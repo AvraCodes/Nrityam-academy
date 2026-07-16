@@ -27,45 +27,66 @@ const videos = [
 // Wait, let's fix the name of sucheta: in command I ran: mv "...Sucheta Chakraborty..." to "...sucheta-chakraborty.mp4".
 // Let me update the src mapping for Sucheta to match exactly.
 
+const TestimonialsColumn = ({
+  videos,
+  duration = 30,
+  reverse = false,
+}: {
+  videos: { src: string; name: string; location: string; }[];
+  duration?: number;
+  reverse?: boolean;
+}) => {
+  return (
+    <div className="h-[800px] overflow-hidden">
+      <motion.div
+        animate={{
+          y: reverse ? ["-50%", "0%"] : ["0%", "-50%"],
+        }}
+        transition={{
+          duration: duration,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        }}
+        className="flex flex-col gap-6"
+      >
+        {/* Render twice for infinite loop */}
+        {[...videos, ...videos].map((video, idx) => (
+          <div 
+            key={`${video.src}-${idx}`} 
+            className="relative rounded-2xl overflow-hidden group cursor-pointer shadow-lg border border-white/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-primary/10"
+          >
+            <video
+              src={video.src}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500 bg-bg-ivory"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-opacity duration-300" />
+            <div className="absolute bottom-4 left-4 right-4 z-10 pointer-events-none">
+              <h4 className="text-white font-serif text-lg font-medium tracking-wide">{video.name}</h4>
+              <p className="text-white/80 text-sm font-sans flex items-center gap-1.5 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary block animate-pulse" />
+                {video.location}
+              </p>
+            </div>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
 export default function VideoTestimonialsGallery() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, -150]);
-
   // Split into 3 columns
   const col1 = videos.filter((_, i) => i % 3 === 0);
   const col2 = videos.filter((_, i) => i % 3 === 1);
   const col3 = videos.filter((_, i) => i % 3 === 2);
 
-  const renderCard = (video: typeof videos[0]) => (
-    <div key={video.src} className="relative rounded-2xl overflow-hidden mb-6 group cursor-pointer shadow-lg border border-white/20">
-      <video
-        src={video.src}
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 bg-bg-ivory"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-opacity duration-300" />
-      <div className="absolute bottom-4 left-4 right-4 z-10 pointer-events-none">
-        <h4 className="text-white font-serif text-lg font-medium tracking-wide">{video.name}</h4>
-        <p className="text-white/80 text-sm font-sans flex items-center gap-1.5 mt-0.5">
-          <span className="w-1 h-1 rounded-full bg-secondary block" />
-          {video.location}
-        </p>
-      </div>
-    </div>
-  );
-
   return (
-    <section ref={containerRef} className="py-24 md:py-32 bg-transparent relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10 text-center">
         <div className="flex items-center justify-center gap-3 mb-4">
           <span className="w-8 h-px bg-primary" />
@@ -91,22 +112,15 @@ export default function VideoTestimonialsGallery() {
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-bg-ivory to-transparent z-20 pointer-events-none" />
 
           {/* Col 1 */}
-          <motion.div style={{ y: y1 }} className="flex flex-col pt-12">
-            {col1.map(renderCard)}
-            {col1.map(renderCard)} {/* Duplicate for scrolling length */}
-          </motion.div>
+          <TestimonialsColumn videos={col1} duration={45} />
 
           {/* Col 2 */}
-          <motion.div style={{ y: y2 }} className="flex flex-col -mt-[400px]">
-            {col2.map(renderCard)}
-            {col2.map(renderCard)}
-          </motion.div>
+          <TestimonialsColumn videos={col2} duration={40} reverse={true} />
 
           {/* Col 3 */}
-          <motion.div style={{ y: y3 }} className="flex flex-col hidden lg:flex pt-24">
-            {col3.map(renderCard)}
-            {col3.map(renderCard)}
-          </motion.div>
+          <div className="hidden lg:block">
+            <TestimonialsColumn videos={col3} duration={50} />
+          </div>
 
         </div>
       </div>

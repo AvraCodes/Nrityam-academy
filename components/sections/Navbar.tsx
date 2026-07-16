@@ -28,7 +28,7 @@ export default function Navbar() {
       >
         <div className="px-5 backdrop-blur-2xl bg-white/40 border border-white/20 rounded-full py-3.5 flex justify-between items-center shadow-lg">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 rounded-full overflow-hidden border-[3px] border-primary group-hover:border-primary-light transition-colors shadow-sm">
+            <div className="relative w-11 h-11 rounded-full overflow-hidden border-[1.5px] border-primary group-hover:border-primary-light transition-colors shadow-sm">
               <Image src="/logo.jpeg" alt="Nrityaam Logo" fill className="object-cover" />
             </div>
             <span className="font-serif text-2xl font-bold text-text-main tracking-wide">

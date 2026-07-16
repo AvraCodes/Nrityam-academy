@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
+import Link from 'next/link';
 import { RippleButton } from "@/components/ui/multi-type-ripple-buttons";
 import { Check } from 'lucide-react';
 
@@ -69,7 +70,9 @@ export const PricingCard = ({
           </li>
         ))}
       </ul>
-      <RippleButton className={buttonClasses.trim()}>{buttonText}</RippleButton>
+      <Link href="/contact" className="w-full mt-auto block">
+        <RippleButton className={buttonClasses.trim()}>{buttonText}</RippleButton>
+      </Link>
     </div>
   );
 };
