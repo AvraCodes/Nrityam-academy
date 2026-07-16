@@ -40,7 +40,7 @@ interface AccordionItemProps {
 
 const AccordionItem: React.FC<AccordionItemProps> = ({ item, isOpen, onToggle }) => {
   return (
-    <div className="border border-text-light/10 rounded-2xl bg-white overflow-hidden transition-all duration-300 hover:border-primary/20">
+    <div className="border border-white/20 rounded-2xl bg-white/50 backdrop-blur-md overflow-hidden transition-all duration-300 hover:border-primary/20">
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between p-6 text-left font-semibold text-text-main hover:text-primary transition-colors cursor-pointer select-none"
@@ -75,7 +75,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-bg-subtle py-20 md:py-28 overflow-hidden text-text-main border-t border-text-light/10">
+    <section id="faq" className="bg-transparent py-20 md:py-28 overflow-hidden text-text-main border-t border-white/10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

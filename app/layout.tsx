@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import Navbar from "@/components/sections/Navbar";
+import Footer from "@/components/sections/Footer";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -30,6 +33,8 @@ export const metadata: Metadata = {
   },
 };
 
+import GlobalBackground from "@/components/ui/GlobalBackground";
+
 export default function RootLayout({
   children,
 }: {
@@ -41,13 +46,18 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${cormorant.variable} ${outfit.variable}`}
     >
-      <body>
+      <body className="flex flex-col min-h-screen">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           disableTransitionOnChange
         >
-          {children}
+          <SmoothScroll>
+            <GlobalBackground />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>

@@ -32,7 +32,7 @@ const itemVariants = {
 
 export default function ProblemStatement() {
   return (
-    <section id="system" className="bg-bg-subtle py-20 md:py-28 overflow-hidden text-text-main relative border-b border-text-light/10">
+    <section id="system" className="bg-transparent py-20 md:py-28 overflow-hidden text-text-main relative border-b border-white/10">
       {/* Background styling elements */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary-glow/5 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accent-light/5 blur-3xl pointer-events-none" />
@@ -60,7 +60,7 @@ export default function ProblemStatement() {
             </p>
 
             {/* Result callout card */}
-            <div className="p-6 bg-white border border-text-light/20 rounded-2xl shadow-md relative overflow-hidden group hover:border-primary/30 transition-colors">
+            <div className="p-6 bg-white/50 backdrop-blur-md border border-white/40 rounded-2xl shadow-md relative overflow-hidden group hover:bg-white/60 hover:border-primary/30 transition-colors">
               <div className="absolute top-0 left-0 h-full w-1 bg-primary" />
               <div className="text-xs uppercase tracking-widest text-accent font-semibold mb-2 flex items-center gap-2">
                 <AlertCircle className="w-4 h-4" />
@@ -88,7 +88,7 @@ export default function ProblemStatement() {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="flex gap-4 p-5 bg-white border border-text-light/10 rounded-2xl transition-all duration-300 group hover:translate-y-[-2px] hover:border-primary/20 hover:shadow-sm"
+                  className="flex gap-4 p-5 bg-white/50 backdrop-blur-md border border-white/40 rounded-2xl transition-all duration-300 group hover:translate-y-[-2px] hover:border-primary/40 hover:bg-white/70 hover:shadow-md"
                 >
                   <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary-glow/10 border border-primary/20 text-primary font-sans text-sm font-semibold group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                     {index + 1}
