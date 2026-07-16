@@ -66,7 +66,7 @@ const itemVariants = {
 
 export default function WhatIsIncluded() {
   return (
-    <section id="what-is-included" className="bg-bg-subtle py-20 md:py-28 text-text-main relative border-t border-text-light/10">
+    <section id="what-is-included" className="bg-transparent py-20 md:py-28 text-text-main relative border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -105,7 +105,7 @@ export default function WhatIsIncluded() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className="p-8 bg-white border border-text-light/20 rounded-3xl hover:border-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col text-left group"
+                className="p-8 bg-white/40 backdrop-blur-md border border-white/20 rounded-3xl hover:border-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col text-left group"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-2xl bg-primary-glow/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">

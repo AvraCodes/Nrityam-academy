@@ -1,4 +1,5 @@
 import { ModernPricingPage } from "@/components/sections/Pricing";
+import WhatIsIncluded from "@/components/sections/WhatIsIncluded";
 
 const pricingPlans = [
   {
@@ -33,11 +34,16 @@ const pricingPlans = [
 
 export default function PricingRoute() {
   return (
-    <ModernPricingPage
-      title="Investment in Your Art"
-      subtitle="Choose the structured plan that fits your current level and goals."
-      plans={pricingPlans}
-      showAnimatedBackground={true}
-    />
+    <div className="flex flex-col pb-20">
+      <ModernPricingPage
+        title="Investment in Your Art"
+        subtitle="Choose the structured plan that fits your current level and goals."
+        plans={pricingPlans}
+        showAnimatedBackground={true}
+      />
+      <div className="-mt-16">
+        <WhatIsIncluded />
+      </div>
+    </div>
   );
 }

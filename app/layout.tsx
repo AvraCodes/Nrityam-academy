@@ -46,6 +46,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${cormorant.variable} ${outfit.variable}`}
     >
+      <head>
+        <link rel="preload" href="/hero-bg.mp4" as="video" type="video/mp4" />
+      </head>
       <body className="flex flex-col min-h-screen">
         <ThemeProvider
           attribute="class"
