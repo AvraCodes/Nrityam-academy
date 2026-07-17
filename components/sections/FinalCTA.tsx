@@ -30,11 +30,8 @@ export default function FinalCTA() {
             </div>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-[--color-text-main] mb-6 text-balance leading-tight">
-            Ready to Begin Your <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--color-primary] to-[--color-secondary-dark]">
-              Dance Journey?
-            </span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-[--color-primary] mb-6 text-balance leading-tight">
+            Ready to Begin Your Dance Journey?
           </h2>
           
           <p className="text-lg sm:text-xl text-[--color-text-muted] font-light mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -44,7 +41,7 @@ export default function FinalCTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <HoverButton 
               onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
-              className="w-full sm:w-auto bg-[--color-primary] text-white border border-[--color-primary-light] hover:bg-[--color-primary-dark] shadow-xl shadow-[--color-primary-glow] h-14 px-8 text-base font-medium"
+              className="w-full sm:w-auto bg-white text-[--color-primary] border border-[--color-primary] hover:bg-[--color-primary]/5 shadow-xl shadow-[--color-primary]/10 h-14 px-8 text-base font-medium"
             >
               Enroll Now
               <ArrowRight className="w-5 h-5 ml-2" />

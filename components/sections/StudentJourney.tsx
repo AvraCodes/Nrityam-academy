@@ -32,17 +32,9 @@ export default function StudentJourney() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[--color-primary]/30 bg-[--color-primary]/10 px-4 py-1.5 mb-6">
-            <span className="text-[11px] font-medium tracking-widest text-[--color-secondary] uppercase">
-              The Path to Mastery
-            </span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-text-main] mb-6">
-            How We Nurture a <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--color-secondary-dark] to-[--color-primary]">
-              Complete Dancer
-            </span>
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-primary] mb-6">
+            How We Nurture a Complete Dancer
           </h2>
           <p className="text-lg text-[--color-text-muted] font-light">
             We don't just teach steps; we guide you through a profound transformation. Every student follows a proven path supported by modern learning channels.

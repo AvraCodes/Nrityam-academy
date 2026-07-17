@@ -16,10 +16,7 @@ export default function Process() {
     <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-[--color-primary]/10">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[--color-primary]/30 bg-[--color-primary]/10 px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest text-[--color-secondary] mb-6">
-            The Enrollment Journey
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-serif text-[--color-text-main] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-text-main] mb-6">
             A structured path, <br/> from day one.
           </h2>
           <p className="text-lg text-[--color-text-muted] font-light max-w-xl">

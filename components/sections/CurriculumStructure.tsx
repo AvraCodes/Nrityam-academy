@@ -50,16 +50,8 @@ export default function CurriculumStructure() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-[--color-secondary]/30 bg-[--color-secondary]/10 px-4 py-1.5 mb-6">
-            <span className="text-[11px] font-medium tracking-widest text-[--color-secondary] uppercase">
-              The Framework
-            </span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-text-main] mb-6">
-            A Structured Path to <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--color-secondary-dark] to-[--color-primary]">
-              Mastery
-            </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-primary] mb-6">
+            A Structured Path to Mastery
           </h2>
           <p className="text-lg text-[--color-text-muted] font-light max-w-2xl mx-auto">
             We don't just teach choreography. We build dancers. Our curriculum is layered, ensuring every student develops a robust foundation before advancing.
@@ -111,8 +103,8 @@ export default function CurriculumStructure() {
                     >
                       <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${
                         isActive 
-                          ? 'bg-[--color-primary] text-white' 
-                          : 'bg-[--color-primary]/10 text-[--color-text-muted]'
+                          ? 'bg-[--color-primary]/20 text-[--color-primary]' 
+                          : 'bg-[--color-primary]/5 text-[--color-text-muted]'
                       }`}>
                         <Icon className="w-5 h-5" />
                       </div>

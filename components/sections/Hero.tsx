@@ -112,7 +112,7 @@ export default function Hero() {
             {/* Main Headline */}
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-[--color-text-main] mb-6 text-balance leading-[1.1]">
               Master the True Art of <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--color-primary] to-[--color-secondary]">
+              <span className="text-[--color-primary]">
                 Bharatanatyam
               </span>
             </h1>
@@ -125,7 +125,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-4 mb-14">
               <HoverButton 
                 onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
-                className="bg-[--color-primary] text-white border border-[--color-primary-light] hover:bg-[--color-primary-dark] shadow-lg shadow-[--color-primary-glow]"
+                className="bg-white text-[--color-primary] border border-[--color-primary] hover:bg-[--color-primary]/5 shadow-lg shadow-[--color-primary]/10"
               >
                 Begin Your Journey
                 <ArrowRight className="w-4 h-4 ml-2" />

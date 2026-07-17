@@ -60,12 +60,9 @@ export default function AcademyFeatures() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-2xl mb-16"
+          className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-[--color-primary]/30 bg-[--color-primary]/10 px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest text-[--color-secondary] mb-6">
-            <Sparkles className="h-3.5 w-3.5" /> Academy Features
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-serif text-[--color-text-main] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-text-main] mb-6">
             Everything you need <br/> to excel in dance.
           </h2>
           <p className="text-lg text-[--color-text-muted] font-light max-w-xl">

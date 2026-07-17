@@ -55,7 +55,7 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
                 className="text-[--color-text-main] text-3xl sm:text-[40px] font-serif font-medium leading-tight md:leading-[1.2]"
               >
                 Your virtual studio, <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--color-primary] to-[--color-secondary-dark]">accessible anywhere.</span>
+                <span className="text-[--color-primary]">accessible anywhere.</span>
               </motion.h2>
             </div>
 

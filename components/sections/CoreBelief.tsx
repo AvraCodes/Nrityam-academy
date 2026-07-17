@@ -66,7 +66,7 @@ export default function CoreBelief() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-text-main] mb-6"
           >
-            The Art of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--color-primary] to-[--color-secondary]">Bharatanatyam</span>
+            The Art of <span className="text-[--color-primary]">Bharatanatyam</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

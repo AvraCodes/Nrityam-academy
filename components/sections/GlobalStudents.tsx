@@ -133,7 +133,7 @@ export default function GlobalStudents() {
         <div className="text-center mb-16 sm:mb-24">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[--color-text-main] mb-6">
             Connecting Dancers <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--color-primary] to-[--color-secondary-dark]">
+            <span className="text-[--color-primary]">
               Across the Globe
             </span>
           </h2>
