@@ -53,9 +53,9 @@ export default function CoreBelief() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2B2118] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-primary] mb-6"
           >
-            The Art of <span className="text-[#D4AF37]">Bharatanatyam</span>
+            The Art of <span className="text-[#8B5E3C]">Bharatanatyam</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
