@@ -165,6 +165,7 @@ export default function CurriculumStructure() {
                 )
             })}
           </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>
