@@ -16,7 +16,7 @@ const AUTO_ADVANCE_MS = 5000
 
 export default function CoreBelief() {
   const [activeStep, setActiveStep] = useState(0)
-  const [progress, setProgress] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     if (isHovered) return
