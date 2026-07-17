@@ -18,16 +18,9 @@ export default function CoreBelief() {
   const [activeStep, setActiveStep] = useState(0)
   const [progress, setProgress] = useState(0)
 
-  const advance = useCallback(() => {
-    setActiveStep((prev) => (prev + 1) % STEP_DETAILS.length)
-    setProgress(0)
-  }, [])
-
   useEffect(() => {
+    if (isHovered) return
     const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          advance()
       setActiveStep((prev) => (prev + 1) % STEP_DETAILS.length)
     }, 3000)
     return () => clearInterval(interval)
