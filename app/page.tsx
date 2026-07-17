@@ -1,9 +1,15 @@
 import Hero from "@/components/sections/Hero";
-import ProblemStatement from "@/components/sections/ProblemStatement";
-import VideoTestimonialsGallery from "@/components/sections/VideoTestimonialsGallery";
+import CoreBelief from "@/components/sections/CoreBelief";
+import CurriculumStructure from "@/components/sections/CurriculumStructure";
+import StudentJourney from "@/components/sections/StudentJourney";
+import Process from "@/components/sections/Process";
+import AcademyFeatures from "@/components/sections/AcademyFeatures";
+import LearningPortal from "@/components/sections/LearningPortal";
+import GlobalStudents from "@/components/sections/GlobalStudents";
 import { ModernPricingPage } from "@/components/sections/Pricing";
 import Team from "@/components/sections/Team";
 import FAQ from "@/components/sections/FAQ";
+import FinalCTA from "@/components/sections/FinalCTA";
 import Contact from "@/components/sections/Contact";
 
 const pricingPlans = [
@@ -39,17 +45,23 @@ const pricingPlans = [
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col min-h-screen">
+    <div className="relative flex flex-col min-h-screen overflow-hidden">
       <Hero />
-      <ProblemStatement />
+      <CoreBelief />
+      <Process />
+      <CurriculumStructure />
+      <StudentJourney />
+      <AcademyFeatures />
+      <LearningPortal />
+      <GlobalStudents />
       <Team />
-      <VideoTestimonialsGallery />
       <ModernPricingPage
         title="Investment in Your Art"
         subtitle="Choose the structured plan that fits your current level and goals."
         plans={pricingPlans}
       />
       <FAQ />
+      <FinalCTA />
       <Contact />
     </div>
   );

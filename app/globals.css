@@ -2,7 +2,7 @@
 
 @theme {
   /* ── Fonts ────────────────────────────────── */
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-serif: var(--font-serif);
   --font-sans:  "Outfit", system-ui, sans-serif;
 
   /* ── Brand Colors (Royal Maroon & Temple Gold) ── */

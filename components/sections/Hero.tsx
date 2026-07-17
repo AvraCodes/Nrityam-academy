@@ -1,111 +1,173 @@
-"use client";
+"use client"
 
-import React from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import MagneticButton from "../ui/MagneticButton";
-import TextReveal from "../ui/TextReveal";
+import React, { useRef, useState, useEffect } from 'react'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
+import {
+  ArrowRight,
+  Star,
+  Globe,
+  Award,
+  Video,
+  PlayCircle
+} from 'lucide-react'
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2, delayChildren: 0.1 },
-  },
-};
+// Internal UI Components
+import { HoverButton } from '@/components/ui/hover-button'
+import { TiltCard } from '@/components/ui/tilt-card'
 
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.6, ease: "easeOut" as const },
-  },
-};
+const AnimatedCounter = ({ value, duration = 1.6 }: { value: string; duration?: number }) => {
+  const hasNumbers = /[0-9]/.test(value)
+  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLSpanElement>(null)
+  const isInView = useInView(ref, { once: true, amount: 0.5 })
+
+  const numericVal = hasNumbers ? (parseInt(value.replace(/[^0-9]/g, '')) || 0) : 0
+  const prefix = hasNumbers ? (value.match(/^[^0-9]*/)?.[0] || '') : value
+  const suffix = hasNumbers ? (value.replace(/^[^0-9]*[0-9]+/, '') || '') : ''
+
+  useEffect(() => {
+    if (!isInView || !hasNumbers) return
+    let startTimestamp: number | null = null
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp
+      const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setCount(Math.floor(eased * numericVal))
+      if (progress < 1) window.requestAnimationFrame(step)
+    }
+    window.requestAnimationFrame(step)
+  }, [isInView, numericVal, duration, hasNumbers])
+
+  if (!hasNumbers) {
+    return <span ref={ref}>{value}</span>
+  }
+
+  return <span ref={ref}>{prefix}{count}{suffix}</span>
+}
+
+const StatItem = ({ value, label }: { value: string; label: string }) => (
+  <div className="flex flex-col items-center justify-center transition-transform hover:-translate-y-1 cursor-default">
+    <span className="text-base font-bold text-[--color-text-main] sm:text-lg">
+      <AnimatedCounter value={value} />
+    </span>
+    <span className="text-[9px] uppercase tracking-wider text-[--color-text-muted] font-medium sm:text-[10px] text-balance text-center">
+      {label}
+    </span>
+  </div>
+)
+
+const DanceSVG = () => (
+  <svg viewBox="0 0 800 600" className="absolute right-0 top-1/2 -translate-y-1/2 w-[70%] h-[90%] opacity-15 pointer-events-none select-none z-0 mix-blend-screen" fill="none">
+    <defs>
+      <linearGradient id="danceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="var(--color-primary)" />
+        <stop offset="100%" stopColor="var(--color-secondary)" />
+      </linearGradient>
+    </defs>
+    <circle cx="450" cy="300" r="220" stroke="url(#danceGrad)" strokeWidth="1.5" strokeDasharray="6,6" />
+    <circle cx="450" cy="300" r="160" stroke="url(#danceGrad)" strokeWidth="1" />
+    {/* Abstract geometric poses */}
+    <path d="M280,420 L380,310 L480,340 L580,210 L680,230" stroke="url(#danceGrad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="380" cy="310" r="5" fill="var(--color-secondary)" className="animate-pulse" />
+    <circle cx="480" cy="340" r="5" fill="var(--color-primary)" />
+    <circle cx="580" cy="210" r="7" fill="var(--color-secondary)" />
+  </svg>
+)
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative w-full text-text-main overflow-hidden h-screen min-h-[700px] flex items-center bg-transparent"
-    >
-      {/* ── Background layers (Light theme configuration with premium blur) ── */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute inset-0 z-0 pointer-events-none"
-      >
-        {/* Ambient Radial Glow */}
-        <div className="absolute top-[30%] left-[-10%] w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-br from-primary/15 to-secondary/10 blur-[100px] opacity-60" />
-      </motion.div>
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[--color-bg-ivory] pt-20 pb-16">
+      {/* Background radial gradient */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent,var(--color-bg-ivory))] opacity-80" />
+      </div>
 
-      {/* ── Foreground content ── */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center w-full">
-        {/* Main hero copy (Left Aligned) */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="relative z-30 flex flex-col items-start text-left max-w-2xl ml-0 mr-auto pt-20"
-        >
+      <DanceSVG />
 
-
-          {/* Headline with TextReveal */}
-          <div className="mb-6">
-            <TextReveal
-              text="The Structured"
-              className="text-5xl md:text-7xl font-light mb-1 leading-tight text-primary font-sans"
-              delay={0}
-            />
-            <motion.h2
-              variants={itemVariants}
-              className="text-5xl md:text-7xl pb-2 font-light bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent italic font-serif"
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          
+          <motion.div 
+            className="flex-1 text-left"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {/* Status Badge */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 backdrop-blur-sm px-4 py-1.5 mb-8"
             >
-              Bharatanatyam
-            </motion.h2>
-            <TextReveal
-              text="Training System"
-              className="text-5xl md:text-7xl font-light text-text-main font-sans"
-              delay={0.2}
-            />
-          </div>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[--color-primary-light] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[--color-primary]"></span>
+              </span>
+              <span className="text-[11px] font-medium tracking-wide text-[--color-text-main]">
+                Admissions Open for Global Batch 2026
+              </span>
+            </motion.div>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-text-main/90 mb-10 max-w-xl text-base md:text-lg leading-relaxed font-light tracking-wide"
-          >
-            A proven learning path from foundation to stage — taught by Ranbbir
-            Banerjee, a CCRT National Scholar and 3× World of Dance champion.
-          </motion.p>
+            {/* Main Headline */}
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-[--color-text-main] mb-6 text-balance leading-[1.1]">
+              Master the True Art of <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--color-primary] to-[--color-secondary]">
+                Bharatanatyam
+              </span>
+            </h1>
 
-          {/* CTAs */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap items-center justify-start gap-5"
-          >
-            <MagneticButton>
-              <Link
-                href="/contact"
-                className="flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-light text-white font-medium rounded-full transition-all duration-300 shadow-xl shadow-primary/20 cursor-pointer border border-white/10"
+            <p className="text-lg sm:text-xl text-[--color-text-muted] max-w-xl mb-10 leading-relaxed font-light text-balance">
+              A structured, authentic learning path for serious students — from foundational steps to stage mastery, guided by renowned mentor Ranbbir Banerjee.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4 mb-14">
+              <HoverButton 
+                onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+                className="bg-[--color-primary] text-white border border-[--color-primary-light] hover:bg-[--color-primary-dark] shadow-lg shadow-[--color-primary-glow]"
               >
-                Book a Free Call
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </MagneticButton>
+                Begin Your Journey
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </HoverButton>
 
-            <MagneticButton>
-              <Link
-                href="/curriculum"
-                className="px-8 py-4 bg-white/50 backdrop-blur-md border border-white/60 hover:bg-white/80 text-text-main font-medium rounded-full transition-all duration-300 cursor-pointer shadow-sm"
+              <button 
+                onClick={() => document.getElementById("system")?.scrollIntoView({ behavior: "smooth" })}
+                className="group flex items-center justify-center gap-2 h-11 px-6 rounded-full text-sm font-medium text-[--color-text-main] hover:text-[--color-primary] transition-colors bg-black/5 hover:bg-black/10 border border-black/10"
               >
-                Explore the System
-              </Link>
-            </MagneticButton>
+                <PlayCircle className="w-4 h-4 text-[--color-secondary] group-hover:scale-110 transition-transform" />
+                See How It Works
+              </button>
+            </div>
+
+            {/* Trust Metrics */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-black/10">
+              <StatItem value="19+" label="Years Expertise" />
+              <StatItem value="850+" label="Active Students" />
+              <StatItem value="25+" label="Countries" />
+              <StatItem value="4.9/5" label="Average Rating" />
+            </div>
           </motion.div>
-        </motion.div>
+
+          {/* Right side Visual - Abstract elements */}
+          <motion.div 
+            className="flex-1 w-full max-w-lg lg:max-w-none flex items-center justify-center relative"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="relative w-full aspect-square max-w-md mx-auto">
+              <div className="absolute inset-0 rounded-full border border-[--color-primary]/20 animate-[spin_60s_linear_infinite]" />
+              <div className="absolute inset-4 rounded-full border border-[--color-secondary-dark]/20 animate-[spin_40s_linear_infinite_reverse]" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[--color-primary]/5 to-transparent rounded-full backdrop-blur-sm" />
+              
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-64 rounded-full overflow-hidden border border-white/20 shadow-2xl">
+                 <img src="/hero-dancer.png" className="w-full h-full object-cover" alt="Dancer" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
-  );
+  )
 }

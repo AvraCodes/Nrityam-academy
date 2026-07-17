@@ -1,118 +1,101 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, HelpCircle } from "lucide-react";
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Plus } from 'lucide-react'
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-const faqData: FAQItem[] = [
+const FAQS = [
   {
-    question: "How do online Bharatanatyam classes work?",
-    answer: "Our classes combine live weekly sessions with lifetime access to studio-recorded audio files for home practice and direct WhatsApp mentor corrections. Students submit short practice clips weekly and receive direct audio/video critiques on posture and alignment.",
+    q: 'Do I need prior experience in Bharatanatyam to join?',
+    a: 'Not at all. We have batches dedicated entirely to beginners where we focus on building foundational strength, Aramandi posture, and basic Adavus before moving to complex sequences.',
   },
   {
-    question: "What if I miss a live class?",
-    answer: "Every live class is recorded and uploaded to the student portal within 2 hours. You get lifetime access to all recordings, meaning you can review materials and practice on your own schedule without falling behind.",
+    q: 'How do online classes compare to learning in person?',
+    a: 'Our online structure is designed to mimic physical presence. With small batch sizes and a mandatory requirement to keep your camera on, Guru Ranbbir can correct your posture and expressions in real-time, just like in a physical studio.',
   },
   {
-    question: "How does the university-approved certification work?",
-    answer: "Nrityaam holds affiliations with Rabindra Bharati University Dance Dept. and Kolkata Charukala Society. We hold annual examinations and structured level evaluations. Successful candidates receive accredited classical certification for each level completed.",
+    q: 'What if I miss a live session?',
+    a: 'Every single live class is recorded in high definition and uploaded to your student portal immediately. You will have lifetime access to these recordings for your enrolled batch to practice at your own pace.',
   },
   {
-    question: "Is there a minimum age or physical requirement to enroll?",
-    answer: "We welcome serious students of all ages above 10. The training system includes stamina conditioning and posture correction drills (Angasudhi), so no previous athletic or dance history is required to begin.",
+    q: 'How does the 1-on-1 feedback system work?',
+    a: 'Once a week, you can record yourself practicing a specific Adavu or Abhinaya piece and submit it through the portal. Guru Ranbbir provides detailed, time-stamped feedback highlighting what you did well and where you need correction.',
   },
   {
-    question: "What is the assessment call like?",
-    answer: "It's a friendly 15-minute 1-on-1 meeting on WhatsApp or Zoom with Ranbbir sir. He reviews your current experience level (if any), looks at flexibility/posture basic capability, and drafts a customized level-by-level curriculum roadmap for you.",
+    q: 'Do you offer certification or exams?',
+    a: 'Yes. Our curriculum is structured into distinct tiers. At the end of every tier, you can opt for an evaluation. Upon passing, you receive a verified Nrityam Academy certification, leading up to an Arangetram level qualification.',
   },
-];
-
-interface AccordionItemProps {
-  item: FAQItem;
-  isOpen: boolean;
-  onToggle: () => void;
-}
-
-const AccordionItem: React.FC<AccordionItemProps> = ({ item, isOpen, onToggle }) => {
-  return (
-    <div className="border border-white/20 rounded-2xl bg-white/50 backdrop-blur-md overflow-hidden transition-all duration-300 hover:border-primary/20">
-      <button
-        onClick={onToggle}
-        className="w-full flex items-center justify-between p-6 text-left font-semibold text-text-main hover:text-primary transition-colors cursor-pointer select-none"
-      >
-        <span className="text-base md:text-lg pr-4 font-sans">{item.question}</span>
-        <div className={`p-1.5 rounded-full transition-colors flex-shrink-0 ${
-          isOpen ? "bg-primary text-white" : "bg-bg-subtle text-text-muted"
-        }`}>
-          {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-        </div>
-      </button>
-
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            <div className="px-6 pb-6 pt-1 text-text-muted text-sm md:text-base leading-relaxed border-t border-bg-subtle">
-              {item.answer}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+  {
+    q: 'Can I perform on stage through this academy?',
+    a: 'Absolutely. We host annual offline retreats and showcases in both India and Europe. Advanced students who pass the requisite tiers are given opportunities to perform in these prestigious showcases.',
+  },
+]
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="bg-transparent py-20 md:py-28 overflow-hidden text-text-main border-t border-white/10">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
+    <section id="faq" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
+
+      <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="w-8 h-px bg-primary" />
-            <span className="text-[11px] font-sans font-semibold tracking-[0.2em] uppercase text-primary flex items-center gap-1.5">
-              <HelpCircle className="w-3.5 h-3.5" />
-              Frequently Asked Questions
-            </span>
-            <span className="w-8 h-px bg-primary" />
-          </div>
-
-          <h2
-            className="text-4xl md:text-5xl font-light leading-tight text-primary mb-4 font-serif"
-          >
-            Got <em className="italic text-accent">Questions?</em>
+          <span className="inline-flex items-center gap-2 rounded-full border border-[--color-secondary-dark]/30 bg-[--color-secondary-dark]/10 px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest text-[--color-secondary-dark] mb-6">
+            Common Questions
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-text-main] mb-6">
+            Everything you need <br /> to know.
           </h2>
-
-          <p className="text-text-muted max-w-xl mx-auto text-base leading-relaxed">
-            Everything you need to know about joining Nrityaam, class structures, certifications, and assessment roadmaps.
-          </p>
         </div>
 
-        {/* Accordions stack */}
         <div className="space-y-4">
-          {faqData.map((item, idx) => (
-            <AccordionItem
-              key={idx}
-              item={item}
-              isOpen={openIndex === idx}
-              onToggle={() => setOpenIndex(openIndex === idx ? null : idx)}
-            />
-          ))}
+          {FAQS.map((f, i) => {
+            const isOpen = open === i
+            return (
+              <motion.div
+                key={f.q}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                onMouseEnter={() => setOpen(i)}
+                onMouseLeave={() => setOpen(null)}
+                className={`rounded-2xl border bg-white/50 transition-colors ${isOpen ? 'border-[--color-secondary-dark]/40 shadow-sm' : 'border-black/5 hover:border-black/10'}`}
+              >
+                <button
+                  className="flex w-full items-center justify-between gap-4 px-6 sm:px-8 py-6 text-left"
+                >
+                  <span className={`text-base sm:text-lg font-medium transition-colors ${isOpen ? 'text-[--color-text-main]' : 'text-[--color-text-muted]'}`}>
+                    {f.q}
+                  </span>
+                  <motion.span
+                    animate={{ rotate: isOpen ? 45 : 0 }}
+                    transition={{ duration: 0.25 }}
+                    className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border ${isOpen ? 'bg-[--color-secondary-dark] text-white border-transparent shadow-sm' : 'bg-transparent border-black/10 text-[--color-text-muted]'}`}
+                  >
+                    <Plus className="h-4 w-4" />
+                  </motion.span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-6 sm:px-8 pb-8 text-sm sm:text-base text-[--color-text-muted] font-light leading-relaxed">
+                        {f.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            )
+          })}
         </div>
-
       </div>
     </section>
-  );
+  )
 }

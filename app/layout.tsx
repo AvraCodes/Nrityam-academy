@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Outfit } from "next/font/google";
+import { Outfit } from "next/font/google";
+import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+const runiga = localFont({
+  src: "../public/fonts/Runiga.otf",
   variable: "--font-serif",
   display: "swap",
 });
@@ -44,7 +43,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${cormorant.variable} ${outfit.variable}`}
+      className={`${runiga.variable} ${outfit.variable}`}
     >
       <head>
         <link rel="preload" href="/hero-bg.mp4" as="video" type="video/mp4" />

@@ -2,7 +2,7 @@ import TeamMemberCard from "@/components/ui/TeamMemberCard";
 
 export default function Team() {
   return (
-    <section className="bg-transparent py-20 overflow-hidden">
+    <section id="mentor" className="bg-transparent py-20 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-primary font-serif">Meet the Team</h2>

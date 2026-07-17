@@ -108,7 +108,7 @@ export const ModernPricingPage = ({
   plans,
 }: ModernPricingPageProps) => {
   return (
-    <div className="relative bg-transparent text-text-main w-full overflow-hidden pb-32">
+    <div id="pricing" className="relative bg-transparent text-text-main w-full overflow-hidden pb-32">
       <main className="relative z-10 w-full flex flex-col items-center justify-center px-4 pt-32">
         <div className="w-full max-w-5xl mx-auto text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-light leading-tight text-primary font-serif mb-6">

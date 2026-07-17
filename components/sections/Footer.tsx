@@ -1,85 +1,160 @@
-"use client";
+"use client"
 
-import React from "react";
-import Link from "next/link";
+import React from 'react'
+import { Map, MapMarker, MapControls, MarkerContent } from "@/components/ui/map-component"
+import { ArrowUpRight, Instagram, Youtube, Facebook, MapPin, Mail, Phone } from "lucide-react"
+import Link from "next/link"
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
+const Footer = () => {
   return (
-    <footer className="bg-black text-white/40 py-12 border-t border-white/5 relative z-10 text-left text-xs md:text-sm font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          
-          {/* Logo & Copyright */}
-          <div className="flex flex-col items-center md:items-start gap-2">
-            <Link href="/" className="flex items-center gap-2 group">
-              <span className="font-serif text-lg font-semibold text-white tracking-wide">
-                Nrityaam
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[--color-secondary] group-hover:scale-125 transition-transform" />
-            </Link>
-            <p className="text-white/30 text-xs">
-              © {currentYear} Nrityaam School of Bharatanatyam. All rights reserved.
-            </p>
+    <footer className="relative bg-black border-t border-white/5 text-white overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,87,34,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+          {/* Brand & Map Section */}
+          <div className="lg:col-span-5 flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
+              <Link href="/" className="flex items-center gap-2 group w-fit">
+                <span className="font-serif text-2xl font-semibold text-white tracking-wide">
+                  Nrityaam
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[--color-primary] group-hover:scale-125 transition-transform" />
+              </Link>
+              <p className="text-zinc-400 text-sm max-w-sm leading-relaxed">
+                Empowering dancers globally with authentic Bharatanatyam training, structured curriculum, and a passionate community.
+              </p>
+            </div>
+
+            {/* Map Container */}
+            <div className="h-[200px] w-full rounded-2xl overflow-hidden border border-white/10 relative group">
+              <Map
+                center={[88.3639, 22.5726]} // Kolkata coordinates
+                zoom={12}
+                pitch={45}
+                styles={{
+                  light: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+                  dark: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+                }}
+              >
+                <MapMarker 
+                  longitude={88.3639} 
+                  latitude={22.5726}
+                  color="var(--color-primary)"
+                >
+                  <MarkerContent className="bg-[--color-primary] text-white">
+                    <MapPin className="w-4 h-4" />
+                  </MarkerContent>
+                </MapMarker>
+                <div className="absolute bottom-4 right-4 flex gap-2">
+                  <MapControls className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20" />
+                </div>
+              </Map>
+              <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10 rounded-2xl" />
+            </div>
+
+            <div className="flex items-start gap-3 text-sm text-zinc-400">
+              <MapPin className="w-5 h-5 text-[--color-primary] shrink-0 mt-0.5" />
+              <p>
+                Headquarters in Kolkata, West Bengal<br />
+                Available Worldwide via Live Sessions
+              </p>
+            </div>
           </div>
 
-          {/* Quick links & Contact details */}
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-center md:text-right">
-            <a
-              href="#system"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("system")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="hover:text-white transition-colors duration-200"
-            >
-              The System
-            </a>
-            <a
-              href="#mentor"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("mentor")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="hover:text-white transition-colors duration-200"
-            >
-              Mentor
-            </a>
-            <a
-              href="#gallery"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="hover:text-white transition-colors duration-200"
-            >
-              Gallery
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="hover:text-white transition-colors duration-200"
-            >
-              Contact
-            </a>
-          </div>
+          {/* Spacer */}
+          <div className="hidden lg:block lg:col-span-1" />
 
+          {/* Links Section */}
+          <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-8">
+            {/* Platform */}
+            <div className="flex flex-col gap-6">
+              <h3 className="text-white font-semibold text-sm">Academy</h3>
+              <ul className="flex flex-col gap-4">
+                {["The System", "Mentor", "Gallery", "Pricing"].map((item) => (
+                  <li key={item}>
+                    <Link 
+                      href={`#${item.toLowerCase().replace(' ', '-')}`}
+                      className="text-zinc-400 hover:text-white hover:translate-x-1 transition-all duration-300 text-sm inline-flex items-center gap-1 group"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Legal */}
+            <div className="flex flex-col gap-6">
+              <h3 className="text-white font-semibold text-sm">Legal</h3>
+              <ul className="flex flex-col gap-4">
+                {["Privacy Policy", "Terms of Service", "Refund Policy"].map((item) => (
+                  <li key={item}>
+                    <Link 
+                      href="#" 
+                      className="text-zinc-400 hover:text-white hover:translate-x-1 transition-all duration-300 text-sm"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div className="flex flex-col gap-6 col-span-2 sm:col-span-1">
+              <h3 className="text-white font-semibold text-sm">Contact</h3>
+              <ul className="flex flex-col gap-4">
+                <li>
+                  <a href="mailto:hello@nrityaam.com" className="text-zinc-400 hover:text-[--color-primary] transition-colors text-sm flex items-center gap-2 group">
+                    <Mail className="w-4 h-4 group-hover:-rotate-12 transition-transform" />
+                    hello@nrityaam.com
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+919876543210" className="text-zinc-400 hover:text-[--color-primary] transition-colors text-sm flex items-center gap-2 group">
+                    <Phone className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                    +91 98765 43210
+                  </a>
+                </li>
+              </ul>
+
+              {/* Social Links */}
+              <div className="flex items-center gap-4 mt-2">
+                {[
+                  { icon: Instagram, href: "#" },
+                  { icon: Youtube, href: "#" },
+                  { icon: Facebook, href: "#" },
+                ].map((social, i) => (
+                  <a 
+                    key={i} 
+                    href={social.href}
+                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:bg-[--color-primary] hover:text-white hover:border-[--color-primary] transition-all duration-300"
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Address and details sub-footer */}
-        <div className="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-white/30 text-xs">
-          <p>
-            Mentorship by Ranbbir Banerjee · Trusted by 850+ Students in 25 Countries.
+        {/* Bottom Bar */}
+        <div className="mt-20 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-zinc-500 text-sm">
+            © {new Date().getFullYear()} Nrityaam School of Bharatanatyam. All rights reserved.
           </p>
-          <p>
-            WhatsApp Support: +91 6291 333 077 · Email: contact@nrityaam.com
-          </p>
+          <div className="flex items-center gap-2 text-zinc-500 text-sm">
+            <span>Built with passion in</span>
+            <span className="text-[--color-primary] animate-pulse">❤</span>
+            <span>Kolkata</span>
+          </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }
+
+export default Footer
