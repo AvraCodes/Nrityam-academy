@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { TiltCard } from '@/components/ui/tilt-card'
 import { ChevronDown, Book, Zap, Heart, Star } from 'lucide-react'
