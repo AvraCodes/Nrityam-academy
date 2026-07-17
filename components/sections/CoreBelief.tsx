@@ -88,7 +88,7 @@ export default function CoreBelief() {
               return (
                 <button
                   key={idx}
-                  onClick={() => handleStepClick(idx)}
+                  onMouseEnter={() => handleStepClick(idx)}
                   className={`w-full text-left p-4 rounded-2xl transition-all duration-300 flex items-start gap-4 group cursor-pointer border ${
                     isActive 
                       ? 'bg-white/60 border-[--color-primary]/20 shadow-lg shadow-[--color-primary]/5' 

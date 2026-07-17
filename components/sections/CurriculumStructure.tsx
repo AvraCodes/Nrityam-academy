@@ -97,9 +97,8 @@ export default function CurriculumStructure() {
                       : 'border-[--color-primary]/10 bg-white/50 hover:bg-white/80'
                   }`}>
                     <button
-                      onClick={() => toggleLayer(index)}
                       onMouseEnter={() => setActiveLayer(index)}
-                      className="flex items-center gap-4 w-full p-6 sm:p-8 text-left"
+                      className="flex items-center gap-4 w-full p-6 sm:p-8 text-left cursor-pointer"
                     >
                       <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${
                         isActive 
