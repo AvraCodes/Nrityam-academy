@@ -6,7 +6,7 @@ import { HoverButton } from '@/components/ui/hover-button'
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] overflow-hidden border-t border-[--color-primary]/10">
+    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] overflow-hidden border-t border-[--color-primary]/10">
       {/* Background radial gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(122,30,44,0.05),transparent_50%)]" />
 

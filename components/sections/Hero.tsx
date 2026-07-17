@@ -84,7 +84,7 @@ export default function Hero() {
 
       <DanceSVG />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 lg:mt-12">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           
           <motion.div 
@@ -110,7 +110,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-[--color-text-main] mb-6 text-balance leading-[1.1]">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight text-[--color-text-main] mb-6 text-balance leading-[1.1]">
               Master the True Art of <br />
               <span className="text-[--color-primary]">
                 Bharatanatyam

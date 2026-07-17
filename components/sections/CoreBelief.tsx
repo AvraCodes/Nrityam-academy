@@ -31,7 +31,7 @@ export default function CoreBelief() {
   }
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[#FFF8F0] border-t border-[--color-primary]/10 overflow-hidden" id="philosophy">
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-[#FFF8F0] border-t border-[--color-primary]/10 overflow-hidden" id="philosophy">
       {/* Background accents */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_50%)]" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />

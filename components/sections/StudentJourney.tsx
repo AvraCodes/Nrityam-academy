@@ -35,7 +35,7 @@ export default function StudentJourney() {
 
   return (
     <section 
-      className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FFF8F0] border-t border-[--color-primary]/10" 
+      className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#FFF8F0] border-t border-[--color-primary]/10" 
       id="journey"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

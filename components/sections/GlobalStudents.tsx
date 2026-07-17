@@ -125,7 +125,7 @@ const TestimonialsColumn = (props: {
 
 export default function GlobalStudents() {
   return (
-    <section className="relative py-24 sm:py-32 bg-[--color-bg-ivory] overflow-hidden" id="gallery">
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-[--color-bg-ivory] overflow-hidden" id="gallery">
       <div className="absolute inset-0 bg-gradient-to-b from-[--color-bg-ivory] via-[--color-bg-ivory]/90 to-[--color-bg-ivory] z-0" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(122,30,44,0.05),transparent_70%)] z-0" />
       
@@ -145,12 +145,12 @@ export default function GlobalStudents() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left Side: Globe Pulse */}
           <div className="relative flex flex-col items-center justify-center">
-            <GlobePulse className="w-full max-w-[500px]" />
+            <GlobePulse className="w-full max-w-[320px] sm:max-w-[500px]" />
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[--color-bg-ivory] via-[--color-bg-ivory]/80 to-transparent h-24 pointer-events-none" />
           </div>
 
           {/* Right Side: Scrolling Testimonials */}
-          <div className="relative h-[600px] sm:h-[700px] overflow-hidden rounded-3xl border border-[--color-primary]/10 bg-[--color-primary]/5 p-4 sm:p-8 flex gap-4 sm:gap-6 mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)">
+          <div className="relative h-[450px] sm:h-[700px] overflow-hidden rounded-3xl border border-[--color-primary]/10 bg-[--color-primary]/5 p-4 sm:p-8 flex gap-4 sm:gap-6 mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)">
             <TestimonialsColumn 
               testimonials={testimonials.slice(0, 3)} 
               duration={40} 

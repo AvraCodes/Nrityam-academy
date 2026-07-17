@@ -28,7 +28,7 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
   const imageOrderClass = reverseLayout ? 'md:col-start-1' : ''
 
   return (
-    <section className="relative py-16 sm:py-24 md:py-32 bg-[--color-bg-ivory] overflow-hidden border-t border-[--color-primary]/10 z-10" id="portal">
+    <section className="relative py-12 sm:py-24 md:py-32 bg-[--color-bg-ivory] overflow-hidden border-t border-[--color-primary]/10 z-10" id="portal">
       
       {/* Glow Effects */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[--color-primary]/10 rounded-full blur-[100px] pointer-events-none" />
