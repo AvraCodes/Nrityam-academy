@@ -7,7 +7,7 @@ import Link from "next/link"
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black border-t border-white/5 text-white overflow-hidden">
+    <footer className="relative bg-[--color-primary-dark] border-t border-white/5 text-white overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,87,34,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />

@@ -60,7 +60,7 @@ export default function FAQ() {
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 onMouseEnter={() => setOpen(i)}
                 onMouseLeave={() => setOpen(null)}
-                className={`rounded-2xl border bg-white/50 transition-colors ${isOpen ? 'border-[--color-secondary-dark]/40 shadow-sm' : 'border-black/5 hover:border-black/10'}`}
+                className={`rounded-2xl border bg-white/50 transition-colors ${isOpen ? 'border-[--color-secondary-dark]/40 shadow-sm' : 'border-[--color-primary]/10 hover:border-[--color-primary]/20'}`}
               >
                 <button
                   className="flex w-full items-center justify-between gap-4 px-6 sm:px-8 py-6 text-left"
@@ -71,7 +71,7 @@ export default function FAQ() {
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.25 }}
-                    className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border ${isOpen ? 'bg-[--color-secondary-dark] text-white border-transparent shadow-sm' : 'bg-transparent border-black/10 text-[--color-text-muted]'}`}
+                    className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border ${isOpen ? 'bg-[--color-secondary-dark] text-white border-transparent shadow-sm' : 'bg-transparent border-[--color-primary]/20 text-[--color-text-muted]'}`}
                   >
                     <Plus className="h-4 w-4" />
                   </motion.span>

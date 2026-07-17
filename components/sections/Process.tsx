@@ -13,7 +13,7 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-black/5">
+    <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-[--color-primary]/10">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-16">
           <span className="inline-flex items-center gap-2 rounded-full border border-[--color-primary]/30 bg-[--color-primary]/10 px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest text-[--color-secondary] mb-6">
@@ -40,7 +40,7 @@ export default function Process() {
                 transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
                 className="relative"
               >
-                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-black/10 bg-white hover:border-[--color-secondary-dark]/40 transition-colors shadow-sm">
+                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-[--color-primary]/20 bg-white hover:border-[--color-primary]/40 transition-colors shadow-sm">
                   <s.icon className="h-6 w-6 text-[--color-text-muted]" />
                   <span className="absolute -top-3 -right-3 flex h-7 w-7 items-center justify-center rounded-full bg-[--color-secondary] text-[10px] font-bold text-black border-[3px] border-white">{s.k}</span>
                 </div>

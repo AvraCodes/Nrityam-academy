@@ -28,7 +28,7 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
   const imageOrderClass = reverseLayout ? 'md:col-start-1' : ''
 
   return (
-    <section className="relative py-16 sm:py-24 md:py-32 bg-[--color-bg-ivory] overflow-hidden border-t border-black/5 z-10" id="portal">
+    <section className="relative py-16 sm:py-24 md:py-32 bg-[--color-bg-ivory] overflow-hidden border-t border-[--color-primary]/10 z-10" id="portal">
       
       {/* Glow Effects */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[--color-primary]/10 rounded-full blur-[100px] pointer-events-none" />
@@ -86,7 +86,7 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
             variants={itemVariants}
           >
             <TiltCard className="w-full">
-              <div className="relative rounded-2xl overflow-hidden border border-black/10 bg-white/70 backdrop-blur-xl shadow-2xl p-2 pb-0">
+              <div className="relative rounded-2xl overflow-hidden border border-[--color-primary]/20 bg-white/70 backdrop-blur-xl shadow-2xl p-2 pb-0">
                 
                 {/* Browser bar */}
                 <div className="h-8 flex items-center px-4 gap-1.5 mb-2">
@@ -95,7 +95,7 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
                   <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
                 </div>
 
-                <div className="rounded-t-xl bg-white border border-black/5 border-b-0 overflow-hidden relative shadow-inner">
+                <div className="rounded-t-xl bg-white border border-[--color-primary]/10 border-b-0 overflow-hidden relative shadow-inner">
                   {/* Mock Video Player */}
                   <div className="aspect-video relative bg-black flex flex-col justify-between">
                     <img src="https://images.unsplash.com/photo-1549471013-3364d73206c8?q=80&w=800&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-80" alt="Video player" />
@@ -105,7 +105,7 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
                       </div>
                     </div>
                     {/* Mock Progress Bar */}
-                    <div className="absolute bottom-0 inset-x-0 h-1 bg-black/10">
+                    <div className="absolute bottom-0 inset-x-0 h-1 bg-[--color-primary]/20">
                       <div className="h-full bg-[--color-primary] w-1/3" />
                     </div>
                   </div>
@@ -116,11 +116,11 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
                     <p className="text-[--color-text-muted] text-xs mb-4">Recorded on July 15, 2026 • 1h 45m</p>
                     
                     <div className="flex gap-3 overflow-hidden">
-                      <div className="w-32 h-20 rounded-lg bg-black/5 border border-black/10 shrink-0 relative overflow-hidden">
+                      <div className="w-32 h-20 rounded-lg bg-[--color-primary]/5 border border-[--color-primary]/10 shrink-0 relative overflow-hidden">
                          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" className="w-full h-full object-cover opacity-50" alt="thumb" />
                          <span className="absolute bottom-1 right-1 text-[8px] bg-black/80 px-1 rounded text-white">12:40</span>
                       </div>
-                      <div className="w-32 h-20 rounded-lg bg-black/5 border border-[--color-primary]/30 shrink-0 relative overflow-hidden">
+                      <div className="w-32 h-20 rounded-lg bg-[--color-primary]/5 border border-[--color-primary]/30 shrink-0 relative overflow-hidden">
                          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" className="w-full h-full object-cover opacity-90" alt="thumb" />
                          <span className="absolute bottom-1 right-1 text-[8px] bg-black/80 px-1 rounded text-white">45:12</span>
                          <div className="absolute inset-0 ring-2 ring-[--color-primary] ring-inset" />

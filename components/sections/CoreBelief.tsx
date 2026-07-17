@@ -42,7 +42,7 @@ export default function CoreBelief() {
   }
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[--color-bg-ivory] border-t border-black/5 overflow-hidden" id="philosophy">
+    <section className="relative py-24 sm:py-32 bg-[--color-bg-ivory] border-t border-[--color-primary]/10 overflow-hidden" id="philosophy">
       {/* Background accents */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(122,30,44,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
@@ -89,10 +89,10 @@ export default function CoreBelief() {
                 <button
                   key={idx}
                   onClick={() => handleStepClick(idx)}
-                  className={`relative flex items-center justify-between p-5 rounded-2xl transition-all duration-300 text-left overflow-hidden group ${
+                  className={`w-full text-left p-4 rounded-2xl transition-all duration-300 flex items-start gap-4 group cursor-pointer border ${
                     isActive 
-                      ? 'bg-white/60 border border-black/10 shadow-lg shadow-[--color-primary]/5' 
-                      : 'bg-transparent border border-transparent hover:bg-black/5'
+                      ? 'bg-white/60 border-[--color-primary]/20 shadow-lg shadow-[--color-primary]/5' 
+                      : 'bg-transparent border-transparent hover:bg-[--color-primary]/5'
                   }`}
                 >
                   {/* Progress bar background for active step */}
@@ -104,8 +104,8 @@ export default function CoreBelief() {
                   )}
                   
                   <div className="relative z-10 flex items-center gap-4">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors ${
-                      isActive ? 'bg-[--color-primary] text-white' : 'bg-black/5 text-[--color-text-muted] group-hover:bg-black/10'
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 border border-transparent ${
+                      isActive ? 'bg-[--color-primary] text-white' : 'bg-[--color-primary]/10 text-[--color-text-muted] group-hover:bg-[--color-primary]/20'
                     }`}>
                       {idx + 1}
                     </div>
@@ -122,8 +122,8 @@ export default function CoreBelief() {
 
           {/* Right: Content Display */}
           <div className="lg:col-span-7 relative min-h-[300px] sm:min-h-[250px] lg:min-h-[400px]">
-            <TiltCard className="h-full w-full">
-              <div className="h-full w-full p-8 sm:p-12 rounded-3xl border border-black/10 bg-white/70 backdrop-blur-md relative overflow-hidden flex flex-col justify-center shadow-2xl">
+            <motion.div className="flex-1 w-full lg:h-[450px]">
+              <div className="h-full w-full p-8 sm:p-12 rounded-3xl border border-[--color-primary]/20 bg-white/70 backdrop-blur-md relative overflow-hidden flex flex-col justify-center shadow-2xl">
                 {/* Decorative glowing orb */}
                 <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-[--color-primary] rounded-full blur-[100px] opacity-20" />
                 

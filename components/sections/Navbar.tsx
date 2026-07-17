@@ -125,7 +125,7 @@ export default function Navbar() {
             headerShapeClass,
             "border",
             isScrolled || isOpen 
-              ? "bg-white/80 backdrop-blur-xl border-black/5 shadow-lg" 
+              ? "bg-white/80 backdrop-blur-xl border-[--color-primary]/10 shadow-lg" 
               : "bg-transparent border-transparent"
           )}
         >
@@ -151,7 +151,7 @@ export default function Navbar() {
                   e.preventDefault();
                   document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="hidden sm:inline-flex h-10 items-center justify-center rounded-full bg-white text-[--color-text-main] px-6 text-sm font-medium border border-black/10 transition-all hover:bg-[--color-primary] hover:text-white hover:scale-105 shadow-sm hover:shadow-lg"
+                className="hidden sm:inline-flex h-10 items-center justify-center rounded-full bg-white text-[--color-text-main] px-6 text-sm font-medium border border-[--color-primary]/20 transition-all hover:bg-[--color-primary] hover:text-white hover:scale-105 shadow-sm hover:shadow-lg"
               >
                 Enroll Now
               </a>
@@ -198,7 +198,7 @@ export default function Navbar() {
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="md:hidden"
               >
-                <div className="flex flex-col gap-4 px-8 pb-8 pt-4 border-t border-black/5">
+                <div className="flex flex-col gap-4 px-8 pb-8 pt-4 border-t border-[--color-primary]/10">
                   <a href="#system" onClick={() => setIsOpen(false)} className="text-base text-[--color-text-muted] hover:bg-[--color-primary] hover:text-white px-4 py-2 rounded-xl transition-all font-medium">The System</a>
                   <a href="#portal" onClick={() => setIsOpen(false)} className="text-base text-[--color-text-muted] hover:bg-[--color-primary] hover:text-white px-4 py-2 rounded-xl transition-all font-medium">Portal</a>
                   <a href="#mentor" onClick={() => setIsOpen(false)} className="text-base text-[--color-text-muted] hover:bg-[--color-primary] hover:text-white px-4 py-2 rounded-xl transition-all font-medium">Mentor</a>
@@ -212,7 +212,7 @@ export default function Navbar() {
                       setIsOpen(false);
                       document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="mt-4 inline-flex h-12 w-full items-center justify-center rounded-full bg-white text-[--color-text-main] border border-black/10 text-base font-medium hover:bg-[--color-primary] hover:text-white shadow-sm transition-all"
+                    className="mt-4 inline-flex h-12 w-full items-center justify-center rounded-full bg-white text-[--color-text-main] border border-[--color-primary]/20 text-base font-medium hover:bg-[--color-primary] hover:text-white shadow-sm transition-all"
                   >
                     Enroll Now
                   </a>

@@ -83,13 +83,13 @@ const TestimonialsColumn = (props: {
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, role, location }, i) => (
                 <div 
-                  className="p-8 rounded-3xl border border-black/5 bg-white shadow-sm transition-colors hover:border-[--color-primary]/30" 
+                  className="p-8 rounded-3xl border border-[--color-primary]/10 bg-white shadow-sm transition-colors hover:border-[--color-primary]/30" 
                   key={i}
                 >
                   <div className="text-sm text-[--color-text-main] font-light leading-relaxed">
                     "{text}"
                   </div>
-                  <div className="flex items-center justify-between gap-3 mt-5 border-t border-black/5 pt-4">
+                  <div className="flex items-center justify-between gap-3 mt-5 border-t border-[--color-primary]/10 pt-4">
                     <div className="flex items-center gap-3">
                       <img
                         width={40}
@@ -150,7 +150,7 @@ export default function GlobalStudents() {
           </div>
 
           {/* Right Side: Scrolling Testimonials */}
-          <div className="relative h-[600px] sm:h-[700px] overflow-hidden rounded-3xl border border-black/5 bg-black/5 p-4 sm:p-8 flex gap-4 sm:gap-6 mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)">
+          <div className="relative h-[600px] sm:h-[700px] overflow-hidden rounded-3xl border border-[--color-primary]/10 bg-[--color-primary]/5 p-4 sm:p-8 flex gap-4 sm:gap-6 mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)">
             <TestimonialsColumn 
               testimonials={testimonials.slice(0, 3)} 
               duration={40} 

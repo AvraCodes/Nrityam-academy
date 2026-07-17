@@ -98,7 +98,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 backdrop-blur-sm px-4 py-1.5 mb-8"
+              className="inline-flex items-center gap-2 rounded-full border border-[--color-primary]/20 bg-[--color-primary]/5 backdrop-blur-sm px-4 py-1.5 mb-8"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[--color-primary-light] opacity-75"></span>
@@ -133,7 +133,7 @@ export default function Hero() {
 
               <button 
                 onClick={() => document.getElementById("system")?.scrollIntoView({ behavior: "smooth" })}
-                className="group flex items-center justify-center gap-2 h-11 px-6 rounded-full text-sm font-medium text-[--color-text-main] hover:text-[--color-primary] transition-colors bg-black/5 hover:bg-black/10 border border-black/10"
+                className="group flex items-center justify-center gap-2 h-11 px-6 rounded-full text-sm font-medium text-[--color-text-main] hover:text-[--color-primary] transition-colors bg-[--color-primary]/5 hover:bg-[--color-primary]/10 border border-[--color-primary]/10"
               >
                 <PlayCircle className="w-4 h-4 text-[--color-secondary] group-hover:scale-110 transition-transform" />
                 See How It Works
@@ -141,7 +141,7 @@ export default function Hero() {
             </div>
 
             {/* Trust Metrics */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-black/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-[--color-primary]/10">
               <StatItem value="19+" label="Years Expertise" />
               <StatItem value="850+" label="Active Students" />
               <StatItem value="25+" label="Countries" />

@@ -41,7 +41,7 @@ function Tile({ children, wrapperClassName = '', className = '', delay = 0 }: { 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      className={`group relative overflow-hidden rounded-3xl border border-black/10 bg-white/70 shadow-sm p-6 transition-colors hover:border-[--color-primary]/40 ${wrapperClassName}`}
+      className={`group relative overflow-hidden rounded-3xl border border-[--color-primary]/10 bg-white/70 shadow-sm p-6 transition-colors hover:border-[--color-primary]/40 ${wrapperClassName}`}
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -54,7 +54,7 @@ function Tile({ children, wrapperClassName = '', className = '', delay = 0 }: { 
 
 export default function AcademyFeatures() {
   return (
-    <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-black/5">
+    <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-[--color-primary]/10">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -91,11 +91,11 @@ export default function AcademyFeatures() {
               {/* Abstract camera/focus UI elements */}
               <div className="mt-6 flex gap-4 opacity-70">
                 <div className="w-16 h-16 border-2 border-[--color-primary]/20 rounded relative">
-                   <div className="absolute top-1 left-1 w-2 h-2 border-t-2 border-l-2 border-black/30" />
-                   <div className="absolute bottom-1 right-1 w-2 h-2 border-b-2 border-r-2 border-black/30" />
+                   <div className="absolute top-1 left-1 w-2 h-2 border-t-2 border-l-2 border-[--color-primary]/30" />
+                   <div className="absolute bottom-1 right-1 w-2 h-2 border-b-2 border-r-2 border-[--color-primary]/30" />
                    <div className="absolute inset-0 m-auto w-1 h-1 bg-[--color-secondary-dark] rounded-full animate-ping" />
                 </div>
-                <div className="flex-1 border-y border-black/10 flex items-center justify-center">
+                <div className="flex-1 border-y border-[--color-primary]/10 flex items-center justify-center">
                   <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-[--color-primary] to-transparent" />
                 </div>
               </div>
@@ -104,7 +104,7 @@ export default function AcademyFeatures() {
 
           {/* 1x1 Global Community */}
           <Tile delay={0.1}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-black/5 ring-1 ring-black/10 mb-4 text-[--color-text-muted]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[--color-primary]/5 ring-1 ring-[--color-primary]/10 mb-4 text-[--color-text-muted]">
               <Users className="h-5 w-5" />
             </div>
             <h3 className="text-lg font-medium text-[--color-text-main] mb-1">Global Peers</h3>
@@ -113,7 +113,7 @@ export default function AcademyFeatures() {
 
           {/* 1x1 Mentor */}
           <Tile delay={0.2} wrapperClassName="bg-[url('https://images.unsplash.com/photo-1549471013-3364d73206c8?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center">
-            <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors" />
+            <div className="absolute inset-0 bg-[--color-primary]/60 group-hover:bg-[--color-primary]/40 transition-colors" />
             <div className="relative z-10 flex flex-col justify-end h-full">
               <div className="flex items-center gap-2 mb-1">
                 <Medal className="w-4 h-4 text-[--color-secondary]" />
@@ -140,7 +140,7 @@ export default function AcademyFeatures() {
           <Tile wrapperClassName="row-span-2 bg-white/70 shadow-sm" delay={0.4}>
             <div className="flex flex-col h-full justify-between">
               <div>
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-black/5 ring-1 ring-black/10 mb-4 text-[--color-text-muted]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[--color-primary]/5 ring-1 ring-[--color-primary]/10 mb-4 text-[--color-text-muted]">
                   <GraduationCap className="h-5 w-5" />
                 </div>
                 <h3 className="text-lg font-medium text-[--color-text-main] mb-2">Certification</h3>
@@ -148,7 +148,7 @@ export default function AcademyFeatures() {
                   Clear exams at every tier to earn verified Nrityam Academy certifications.
                 </p>
               </div>
-              <div className="w-full aspect-square rounded-full border border-dashed border-black/20 flex items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity bg-black/5">
+              <div className="w-full aspect-square rounded-full border border-dashed border-[--color-primary]/20 flex items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity bg-[--color-primary]/5">
                 <ShieldCheck className="w-10 h-10 text-[--color-secondary-dark]" />
               </div>
             </div>
@@ -156,7 +156,7 @@ export default function AcademyFeatures() {
 
           {/* 1x1 Physical conditioning */}
           <Tile delay={0.5}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-black/5 ring-1 ring-black/10 mb-4 text-[--color-primary]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[--color-primary]/5 ring-1 ring-[--color-primary]/10 mb-4 text-[--color-primary]">
               <HeartPulse className="h-5 w-5" />
             </div>
             <h3 className="text-sm font-medium text-[--color-text-main] mb-1">Fitness Focused</h3>

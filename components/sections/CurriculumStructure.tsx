@@ -40,7 +40,7 @@ export default function CurriculumStructure() {
   }
 
   return (
-    <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-black/5" id="system">
+    <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-[--color-primary]/10" id="system">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -76,8 +76,8 @@ export default function CurriculumStructure() {
                 index === activeLayer
                   ? 'bg-[--color-secondary-dark]'
                   : index < activeLayer
-                    ? 'bg-[--color-secondary-dark]/30'
-                    : 'bg-black/10'
+                    ? 'bg-[--color-primary] w-8' 
+                    : 'bg-[--color-primary]/20'
               }`}
             />
           ))}
@@ -100,9 +100,9 @@ export default function CurriculumStructure() {
                   transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                 >
                   <TiltCard className={`border rounded-2xl transition-all duration-300 overflow-hidden ${
-                    isActive
-                      ? 'border-[--color-secondary]/30 bg-white shadow-xl shadow-[--color-secondary]/5'
-                      : 'border-black/5 bg-white/50 hover:bg-white/80'
+                    isActive 
+                      ? 'border-[--color-primary]/30 bg-white shadow-lg shadow-[--color-primary]/5' 
+                      : 'border-[--color-primary]/10 bg-white/50 hover:bg-white/80'
                   }`}>
                     <button
                       onClick={() => toggleLayer(index)}
@@ -110,9 +110,9 @@ export default function CurriculumStructure() {
                       className="flex items-center gap-4 w-full p-6 sm:p-8 text-left"
                     >
                       <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${
-                        isActive
-                          ? 'bg-[--color-secondary] text-black shadow-lg shadow-[--color-secondary]/20'
-                          : 'bg-black/5 text-[--color-text-muted]'
+                        isActive 
+                          ? 'bg-[--color-primary] text-white' 
+                          : 'bg-[--color-primary]/10 text-[--color-text-muted]'
                       }`}>
                         <Icon className="w-5 h-5" />
                       </div>
@@ -131,8 +131,8 @@ export default function CurriculumStructure() {
                       <motion.div
                         animate={{ rotate: isActive ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
-                        className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center border transition-colors ${
-                          isActive ? 'border-[--color-secondary]/50 text-[--color-secondary-dark] bg-[--color-secondary]/10' : 'border-black/10 text-[--color-text-muted]'
+                        className={`text-xs px-3 py-1 rounded-full border transition-colors ${
+                          isActive ? 'border-[--color-secondary]/50 text-[--color-secondary-dark] bg-[--color-secondary]/10' : 'border-[--color-primary]/20 text-[--color-text-muted]'
                         }`}
                       >
                         <ChevronDown className="w-4 h-4" />
