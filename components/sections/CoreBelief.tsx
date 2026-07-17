@@ -148,7 +148,7 @@ export default function CoreBelief() {
                   </motion.div>
                 </AnimatePresence>
               </div>
-            </TiltCard>
+            </motion.div>
           </div>
 
         </div>
