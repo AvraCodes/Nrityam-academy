@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Sparkles, Video, Users, Medal, Clock, ShieldCheck, HeartPulse, GraduationCap, MapPin } from 'lucide-react'
+import { Video, Users, Medal, Clock, ShieldCheck, HeartPulse, GraduationCap, MapPin } from 'lucide-react'
 
 function Counter({ value, decimals = 0, suffix = '' }: { value: number; decimals?: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null)

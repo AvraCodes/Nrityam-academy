@@ -1,12 +1,21 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { TiltCard } from '@/components/ui/tilt-card'
 import { Layers, Network, ChevronRight, Activity, ArrowRight } from 'lucide-react'
 
 export default function StudentJourney() {
   const [activeTab, setActiveTab] = useState<'lifecycle' | 'channels'>('lifecycle')
+  const [isHovered, setIsHovered] = useState(false)
+
+  useEffect(() => {
+    if (isHovered) return
+    const interval = setInterval(() => {
+      setActiveTab((prev) => prev === 'lifecycle' ? 'channels' : 'lifecycle')
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [isHovered])
 
   const stages = [
     { title: 'Foundation Seeker', desc: 'Starting fresh. Learning basic Aramandi, footwork, and grasping the foundational rhythm.' },
@@ -25,7 +34,12 @@ export default function StudentJourney() {
   ]
 
   return (
-    <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-[--color-primary]/10" id="journey">
+    <section 
+      className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FFF8F0] border-t border-[--color-primary]/10" 
+      id="journey"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       
       {/* Structural visual background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[--color-primary]/10 rounded-full blur-[100px] pointer-events-none z-0" />
@@ -33,7 +47,7 @@ export default function StudentJourney() {
       <div className="max-w-6xl mx-auto relative z-10">
         
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-primary] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2B2118] mb-6">
             How We Nurture a Complete Dancer
           </h2>
           <p className="text-lg text-[--color-text-muted] font-light">
@@ -77,8 +91,8 @@ export default function StudentJourney() {
               onMouseEnter={() => setActiveTab('lifecycle')}
               className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer relative z-10 ${
                 activeTab === 'lifecycle'
-                  ? 'bg-[--color-primary] text-white shadow-lg shadow-[--color-primary]/25'
-                  : 'text-[--color-text-muted] hover:text-[--color-primary]'
+                  ? 'bg-[#D4AF37] text-[#2B2118] shadow-lg shadow-[#D4AF37]/25'
+                  : 'text-[#8B5E3C] hover:text-[#2B2118]'
               }`}
             >
               <Layers className="w-4 h-4" />
@@ -89,8 +103,8 @@ export default function StudentJourney() {
               onMouseEnter={() => setActiveTab('channels')}
               className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer relative z-10 ${
                 activeTab === 'channels'
-                  ? 'bg-[--color-primary] text-white shadow-lg shadow-[--color-primary]/25'
-                  : 'text-[--color-text-muted] hover:text-[--color-primary]'
+                  ? 'bg-[#D4AF37] text-[#2B2118] shadow-lg shadow-[#D4AF37]/25'
+                  : 'text-[#8B5E3C] hover:text-[#2B2118]'
               }`}
             >
               <Network className="w-4 h-4" />

@@ -28,23 +28,19 @@ export default function CoreBelief() {
       setProgress((prev) => {
         if (prev >= 100) {
           advance()
-          return 0
-        }
-        return prev + (100 / (AUTO_ADVANCE_MS / 50))
-      })
-    }, 50)
+      setActiveStep((prev) => (prev + 1) % STEP_DETAILS.length)
+    }, 3000)
     return () => clearInterval(interval)
-  }, [advance])
+  }, [isHovered])
 
   const handleStepClick = (index: number) => {
     setActiveStep(index)
-    setProgress(0)
   }
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[--color-bg-ivory] border-t border-[--color-primary]/10 overflow-hidden" id="philosophy">
+    <section className="relative py-24 sm:py-32 bg-[#FFF8F0] border-t border-[--color-primary]/10 overflow-hidden" id="philosophy">
       {/* Background accents */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(122,30,44,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_50%)]" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -53,9 +49,9 @@ export default function CoreBelief() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-[--color-primary]/30 bg-[--color-primary]/10 px-4 py-1.5 mb-6"
+            className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5 mb-6"
           >
-            <span className="text-[11px] font-medium tracking-widest text-[--color-secondary] uppercase">
+            <span className="text-[11px] font-medium tracking-widest text-[#8B5E3C] uppercase">
               Our Philosophy
             </span>
           </motion.div>
@@ -64,16 +60,16 @@ export default function CoreBelief() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-text-main] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2B2118] mb-6"
           >
-            The Art of <span className="text-[--color-primary]">Bharatanatyam</span>
+            The Art of <span className="text-[#D4AF37]">Bharatanatyam</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-[--color-text-muted] font-light"
+            className="text-lg text-[#8B5E3C] font-light"
           >
             We believe true artistry cannot be rushed. Our methodology breaks down this divine dance into five essential pillars, building a dancer from the ground up.
           </motion.p>
@@ -82,38 +78,38 @@ export default function CoreBelief() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           
           {/* Left: Navigation Steps */}
-          <div className="lg:col-span-5 flex flex-col gap-2">
+          <div 
+            className="lg:col-span-5 flex flex-col gap-3"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {STEP_DETAILS.map((step, idx) => {
               const isActive = activeStep === idx
               return (
                 <button
                   key={idx}
                   onMouseEnter={() => handleStepClick(idx)}
-                  className={`w-full text-left p-4 rounded-2xl transition-all duration-300 flex items-start gap-4 group cursor-pointer border ${
+                  className={`relative w-full text-left p-4 rounded-2xl transition-all duration-300 flex items-start gap-4 group cursor-pointer border ${
                     isActive 
-                      ? 'bg-white/60 border-[--color-primary]/20 shadow-lg shadow-[--color-primary]/5' 
-                      : 'bg-transparent border-transparent hover:bg-[--color-primary]/5'
+                      ? 'bg-[#D4AF37]/10 border-[#D4AF37]/30 shadow-lg shadow-[#D4AF37]/5' 
+                      : 'bg-transparent border-transparent hover:bg-[#D4AF37]/5'
                   }`}
                 >
-                  {/* Progress bar background for active step */}
                   {isActive && (
-                    <div 
-                      className="absolute inset-y-0 left-0 bg-[--color-primary]/20 transition-all duration-75 ease-linear"
-                      style={{ width: `${progress}%` }}
-                    />
+                    <motion.div layoutId="activeBg" className="absolute inset-0 bg-white/40 rounded-2xl -z-10" />
                   )}
                   
                   <div className="relative z-10 flex items-center gap-4">
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 border border-transparent ${
-                      isActive ? 'bg-[--color-primary] text-white' : 'bg-[--color-primary]/10 text-[--color-text-muted] group-hover:bg-[--color-primary]/20'
+                      isActive ? 'bg-[#D4AF37] text-[#FFF8F0]' : 'border-[#8B5E3C]/30 text-[#8B5E3C] group-hover:bg-[#8B5E3C]/10'
                     }`}>
                       {idx + 1}
                     </div>
-                    <span className={`text-base sm:text-lg font-medium transition-colors ${
-                      isActive ? 'text-[--color-text-main]' : 'text-[--color-text-muted] group-hover:text-[--color-text-main]'
+                    <h4 className={`text-xl font-medium transition-colors ${
+                      isActive ? 'text-[#2B2118]' : 'text-[#8B5E3C] group-hover:text-[#2B2118]'
                     }`}>
                       {step.name}
-                    </span>
+                    </h4>
                   </div>
                 </button>
               )
@@ -136,13 +132,13 @@ export default function CoreBelief() {
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     className="relative z-10"
                   >
-                    <div className="w-12 h-12 rounded-full bg-[--color-primary]/10 border border-[--color-primary]/30 flex items-center justify-center text-[--color-primary] mb-6">
+                    <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#8B5E3C] mb-6">
                       <span className="font-serif text-2xl">{activeStep + 1}</span>
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-serif text-[--color-text-main] mb-4">
+                    <h3 className="text-2xl sm:text-3xl font-serif text-[#2B2118] mb-4">
                       {STEP_DETAILS[activeStep].name}
                     </h3>
-                    <p className="text-lg sm:text-xl text-[--color-text-muted] font-light leading-relaxed">
+                    <p className="text-lg sm:text-xl text-[#8B5E3C] font-light leading-relaxed">
                       {STEP_DETAILS[activeStep].detail}
                     </p>
                   </motion.div>

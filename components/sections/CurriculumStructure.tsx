@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { TiltCard } from '@/components/ui/tilt-card'
-import { ChevronDown, Book, Zap, Sparkles, Star } from 'lucide-react'
+import { ChevronDown, Book, Zap, Heart, Star } from 'lucide-react'
 
 const LAYERS = [
   {
@@ -22,7 +22,7 @@ const LAYERS = [
     number: "03",
     title: "Expression (Abhinaya)",
     desc: "The soul of the dance. Learning the intricate vocabulary of hand gestures (Mudras) and facial expressions (Navarasas) to tell ancient stories and evoke deep emotions.",
-    icon: Sparkles
+    icon: Heart
   },
   {
     number: "04",
@@ -34,6 +34,15 @@ const LAYERS = [
 
 export default function CurriculumStructure() {
   const [activeLayer, setActiveLayer] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+
+  useEffect(() => {
+    if (isHovered) return
+    const interval = setInterval(() => {
+      setActiveLayer((prev) => (prev + 1) % LAYERS.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [isHovered])
 
   const toggleLayer = (index: number) => {
     setActiveLayer(index === activeLayer ? -1 : index)
@@ -50,10 +59,10 @@ export default function CurriculumStructure() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-primary] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2B2118] mb-6">
             A Structured Path to Mastery
           </h2>
-          <p className="text-lg text-[--color-text-muted] font-light max-w-2xl mx-auto">
+          <p className="text-lg text-[#8B5E3C] font-light max-w-2xl mx-auto">
             We don't just teach choreography. We build dancers. Our curriculum is layered, ensuring every student develops a robust foundation before advancing.
           </p>
         </motion.div>
@@ -79,77 +88,81 @@ export default function CurriculumStructure() {
         </div>
 
         <div className="space-y-4">
-          <AnimatePresence>
-            {LAYERS.map((layer, index) => {
-              const isActive = index === activeLayer
-              const Icon = layer.icon
-              return (
-                <motion.div
-                  key={layer.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                >
-                  <TiltCard className={`border rounded-2xl transition-all duration-300 overflow-hidden ${
-                    isActive 
-                      ? 'border-[--color-primary]/30 bg-white shadow-lg shadow-[--color-primary]/5' 
-                      : 'border-[--color-primary]/10 bg-white/50 hover:bg-white/80'
-                  }`}>
-                    <button
-                      onMouseEnter={() => setActiveLayer(index)}
-                      className="flex items-center gap-4 w-full p-6 sm:p-8 text-left cursor-pointer"
-                    >
-                      <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${
-                        isActive 
-                          ? 'bg-[--color-primary]/20 text-[--color-primary]' 
-                          : 'bg-[--color-primary]/5 text-[--color-text-muted]'
-                      }`}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      
-                      <div className="flex-grow">
-                        <div className="flex items-baseline gap-3 mb-1">
-                          <span className={`text-sm font-serif transition-colors ${isActive ? 'text-[--color-secondary-dark]' : 'text-black/30'}`}>
-                            {layer.number}
-                          </span>
-                          <h3 className={`text-xl font-medium transition-colors ${isActive ? 'text-[--color-text-main]' : 'text-[--color-text-muted]'}`}>
+        <div className="max-w-4xl mx-auto" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+          <div className="flex flex-col gap-4">
+            <AnimatePresence>
+              {LAYERS.map((layer, index) => {
+                const isActive = activeLayer === index
+                const Icon = layer.icon
+                return (
+                  <motion.div
+                    key={layer.number}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                  >
+                    <TiltCard className={`rounded-3xl border transition-all duration-300 overflow-hidden ${
+                      isActive 
+                        ? 'border-[#D4AF37]/30 bg-white shadow-lg shadow-[#D4AF37]/10' 
+                        : 'border-[#8B5E3C]/10 bg-white/50 hover:bg-white/80'
+                    }`}>
+                      <button
+                        onMouseEnter={() => setActiveLayer(index)}
+                        className="flex items-center gap-4 w-full p-6 sm:p-8 text-left cursor-pointer"
+                      >
+                        <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${
+                          isActive 
+                            ? 'bg-[#D4AF37]/20 text-[#D4AF37]' 
+                            : 'bg-[#D4AF37]/5 text-[#8B5E3C]'
+                        }`}>
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        
+                        <div className="flex-1">
+                          <div className={`text-xs font-mono mb-1 tracking-widest ${
+                            isActive ? 'text-[#D4AF37]' : 'text-[#8B5E3C]/70'
+                          }`}>
+                            LAYER {layer.number}
+                          </div>
+                          <h3 className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${
+                            isActive ? 'text-[#2B2118]' : 'text-[#8B5E3C]'
+                          }`}>
                             {layer.title}
                           </h3>
                         </div>
-                      </div>
 
-                      <motion.div
-                        animate={{ rotate: isActive ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                        className={`text-xs px-3 py-1 rounded-full border transition-colors ${
-                          isActive ? 'border-[--color-secondary]/50 text-[--color-secondary-dark] bg-[--color-secondary]/10' : 'border-[--color-primary]/20 text-[--color-text-muted]'
-                        }`}
-                      >
-                        <ChevronDown className="w-4 h-4" />
-                      </motion.div>
-                    </button>
-
-                    <AnimatePresence>
-                      {isActive && (
                         <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          animate={{ rotate: isActive ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                          className={`text-xs px-3 py-1 rounded-full border transition-colors ${
+                            isActive ? 'border-[#D4AF37]/50 text-[#D4AF37] bg-[#D4AF37]/10' : 'border-[#8B5E3C]/20 text-[#8B5E3C]'
+                          }`}
                         >
-                          <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-2 pl-[88px]">
-                            <div className="h-px w-full bg-gradient-to-r from-black/10 to-transparent mb-6" />
-                            <p className="text-[--color-text-muted] font-light text-base sm:text-lg leading-relaxed">
-                              {layer.desc}
-                            </p>
-                          </div>
+                          <ChevronDown className="w-4 h-4" />
                         </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </TiltCard>
-                </motion.div>
-              )
+                      </button>
+
+                      <AnimatePresence>
+                        {isActive && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          >
+                            <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-2 pl-[88px]">
+                              <div className="h-px w-full bg-gradient-to-r from-black/10 to-transparent mb-6" />
+                              <p className="text-base sm:text-lg text-[#8B5E3C] font-light leading-relaxed">
+                                {layer.desc}
+                              </p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </TiltCard>
+                  </motion.div>
+                )
             })}
           </AnimatePresence>
         </div>

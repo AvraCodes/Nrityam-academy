@@ -1,14 +1,14 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { Stethoscope, CalendarPlus, Video, Repeat, Sparkles } from 'lucide-react'
+import { Stethoscope, CalendarPlus, Video, Repeat, Star } from 'lucide-react'
 
 const STEPS = [
   { icon: Stethoscope, k: '01', t: 'Evaluate', d: 'Submit a short video or join a live evaluation to determine your current level and batch placement.' },
   { icon: CalendarPlus, k: '02', t: 'Enroll', d: 'Select your preferred batch timings and complete the onboarding process.' },
   { icon: Video, k: '03', t: 'Learn', d: 'Attend live interactive classes twice a week, led directly by Guru Ranbbir Banerjee.' },
   { icon: Repeat, k: '04', t: 'Practice', d: 'Access lifetime recordings of your classes. Submit practice videos for personalized 1-on-1 feedback.' },
-  { icon: Sparkles, k: '05', t: 'Perform', d: 'Graduate to advanced repertoires, earn certifications, and prepare for stage performances.' },
+  { icon: Star, k: '05', t: 'Perform', d: 'Graduate to advanced repertoires, earn certifications, and prepare for stage performances.' },
 ]
 
 export default function Process() {

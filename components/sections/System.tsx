@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ChevronRight, Clock, Shield, Sparkles, BookOpen, Compass } from "lucide-react";
+import { CheckCircle2, ChevronRight, Clock, Shield, Heart, BookOpen, Compass } from "lucide-react";
 
 interface CurriculumDetail {
   title: string;
@@ -61,7 +61,7 @@ const curriculumData: CurriculumDetail[] = [
     title: "4. Perform Confidently on Stage",
     shortDesc: "Learn full choreographies step-by-step to transition smoothly onto stage.",
     detailedDesc: "Learn full classical recitals under expert choreography guidance. We structure the progression from initial items (Pushpanjali, Alarippu) to advanced expressional numbers (Shabdam, Keerthanam), preparing you to dance on live stages.",
-    icon: Sparkles,
+    icon: Heart,
     syllabus: [
       "Pushpanjali & Alarippu full item choreographies",
       "Stage directions & space positioning training",
