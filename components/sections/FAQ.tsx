@@ -35,15 +35,15 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory]">
+    <section id="faq" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-bg-ivory">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[--color-secondary-dark]/30 bg-[--color-secondary-dark]/10 px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest text-[--color-secondary-dark] mb-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-secondary-dark/30 bg-secondary-dark/10 px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest text-secondary-dark mb-6">
             Common Questions
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-text-main] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-text-main mb-6">
             Everything you need <br /> to know.
           </h2>
         </div>
@@ -60,18 +60,18 @@ export default function FAQ() {
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 onMouseEnter={() => setOpen(i)}
                 onMouseLeave={() => setOpen(null)}
-                className={`rounded-2xl border bg-white/50 transition-colors ${isOpen ? 'border-[--color-secondary-dark]/40 shadow-sm' : 'border-[--color-primary]/10 hover:border-[--color-primary]/20'}`}
+                className={`rounded-2xl border bg-white/50 transition-colors ${isOpen ? 'border-secondary-dark/40 shadow-sm' : 'border-primary/10 hover:border-primary/20'}`}
               >
                 <button
                   className="flex w-full items-center justify-between gap-4 px-6 sm:px-8 py-6 text-left"
                 >
-                  <span className={`text-base sm:text-lg font-medium transition-colors ${isOpen ? 'text-[--color-text-main]' : 'text-[--color-text-muted]'}`}>
+                  <span className={`text-base sm:text-lg font-medium transition-colors ${isOpen ? 'text-text-main' : 'text-text-muted'}`}>
                     {f.q}
                   </span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.25 }}
-                    className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border ${isOpen ? 'bg-[--color-secondary-dark] text-white border-transparent shadow-sm' : 'bg-transparent border-[--color-primary]/20 text-[--color-text-muted]'}`}
+                    className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border ${isOpen ? 'bg-secondary-dark text-white border-transparent shadow-sm' : 'bg-transparent border-primary/20 text-text-muted'}`}
                   >
                     <Plus className="h-4 w-4" />
                   </motion.span>
@@ -85,7 +85,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="px-6 sm:px-8 pb-8 text-sm sm:text-base text-[--color-text-muted] font-light leading-relaxed">
+                      <p className="px-6 sm:px-8 pb-8 text-sm sm:text-base text-text-muted font-light leading-relaxed">
                         {f.a}
                       </p>
                     </motion.div>

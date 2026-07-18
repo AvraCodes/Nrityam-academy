@@ -16,7 +16,7 @@ const pricingPlans = [
   {
     planName: "Foundation",
     description: "Perfect for beginners starting their journey.",
-    price: "49",
+    price: "3,999",
     features: [
       "2 Live sessions per week",
       "Access to session recordings",
@@ -29,7 +29,7 @@ const pricingPlans = [
   {
     planName: "Pro Student",
     description: "For serious students aiming for certification.",
-    price: "89",
+    price: "6,999",
     features: [
       "4 Live sessions per week",
       "Lifetime access to recordings",

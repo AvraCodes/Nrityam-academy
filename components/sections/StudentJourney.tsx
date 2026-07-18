@@ -35,14 +35,14 @@ export default function StudentJourney() {
 
   return (
     <section 
-      className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#FFF8F0] border-t border-[--color-primary]/10" 
+      className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#FFF8F0] border-t border-primary/10" 
       id="journey"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       
       {/* Structural visual background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[--color-primary]/10 rounded-full blur-[100px] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none z-0" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         
@@ -50,33 +50,33 @@ export default function StudentJourney() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2B2118] mb-6">
             How We Nurture a Complete Dancer
           </h2>
-          <p className="text-lg text-[--color-text-muted] font-light">
+          <p className="text-lg text-text-muted font-light">
             We don't just teach steps; we guide you through a profound transformation. Every student follows a proven path supported by modern learning channels.
           </p>
         </div>
 
         {/* Dynamic Philosophy Summary Card */}
-        <TiltCard className="mb-12 p-8 sm:p-10 border border-[--color-primary]/20 rounded-3xl bg-white/70 backdrop-blur-md transition-all duration-500 shadow-xl shadow-[--color-primary]/5">
+        <TiltCard className="mb-12 p-8 sm:p-10 border border-primary/20 rounded-3xl bg-white/70 backdrop-blur-md transition-all duration-500 shadow-xl shadow-primary/5">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div className="space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-serif text-[--color-text-main] tracking-wide">
+              <h3 className="text-2xl sm:text-3xl font-serif text-text-main tracking-wide">
                 Dance Is Not Just Movement. <br className="hidden lg:block"/>
-                <span className="text-[--color-primary]">It's Devotion.</span>
+                <span className="text-primary">It's Devotion.</span>
               </h3>
               <ul className="grid sm:grid-cols-2 gap-4">
                 {['Physical stamina and grace', 'Emotional depth and storytelling', 'Rhythmic precision and speed', 'Theoretical and cultural knowledge'].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-[--color-text-muted] font-light text-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[--color-primary] flex-shrink-0" /> {item}
+                  <li key={i} className="flex items-center gap-3 text-text-muted font-light text-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" /> {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="border-t md:border-t-0 md:border-l border-[--color-primary]/20 pt-6 md:pt-0 md:pl-8 flex-shrink-0">
-              <p className="text-lg sm:text-xl font-medium text-[--color-primary]">
+            <div className="border-t md:border-t-0 md:border-l border-primary/20 pt-6 md:pt-0 md:pl-8 flex-shrink-0">
+              <p className="text-lg sm:text-xl font-medium text-primary">
                 Progress is made only when <br className="hidden sm:inline" />
                 the foundation is unshakeable.
               </p>
-              <p className="text-xs text-[--color-text-muted] mt-2 uppercase tracking-wider font-semibold">
+              <p className="text-xs text-text-muted mt-2 uppercase tracking-wider font-semibold">
                 Patience. Practice. Perfection.
               </p>
             </div>
@@ -85,7 +85,7 @@ export default function StudentJourney() {
 
         {/* Dynamic Tab Switcher */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex rounded-full border border-[--color-primary]/20 bg-[--color-primary]/5 p-1 relative">
+          <div className="inline-flex rounded-full border border-primary/20 bg-primary/5 p-1 relative">
             <button
               onClick={() => setActiveTab('lifecycle')}
               onMouseEnter={() => setActiveTab('lifecycle')}
@@ -128,15 +128,15 @@ export default function StudentJourney() {
               >
                 {stages.map((stage, i) => (
                   <div key={i} className="relative group">
-                    <div className="h-full p-6 rounded-2xl border border-[--color-primary]/10 bg-white hover:bg-white transition-colors flex flex-col justify-between group-hover:border-[--color-primary]/30 relative z-10 shadow-sm">
+                    <div className="h-full p-6 rounded-2xl border border-primary/10 bg-white hover:bg-white transition-colors flex flex-col justify-between group-hover:border-primary/30 relative z-10 shadow-sm">
                       <div>
-                        <div className="text-[10px] font-mono text-[--color-primary] mb-3 tracking-widest uppercase">Stage 0{i + 1}</div>
-                        <h4 className="text-base font-semibold text-[--color-text-main] mb-2 leading-tight">{stage.title}</h4>
+                        <div className="text-[10px] font-mono text-primary mb-3 tracking-widest uppercase">Stage 0{i + 1}</div>
+                        <h4 className="text-base font-semibold text-text-main mb-2 leading-tight">{stage.title}</h4>
                       </div>
-                      <p className="text-xs text-[--color-text-muted] font-light mt-4 leading-relaxed">{stage.desc}</p>
+                      <p className="text-xs text-text-muted font-light mt-4 leading-relaxed">{stage.desc}</p>
                     </div>
                     {i < stages.length - 1 && (
-                      <div className="hidden md:block absolute top-1/2 -right-4 -translate-y-1/2 z-20 text-[--color-primary]">
+                      <div className="hidden md:block absolute top-1/2 -right-4 -translate-y-1/2 z-20 text-primary">
                         <ChevronRight className="w-6 h-6 opacity-50" />
                       </div>
                     )}
@@ -155,17 +155,17 @@ export default function StudentJourney() {
                 className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                 {channels.map((channel, i) => (
-                  <div key={i} className="p-6 sm:p-8 rounded-2xl border border-[--color-primary]/10 bg-white hover:border-[--color-primary]/30 transition-colors flex flex-col gap-4 group shadow-sm">
+                  <div key={i} className="p-6 sm:p-8 rounded-2xl border border-primary/10 bg-white hover:border-primary/30 transition-colors flex flex-col gap-4 group shadow-sm">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-full bg-[--color-primary]/10 border border-[--color-primary]/20 flex items-center justify-center text-[--color-primary] group-hover:scale-110 transition-transform">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                         <Activity className="w-4 h-4" />
                       </div>
-                      <ArrowRight className="w-4 h-4 text-[--color-text-main]/20 group-hover:text-[--color-primary] transition-colors -rotate-45" />
+                      <ArrowRight className="w-4 h-4 text-text-main/20 group-hover:text-primary transition-colors -rotate-45" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-[--color-text-main] mb-1">{channel.name}</h4>
-                      <p className="text-[10px] uppercase tracking-wider text-[--color-secondary-dark] font-medium mb-3">{channel.role}</p>
-                      <p className="text-sm text-[--color-text-muted] font-light leading-relaxed">{channel.desc}</p>
+                      <h4 className="text-lg font-semibold text-text-main mb-1">{channel.name}</h4>
+                      <p className="text-[10px] uppercase tracking-wider text-secondary-dark font-medium mb-3">{channel.role}</p>
+                      <p className="text-sm text-text-muted font-light leading-relaxed">{channel.desc}</p>
                     </div>
                   </div>
                 ))}

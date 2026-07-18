@@ -13,7 +13,7 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-[--color-primary]/10">
+    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-bg-ivory border-t border-primary/10">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           className="max-w-2xl mb-16"
@@ -22,17 +22,17 @@ export default function Process() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-text-main] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-text-main mb-6">
             A structured path, <br/> from day one.
           </h2>
-          <p className="text-lg text-[--color-text-muted] font-light max-w-xl">
+          <p className="text-lg text-text-muted font-light max-w-xl">
             We ensure every student is placed in the right batch and receives the foundational support needed to thrive.
           </p>
         </motion.div>
 
         <div className="relative mt-20">
           {/* connecting line */}
-          <div className="absolute left-0 right-0 top-7 hidden lg:block h-px bg-gradient-to-r from-transparent via-[--color-secondary]/30 to-transparent" />
+          <div className="absolute left-0 right-0 top-7 hidden lg:block h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
             {STEPS.map((s, i) => (
               <motion.div
@@ -43,12 +43,12 @@ export default function Process() {
                 transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
                 className="relative"
               >
-                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-[--color-primary]/20 bg-white hover:border-[--color-primary]/40 transition-colors shadow-sm">
-                  <s.icon className="h-6 w-6 text-[--color-text-muted]" />
-                  <span className="absolute -top-3 -right-3 flex h-7 w-7 items-center justify-center rounded-full bg-[--color-secondary] text-[10px] font-bold text-[--color-text-main] border-[3px] border-white">{s.k}</span>
+                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/20 bg-white hover:border-primary/40 transition-colors shadow-sm">
+                  <s.icon className="h-6 w-6 text-text-muted" />
+                  <span className="absolute -top-3 -right-3 flex h-7 w-7 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-text-main border-[3px] border-white">{s.k}</span>
                 </div>
-                <h3 className="mt-6 text-xl font-medium text-[--color-text-main]">{s.t}</h3>
-                <p className="mt-2 text-sm text-[--color-text-muted] font-light leading-relaxed">{s.d}</p>
+                <h3 className="mt-6 text-xl font-medium text-text-main">{s.t}</h3>
+                <p className="mt-2 text-sm text-text-muted font-light leading-relaxed">{s.d}</p>
               </motion.div>
             ))}
           </div>

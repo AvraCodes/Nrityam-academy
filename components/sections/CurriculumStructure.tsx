@@ -49,7 +49,7 @@ export default function CurriculumStructure() {
   }
 
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-[--color-primary]/10" id="system">
+    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-bg-ivory border-t border-primary/10" id="system">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -75,14 +75,14 @@ export default function CurriculumStructure() {
               onClick={() => toggleLayer(index)}
               className={`h-1.5 flex-1 rounded-full transition-all duration-500 cursor-pointer ${
                 index === activeLayer
-                  ? 'bg-[--color-secondary-dark]'
+                  ? 'bg-secondary-dark'
                   : index < activeLayer
-                    ? 'bg-[--color-primary] w-8' 
-                    : 'bg-[--color-primary]/20'
+                    ? 'bg-primary w-8' 
+                    : 'bg-primary/20'
               }`}
             />
           ))}
-          <span className="text-[10px] font-mono text-[--color-text-muted] ml-4 tracking-wider flex-shrink-0">
+          <span className="text-[10px] font-mono text-text-muted ml-4 tracking-wider flex-shrink-0">
             PHASE {activeLayer >= 0 ? activeLayer + 1 : '—'} / {LAYERS.length}
           </span>
         </div>

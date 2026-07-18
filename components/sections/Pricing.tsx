@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { RippleButton } from "@/components/ui/multi-type-ripple-buttons";
 import { Check } from 'lucide-react';
+import { TiltCard } from "@/components/ui/tilt-card";
 
 // --- Internal Helper Components (Not exported) --- //
 
@@ -57,7 +58,7 @@ export const PricingCard = ({
 
   return (
     <Link href={linkHref} className="flex flex-1 max-w-sm">
-      <div className={cardClasses.trim()}>
+      <TiltCard className={cardClasses.trim()} spotlight={true} tiltLimit={8}>
         {isPopular && (
           <div className="absolute -top-4 right-8 px-4 py-1 text-xs font-semibold rounded-full bg-primary text-white shadow-md">
             Most Popular
@@ -68,7 +69,7 @@ export const PricingCard = ({
           <p className="text-sm text-text-muted mt-2 font-medium">{description}</p>
         </div>
         <div className="my-6 flex items-baseline gap-2 text-text-main">
-          <span className="text-5xl font-light">${price}</span>
+          <span className="text-5xl font-light font-serif">₹{price}</span>
           <span className="text-sm text-text-muted font-medium">/mo</span>
         </div>
         <div className="card-divider w-full mb-6 h-px bg-gradient-to-r from-transparent via-text-main/10 to-transparent"></div>
@@ -83,7 +84,7 @@ export const PricingCard = ({
         <div className="w-full mt-auto block">
           <RippleButton className={buttonClasses.trim()}>{displayButtonText}</RippleButton>
         </div>
-      </div>
+      </TiltCard>
     </Link>
   );
 };

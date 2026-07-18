@@ -29,11 +29,11 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
   const imageOrderClass = reverseLayout ? 'md:col-start-1' : ''
 
   return (
-    <section className="relative py-12 sm:py-24 md:py-32 bg-[--color-bg-ivory] overflow-hidden border-t border-[--color-primary]/10 z-10" id="portal">
+    <section className="relative py-12 sm:py-24 md:py-32 bg-bg-ivory overflow-hidden border-t border-primary/10 z-10" id="portal">
       
       {/* Glow Effects */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[--color-primary]/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-[--color-secondary]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container max-w-7xl w-full px-6 md:px-10 relative z-10 mx-auto">
         <motion.div
@@ -49,19 +49,19 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
             variants={itemVariants}
           >
             <div className="space-y-4">
-              <span className="text-[--color-secondary] font-mono text-xs tracking-widest uppercase">
+              <span className="text-secondary font-mono text-xs tracking-widest uppercase">
                 The Learning Portal
               </span>
               <motion.h2 
-                className="text-[--color-text-main] text-3xl sm:text-[40px] font-serif font-medium leading-tight md:leading-[1.2]"
+                className="text-text-main text-3xl sm:text-[40px] font-serif font-medium leading-tight md:leading-[1.2]"
               >
                 Your virtual studio, <br />
-                <span className="text-[--color-primary]">accessible anywhere.</span>
+                <span className="text-primary">accessible anywhere.</span>
               </motion.h2>
             </div>
 
             <motion.p 
-              className="text-[--color-text-muted] text-base sm:text-lg leading-relaxed font-light"
+              className="text-text-muted text-base sm:text-lg leading-relaxed font-light"
             >
               Missed a live class? Need to review a complex Jathi? Our proprietary learning portal houses a high-definition recording of every session, meticulously organized by module and batch.
             </motion.p>
@@ -73,8 +73,8 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
                 "Direct 1-on-1 feedback submission portal",
                 "Downloadable theory PDFs and music tracks"
               ].map((feature, i) => (
-                <li key={i} className="flex items-center gap-3 text-sm text-[--color-text-muted]">
-                  <CheckCircle2 className="w-4 h-4 text-[--color-primary]" />
+                <li key={i} className="flex items-center gap-3 text-sm text-text-muted">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
                   {feature}
                 </li>
               ))}
@@ -87,7 +87,7 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
             variants={itemVariants}
           >
             <TiltCard className="w-full">
-              <div className="relative rounded-2xl overflow-hidden border border-[--color-primary]/20 bg-white/70 backdrop-blur-xl shadow-2xl p-2 pb-0">
+              <div className="relative rounded-2xl overflow-hidden border border-primary/20 bg-white/70 backdrop-blur-xl shadow-2xl p-2 pb-0">
                 
                 {/* Browser bar */}
                 <div className="h-8 flex items-center px-4 gap-1.5 mb-2">
@@ -96,35 +96,35 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
                   <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
                 </div>
 
-                <div className="rounded-t-xl bg-white border border-[--color-primary]/10 border-b-0 overflow-hidden relative shadow-inner">
+                <div className="rounded-t-xl bg-white border border-primary/10 border-b-0 overflow-hidden relative shadow-inner">
                   {/* Mock Video Player */}
                   <div className="aspect-video relative bg-black flex flex-col justify-between overflow-hidden">
                     <Image src="https://images.unsplash.com/photo-1549471013-3364d73206c8?q=80&w=800&auto=format&fit=crop" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover opacity-80" alt="Video player" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-white/60 backdrop-blur flex items-center justify-center border border-white shadow-lg text-[--color-primary] cursor-pointer hover:scale-110 transition-transform">
+                      <div className="w-16 h-16 rounded-full bg-white/60 backdrop-blur flex items-center justify-center border border-white shadow-lg text-primary cursor-pointer hover:scale-110 transition-transform">
                         <PlayCircle className="w-8 h-8 ml-1" />
                       </div>
                     </div>
                     {/* Mock Progress Bar */}
-                    <div className="absolute bottom-0 inset-x-0 h-1 bg-[--color-primary]/20">
-                      <div className="h-full bg-[--color-primary] w-1/3" />
+                    <div className="absolute bottom-0 inset-x-0 h-1 bg-primary/20">
+                      <div className="h-full bg-primary w-1/3" />
                     </div>
                   </div>
 
                   {/* Mock Video Details */}
                   <div className="p-5">
-                    <h4 className="text-[--color-text-main] font-medium text-lg mb-1">Module 4: Varnam Exploration (Part 1)</h4>
-                    <p className="text-[--color-text-muted] text-xs mb-4">Recorded on July 15, 2026 • 1h 45m</p>
+                    <h4 className="text-text-main font-medium text-lg mb-1">Module 4: Varnam Exploration (Part 1)</h4>
+                    <p className="text-text-muted text-xs mb-4">Recorded on July 15, 2026 • 1h 45m</p>
                     
                     <div className="flex gap-3 overflow-hidden">
-                      <div className="w-32 h-20 rounded-lg bg-[--color-primary]/5 border border-[--color-primary]/10 shrink-0 relative overflow-hidden">
+                      <div className="w-32 h-20 rounded-lg bg-primary/5 border border-primary/10 shrink-0 relative overflow-hidden">
                          <Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" fill sizes="128px" className="object-cover opacity-50" alt="thumb" />
                          <span className="absolute bottom-1 right-1 text-[8px] bg-black/80 px-1 rounded text-white">12:40</span>
                       </div>
-                      <div className="w-32 h-20 rounded-lg bg-[--color-primary]/5 border border-[--color-primary]/30 shrink-0 relative overflow-hidden">
+                      <div className="w-32 h-20 rounded-lg bg-primary/5 border border-primary/30 shrink-0 relative overflow-hidden">
                          <Image src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" fill sizes="128px" className="object-cover opacity-90" alt="thumb" />
                          <span className="absolute bottom-1 right-1 text-[8px] bg-black/80 px-1 rounded text-white">45:12</span>
-                         <div className="absolute inset-0 ring-2 ring-[--color-primary] ring-inset" />
+                         <div className="absolute inset-0 ring-2 ring-primary ring-inset" />
                       </div>
                     </div>
                   </div>

@@ -4,16 +4,18 @@ import React, { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import {
-  ArrowRight,
   Star,
   Globe,
   Award,
   Video,
-  PlayCircle
+  PlayCircle,
+  ArrowRight,
+  ArrowUpRight
 } from 'lucide-react'
 
 // Internal UI Components
 import { HoverButton } from '@/components/ui/hover-button'
+import { GlassButton } from '@/components/ui/glass-button'
 import { TiltCard } from '@/components/ui/tilt-card'
 import { FlipWords } from '@/components/ui/flip-words'
 
@@ -51,10 +53,10 @@ const AnimatedCounter = ({ value, duration = 1.6 }: { value: string; duration?: 
 
 const StatItem = ({ value, label }: { value: string; label: string }) => (
   <div className="flex flex-col items-center justify-center transition-transform hover:-translate-y-1 cursor-default">
-    <span className="text-base font-bold text-[--color-text-main] sm:text-lg">
+    <span className="text-base font-bold text-text-main sm:text-lg">
       <AnimatedCounter value={value} />
     </span>
-    <span className="text-[9px] uppercase tracking-wider text-[--color-text-muted] font-medium sm:text-[10px] text-balance text-center">
+    <span className="text-[9px] uppercase tracking-wider text-text-muted font-medium sm:text-[10px] text-balance text-center">
       {label}
     </span>
   </div>
@@ -80,7 +82,7 @@ const DanceSVG = () => (
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[--color-bg-ivory] pt-20 pb-16">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-bg-ivory pt-20 pb-16">
       {/* Background radial gradient */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent,var(--color-bg-ivory))] opacity-80" />
@@ -102,51 +104,54 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 rounded-full border border-[--color-primary]/20 bg-[--color-primary]/5 backdrop-blur-sm px-4 py-1.5 mb-8"
+              className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm px-4 py-1.5 mb-8"
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[--color-primary-light] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[--color-primary]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-light opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              <span className="text-[11px] font-medium tracking-wide text-[--color-text-main]">
+              <span className="text-[11px] font-medium tracking-wide text-text-main">
                 Admissions Open for Global Batch 2026
               </span>
             </motion.div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight text-[--color-text-main] mb-6 text-balance leading-[1.1]">
-              Master the True Art of <br />
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight mb-6 text-balance leading-[1.1]">
+              <span className="bg-gradient-to-br from-primary via-primary-light to-secondary bg-clip-text text-transparent">
+                Master the True Art of
+              </span> <br />
               <FlipWords 
                 words={["Bharatanatyam", "Expression", "Rhythm", "Devotion"]} 
-                className="text-[--color-primary] -ml-2"
+                className="text-primary -ml-2"
               />
             </h1>
 
-            <p className="text-lg sm:text-xl text-[--color-text-muted] max-w-xl mb-10 leading-relaxed font-light text-balance">
+            <p className="text-lg sm:text-xl text-text-muted max-w-xl mb-10 leading-relaxed font-light text-balance">
               A structured, authentic learning path for serious students — from foundational steps to stage mastery, guided by renowned mentor Ranbbir Banerjee.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 mb-14">
-              <HoverButton 
+            <div className="flex flex-wrap items-center gap-6 mb-14">
+              <GlassButton 
                 onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
-                className="bg-white text-[--color-primary] border border-[--color-primary] hover:bg-[--color-primary]/5 shadow-lg shadow-[--color-primary]/10"
+                className="bg-primary hover:bg-primary-dark text-white shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all group"
+                glassColor="rgba(255, 255, 255, 0.15)"
               >
                 Begin Your Journey
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </HoverButton>
+                <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </GlassButton>
 
               <button 
                 onClick={() => document.getElementById("system")?.scrollIntoView({ behavior: "smooth" })}
-                className="group flex items-center justify-center gap-2 h-11 px-6 rounded-full text-sm font-medium text-[--color-text-main] hover:text-[--color-primary] transition-colors bg-[--color-primary]/5 hover:bg-[--color-primary]/10 border border-[--color-primary]/10"
+                className="group flex items-center justify-center gap-3 h-12 px-7 rounded-full text-base font-medium text-text-main hover:text-primary transition-all bg-primary/5 hover:bg-primary/10 border border-primary/10 hover:border-primary/30 hover:scale-105 active:scale-95"
               >
-                <PlayCircle className="w-4 h-4 text-[--color-secondary] group-hover:scale-110 transition-transform" />
+                <PlayCircle className="w-5 h-5 text-secondary group-hover:scale-110 transition-transform" />
                 See How It Works
               </button>
             </div>
 
             {/* Trust Metrics */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-[--color-primary]/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-primary/10">
               <StatItem value="19+" label="Years Expertise" />
               <StatItem value="850+" label="Active Students" />
               <StatItem value="25+" label="Countries" />
@@ -162,9 +167,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="relative w-full aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-full border border-[--color-primary]/20 animate-[spin_60s_linear_infinite]" />
-              <div className="absolute inset-4 rounded-full border border-[--color-secondary-dark]/20 animate-[spin_40s_linear_infinite_reverse]" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[--color-primary]/5 to-transparent rounded-full backdrop-blur-sm" />
+              <div className="absolute inset-0 rounded-full border border-primary/20 animate-[spin_60s_linear_infinite]" />
+              <div className="absolute inset-4 rounded-full border border-secondary-dark/20 animate-[spin_40s_linear_infinite_reverse]" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent rounded-full backdrop-blur-sm" />
               
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-64 rounded-full overflow-hidden border border-white/20 shadow-2xl relative">
                  <Image src="/hero-dancer.png" fill sizes="(max-width: 768px) 192px, 192px" className="object-cover" alt="Dancer" priority />
