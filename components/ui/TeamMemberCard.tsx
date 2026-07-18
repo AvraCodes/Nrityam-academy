@@ -81,7 +81,7 @@ export default function TeamMemberCard({
           )}
         >
           <div>
-            <p className='text-5xl leading-[1.1] font-light tracking-tight text-text-main font-serif'>
+            <p className='text-4xl sm:text-5xl leading-[1.1] font-light tracking-tight text-text-main font-serif'>
               {firstName}
               <br />
               <span className='font-normal italic text-primary'>{lastName}</span>
