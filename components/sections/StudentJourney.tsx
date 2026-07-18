@@ -54,7 +54,7 @@ export default function StudentJourney() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-text-main mb-6">
-            How We Nurture a Complete Dancer
+            How We Nurture a Complete <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent italic font-light pr-2 pl-1 pb-1">Dancer</span>
           </h2>
           <p className="text-lg text-text-muted font-light">
             We don't just teach steps; we guide you through a profound transformation. Every student follows a proven path supported by modern learning channels.

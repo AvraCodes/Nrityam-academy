@@ -120,25 +120,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* WhatsApp Box */}
-            <div className="p-6 bg-white dark:bg-white/5 dark:bg-white/5 border border-[#25D366]/20 rounded-2xl shadow-sm text-left">
-              <h4 className="text-sm font-semibold text-text-main mb-2 flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-                Need Immediate Answers?
-              </h4>
-              <p className="text-text-muted text-sm leading-relaxed mb-5">
-                Skip the form and chat directly via WhatsApp. Average response time is under 4 hours.
-              </p>
-              <a
-                href="https://wa.me/916291333077"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full gap-2 px-6 py-3.5 bg-white dark:bg-white/5 dark:bg-white/5 border border-[#25D366]/40 hover:bg-[#25D366]/5 text-[#25D366] font-semibold rounded-xl text-sm transition-colors cursor-pointer shadow-sm"
-              >
-                <MessageSquare className="w-4 h-4" />
-                Chat Now on WhatsApp
-              </a>
-            </div>
+
           </motion.div>
 
           {/* Right Column: Inquiry Form Card */}
@@ -248,6 +230,19 @@ export default function Contact() {
                       </>
                     )}
                   </button>
+
+                  <div className="mt-8 flex flex-col items-center justify-center border-t border-primary/10 pt-6">
+                    <p className="text-xs text-text-light uppercase tracking-wider mb-3">Or need immediate answers?</p>
+                    <a
+                      href="https://wa.me/916291333077"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] font-medium rounded-lg text-sm transition-colors cursor-pointer"
+                    >
+                      <MessageSquare className="w-4 h-4" />
+                      Chat on WhatsApp
+                    </a>
+                  </div>
                 </form>
               )}
             </div>

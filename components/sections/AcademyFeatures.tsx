@@ -77,7 +77,6 @@ export default function AcademyFeatures() {
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/20 ring-1 ring-primary/30">
                 <GiScrollUnfurled className="h-6 w-6 text-primary" />
               </div>
-              <span className="rounded-full bg-primary/20 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-primary-light">Live & Interactive</span>
             </div>
             <div>
               <h3 className="text-2xl sm:text-3xl font-serif leading-relaxed text-text-main mb-2">High-Definition Virtual Studio</h3>

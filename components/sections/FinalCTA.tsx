@@ -17,18 +17,6 @@ export default function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Trust Badge */}
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/50 dark:bg-white/5 backdrop-blur-sm px-4 py-2 shadow-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-dark opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary-dark"></span>
-              </span>
-              <span className="text-[11px] font-medium tracking-wide text-text-main">
-                Limited Spots Available for Next Batch
-              </span>
-            </div>
-          </div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary mb-6 text-balance leading-relaxed">
             Ready to Begin Your Dance Journey?
