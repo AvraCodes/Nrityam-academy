@@ -23,7 +23,7 @@ const StatItem = ({ value, label }: { value: string; label: string }) => (
     transition={{ duration: 0.5 }}
     className="flex flex-col gap-1 border-l border-primary/20 pl-4"
   >
-    <div className="text-2xl sm:text-3xl font-serif leading-relaxed text-white font-medium tracking-tight">
+    <div className="text-2xl sm:text-3xl font-sans leading-relaxed text-white font-medium tracking-tight">
       {value}
     </div>
     <div className="text-xs sm:text-sm text-white/70 font-medium tracking-wide uppercase">
