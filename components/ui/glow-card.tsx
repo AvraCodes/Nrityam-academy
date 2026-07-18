@@ -29,6 +29,35 @@ const sizeMap = {
   lg: 'w-80 h-96'
 };
 
+let pointerX = 0;
+let pointerY = 0;
+let isRunning = false;
+const glowNodes = new Set<HTMLDivElement>();
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('pointermove', (e) => {
+    pointerX = e.clientX;
+    pointerY = e.clientY;
+    if (!isRunning) {
+      isRunning = true;
+      requestAnimationFrame(() => {
+        const xp = (pointerX / window.innerWidth).toFixed(2);
+        const yp = (pointerY / window.innerHeight).toFixed(2);
+        const xStr = pointerX.toFixed(2);
+        const yStr = pointerY.toFixed(2);
+        
+        glowNodes.forEach(node => {
+          node.style.setProperty('--x', xStr);
+          node.style.setProperty('--xp', xp);
+          node.style.setProperty('--y', yStr);
+          node.style.setProperty('--yp', yp);
+        });
+        isRunning = false;
+      });
+    }
+  }, { passive: true });
+}
+
 const GlowCard: React.FC<GlowCardProps> = ({ 
   children, 
   className = '', 
@@ -42,20 +71,17 @@ const GlowCard: React.FC<GlowCardProps> = ({
   const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const syncPointer = (e: PointerEvent) => {
-      const { clientX: x, clientY: y } = e;
-      
+    if (cardRef.current) {
+      glowNodes.add(cardRef.current);
+    }
+    return () => {
       if (cardRef.current) {
-        cardRef.current.style.setProperty('--x', x.toFixed(2));
-        cardRef.current.style.setProperty('--xp', (x / window.innerWidth).toFixed(2));
-        cardRef.current.style.setProperty('--y', y.toFixed(2));
-        cardRef.current.style.setProperty('--yp', (y / window.innerHeight).toFixed(2));
+        glowNodes.delete(cardRef.current);
       }
     };
-
-    document.addEventListener('pointermove', syncPointer);
-    return () => document.removeEventListener('pointermove', syncPointer);
   }, []);
+
+
 
   const { base, spread } = glowColorMap[glowColor];
 
@@ -86,7 +112,6 @@ const GlowCard: React.FC<GlowCardProps> = ({
         calc(var(--y, 0) * 1px),
         hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 0.1)), transparent
       )`,
-      backgroundColor: 'var(--backdrop, transparent)',
       backgroundSize: 'calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)))',
       backgroundPosition: '50% 50%',
       backgroundAttachment: 'fixed',

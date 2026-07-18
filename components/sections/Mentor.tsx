@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { Award, ShieldCheck, Presentation, Tv } from "lucide-react";
 
 const details = [

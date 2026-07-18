@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
+import { useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 export const ShaderCanvas = ({ className }: { className?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const isInView = useInView(canvasRef);
   const glProgramRef = useRef<WebGLProgram | null>(null);
   const glBgColorLocationRef = useRef<WebGLUniformLocation | null>(null);
   const glRef = useRef<WebGLRenderingContext | null>(null);
@@ -116,7 +118,9 @@ export const ShaderCanvas = ({ className }: { className?: string }) => {
       gl.uniform1f(iTimeLoc, time * 0.001);
       gl.uniform2f(iResLoc, canvas.width, canvas.height);
       gl.drawArrays(gl.TRIANGLES, 0, 6);
-      animationFrameId = requestAnimationFrame(render);
+      if (isInView) {
+        animationFrameId = requestAnimationFrame(render);
+      }
     };
     const handleResize = () => {
       const parent = canvas.parentElement;
@@ -131,12 +135,14 @@ export const ShaderCanvas = ({ className }: { className?: string }) => {
     };
     handleResize();
     window.addEventListener('resize', handleResize);
-    animationFrameId = requestAnimationFrame(render);
+    if (isInView) {
+      animationFrameId = requestAnimationFrame(render);
+    }
     return () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [backgroundColor]);
+  }, [backgroundColor, isInView]);
 
   return <canvas ref={canvasRef} className={cn("absolute top-0 left-0 w-full h-full block z-0", className)} />;
 };

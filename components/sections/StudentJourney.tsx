@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m as motion, AnimatePresence } from 'framer-motion'
 import { TiltCard } from '@/components/ui/tilt-card'
 import { GlowCard } from '@/components/ui/glow-card'
 import { Layers, Network, ChevronRight, Activity, ArrowRight } from 'lucide-react'

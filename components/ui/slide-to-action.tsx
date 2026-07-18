@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { motion, useAnimation, useMotionValue, useTransform } from "framer-motion";
+import { m as motion, useAnimation, useMotionValue, useTransform } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -86,8 +86,11 @@ export function SlideToAction({
       
       {/* Success fill background */}
       <motion.div
-        className="absolute left-0 top-0 bottom-0 bg-primary/10 rounded-full"
-        style={{ width: useTransform(x, (val) => val + knobWidth + padding) }}
+        className="absolute left-0 top-0 bottom-0 bg-primary/10 rounded-full origin-left"
+        style={{ 
+          width: '100%', 
+          scaleX: useTransform(x, (val) => containerWidth > 0 ? (val + knobWidth + padding) / containerWidth : 0) 
+        }}
       />
     </div>
   );

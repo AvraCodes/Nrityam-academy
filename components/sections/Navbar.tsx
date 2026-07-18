@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { ChevronDown, Menu, X } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m as motion, useScroll, useMotionValueEvent } from 'framer-motion';
 
 import { usePathname, useRouter } from 'next/navigation';
 import { useTheme } from 'next-themes';
@@ -76,29 +77,24 @@ export default function Navbar() {
   }, [isOpen]);
 
   // Smart Hide-on-Scroll Down, Show-on-Scroll Up behavior
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      setIsScrolled(currentScrollY > 20);
+  const { scrollY } = useScroll();
 
-      // Ignore very small scroll movements to prevent stuttering
-      if (Math.abs(currentScrollY - lastScrollY.current) < 5) return;
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 20);
 
-      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
-        // Scrolling down & past threshold - hide navbar
-        setIsVisible(false);
-      } else {
-        // Scrolling up - show navbar
-        setIsVisible(true);
-      }
-      
-      lastScrollY.current = currentScrollY;
-    };
+    const previous = scrollY.getPrevious() || 0;
+    
+    // Ignore very small scroll movements to prevent stuttering
+    if (Math.abs(latest - previous) < 5) return;
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    if (latest > previous && latest > 80) {
+      // Scrolling down & past threshold - hide navbar
+      setIsVisible(false);
+    } else {
+      // Scrolling up - show navbar
+      setIsVisible(true);
+    }
+  });
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setIsOpen(false);
@@ -115,9 +111,11 @@ export default function Navbar() {
       className="flex items-center gap-2 group z-50 transition-transform duration-300 hover:scale-105"
     >
       <div className="relative w-9 h-9 rounded-full overflow-hidden border-[1.5px] border-primary group-hover:border-primary-light transition-colors shadow-sm">
-        <img
+        <Image
           src="/logo.jpeg"
           alt="Nrityaam Logo"
+          width={36}
+          height={36}
           className="w-full h-full object-cover"
         />
       </div>

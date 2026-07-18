@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { MessageSquare, Mail, Instagram, MapPin, Send, Check } from "lucide-react";
 
 // Form validation schema using Zod
@@ -74,7 +74,7 @@ export default function Contact() {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">
-              Start Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-accent to-primary italic pr-2 pl-1 pb-1">Transformation</span> Today
+              Start Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-accent to-primary italic px-2 -mx-2 pb-1">Transformation</span> Today
             </h2>
 
             <p className="text-text-muted text-lg leading-relaxed mb-10 font-light">

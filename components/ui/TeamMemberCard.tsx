@@ -1,7 +1,8 @@
 'use client'
 
 import { ArrowRight } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
+import Image from 'next/image'
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 function cn(...inputs: any[]) { return twMerge(clsx(inputs)) }
@@ -61,9 +62,11 @@ export default function TeamMemberCard({
           )}
         >
           <div className='pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-transparent' />
-          <img
+          <Image
             src={imageUrl}
             alt={fullName}
+            width={360}
+            height={500}
             className='h-full w-full object-cover duration-500 ease-[0.22,1,0.36,1] hover:scale-105'
           />
         </motion.div>

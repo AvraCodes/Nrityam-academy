@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { Video, HelpCircle, Award, UserCheck, Check } from "lucide-react";
 
 const details = [

@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils';
 import {
   AnimatePresence,
-  motion,
+  m as motion,
   TargetAndTransition,
   Variants,
 } from 'framer-motion';

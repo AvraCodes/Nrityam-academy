@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import { useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type AuroraVariant = "default" | "sunset" | "ocean" | "forest" | "lavender" | "ember" | "ice" | "custom";
@@ -58,6 +59,7 @@ export function AuroraBackground({
 }: AuroraBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const timeRef = useRef(0);
+  const isInView = useInView(canvasRef);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -128,15 +130,19 @@ export function AuroraBackground({
       }
       ctx.globalCompositeOperation = "source-over";
 
-      raf = requestAnimationFrame(animate);
+      if (isInView) {
+        raf = requestAnimationFrame(animate);
+      }
     };
-    raf = requestAnimationFrame(animate);
+    if (isInView) {
+      raf = requestAnimationFrame(animate);
+    }
 
     return () => {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(raf);
     };
-  }, [variant, colors, speed, blobCount]);
+  }, [variant, colors, speed, blobCount, isInView]);
 
   return (
     <div className={cn("relative overflow-hidden", className)}>

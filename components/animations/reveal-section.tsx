@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect, type ReactNode } from 'react'
-import { motion, useInView, type Variants } from 'framer-motion'
+import { m as motion, useInView, type Variants } from 'framer-motion'
 
 interface RevealSectionProps {
   children: ReactNode

@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { m as motion, AnimatePresence, useInView } from 'framer-motion'
 import {
   Star,
   Globe,
@@ -71,7 +71,7 @@ export default function Hero() {
 
               {/* Main Headline */}
               <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight mb-8 text-balance leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main to-text-muted">
-                Master the True <br /> Art of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary italic font-light pl-1 pr-2 pb-1">Bharatanatyam</span>
+                Master the True <br /> Art of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary italic font-light px-2 -mx-2 pb-1">Bharatanatyam</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto mb-14 leading-relaxed font-light text-balance">

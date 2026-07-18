@@ -1,7 +1,8 @@
 "use client"
 
 import React from "react"
-import { motion } from "framer-motion"
+import Image from "next/image"
+import { m as motion } from "framer-motion"
 import dynamic from "next/dynamic"
 
 const GlobePulse = dynamic(
@@ -95,7 +96,7 @@ const TestimonialsColumn = (props: {
                   </div>
                   <div className="flex items-center justify-between gap-3 mt-5 border-t border-primary/10 pt-4">
                     <div className="flex items-center gap-3">
-                      <img
+                      <Image
                         width={40}
                         height={40}
                         loading="lazy"

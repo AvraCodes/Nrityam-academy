@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 import "./globals.css";
 
 const blore = localFont({
@@ -64,12 +65,14 @@ export default function RootLayout({
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          <SmoothScroll>
-            <GlobalBackground />
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </SmoothScroll>
+          <MotionProvider>
+            <SmoothScroll>
+              <GlobalBackground />
+              <Navbar />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </SmoothScroll>
+          </MotionProvider>
         </ThemeProvider>
       </body>
     </html>

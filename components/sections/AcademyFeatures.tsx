@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useEffect, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { m as motion, useInView } from 'framer-motion'
 import { GiLotusFlower, GiIndianPalace, GiBurningDot, GiDoubleNecklace, GiScrollUnfurled, GiOpenBook, GiTribalPendant, GiBarefoot, GiHourglass, GiShieldBounces, GiHeartDrop, GiPositionMarker } from 'react-icons/gi'
 import { ProductHighlightCard } from '@/components/ui/product-highlight-card'
 import { GlowCard } from '@/components/ui/glow-card'

@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useCallback } from "react"
+import { useInView } from "framer-motion"
 import createGlobe from "cobe"
 
 interface PulseMarker {
@@ -33,6 +34,7 @@ export function GlobePulse({
   const phiOffsetRef = useRef(0)
   const thetaOffsetRef = useRef(0)
   const isPausedRef = useRef(false)
+  const isInView = useInView(canvasRef)
 
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
     pointerInteracting.current = { x: e.clientX, y: e.clientY }
@@ -98,9 +100,13 @@ export function GlobePulse({
         phi: phi + phiOffsetRef.current + dragOffset.current.phi,
         theta: 0.2 + thetaOffsetRef.current + dragOffset.current.theta,
       })
-      animationId = requestAnimationFrame(animate)
+      if (isInView) {
+        animationId = requestAnimationFrame(animate)
+      }
     }
+    if (isInView) {
       animate()
+    }
       setTimeout(() => canvas && (canvas.style.opacity = "1"))
     }
 
@@ -120,7 +126,7 @@ export function GlobePulse({
       if (animationId) cancelAnimationFrame(animationId)
       if (globe) globe.destroy()
     }
-  }, [markers, speed])
+  }, [speed, markers, isInView])
 
   return (
     <div className={`relative aspect-square select-none ${className}`}>

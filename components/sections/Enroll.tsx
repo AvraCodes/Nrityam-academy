@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { MessageSquare, Clipboard, Compass, Award } from "lucide-react";
 
 const steps = [
