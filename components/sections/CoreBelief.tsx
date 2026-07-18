@@ -31,7 +31,7 @@ export default function CoreBelief() {
   }
 
   return (
- <section className="relative py-16 sm:py-24 lg:py-32 bg-bg-ivory overflow-hidden" id="philosophy">
+ <section className="relative py-16 sm:py-24 lg:py-32 bg-transparent overflow-hidden" id="philosophy">
       {/* Background accents */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_50%)]" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
@@ -39,14 +39,16 @@ export default function CoreBelief() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-1.5 mb-6"
+            className="flex items-center justify-center gap-4 mb-8"
           >
-            <span className="text-[11px] font-medium tracking-widest text-accent uppercase">
+            <div className="h-[1px] w-12 bg-primary/40" />
+            <span className="text-sm font-medium tracking-widest text-primary uppercase">
               Our Philosophy
             </span>
+            <div className="h-[1px] w-12 bg-primary/40" />
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}

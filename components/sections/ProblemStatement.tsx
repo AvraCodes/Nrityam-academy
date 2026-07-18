@@ -43,9 +43,11 @@ export default function ProblemStatement() {
           <div className="lg:col-span-5 text-left">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-px bg-primary" />
-              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] uppercase text-primary">
+              <div className="h-[1px] w-12 bg-primary/40" />
+            <span className="text-sm font-medium tracking-widest text-primary uppercase">
                 The Hard Truth
               </span>
+            <div className="h-[1px] w-12 bg-primary/40" />
             </div>
 
             <h2

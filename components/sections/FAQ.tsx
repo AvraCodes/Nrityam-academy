@@ -40,7 +40,7 @@ export default function FAQ() {
 
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-secondary-dark/30 bg-secondary-dark/10 px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest text-secondary-dark mb-6">
+          <span className="flex items-center justify-center gap-4 mb-8">
             Common Questions
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">

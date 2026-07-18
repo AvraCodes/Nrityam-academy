@@ -61,9 +61,11 @@ export default function Contact() {
           <div className="lg:col-span-5 text-left flex flex-col justify-center h-full">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-12 h-px bg-primary" />
-              <span className="text-[11px] font-sans font-bold tracking-[0.2em] uppercase text-primary">
+              <div className="h-[1px] w-12 bg-primary/40" />
+            <span className="text-sm font-medium tracking-widest text-primary uppercase">
                 Get In Touch
               </span>
+            <div className="h-[1px] w-12 bg-primary/40" />
             </div>
 
             <h2 className="text-4xl md:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">

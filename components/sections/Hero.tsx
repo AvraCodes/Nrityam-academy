@@ -15,38 +15,8 @@ import {
 
 import { GlassButton } from '@/components/ui/glass-button'
 
-const AnimatedCounter = ({ value, duration = 1.6 }: { value: string; duration?: number }) => {
-  const hasDecimals = value.includes('.')
-  const hasNumbers = /[0-9]/.test(value)
-  const shouldAnimate = hasNumbers && !hasDecimals
-  
-  if (!shouldAnimate) return <span>{value}</span>
-  
-  const numericValue = parseInt(value.replace(/[^0-9]/g, ''))
-  const suffix = value.replace(/[0-9]/g, '')
-  
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  
-  useEffect(() => {
-    if (isInView) {
-      let start = 0
-      const increment = numericValue / (duration * 60)
-      const timer = setInterval(() => {
-        start += increment
-        if (start > numericValue) {
-          setCount(numericValue)
-          clearInterval(timer)
-        } else {
-          setCount(Math.floor(start))
-        }
-      }, 1000 / 60)
-      return () => clearInterval(timer)
-    }
-  }, [isInView, numericValue, duration])
-  
-  return <span ref={ref}>{count}{suffix}</span>
+const AnimatedCounter = ({ value }: { value: string }) => {
+  return <span>{value}</span>
 }
 
 const StatItem = ({ value, label }: { value: string; label: string }) => (
@@ -84,10 +54,10 @@ export default function Hero() {
         <DanceSVG />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32 lg:mt-24">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="flex flex-col items-center justify-center text-center">
             
             <motion.div 
-              className="flex-1 text-left"
+              className="flex-1 w-full max-w-4xl mx-auto flex flex-col items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -97,12 +67,13 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="flex items-center gap-4 mb-8"
+                className="flex items-center justify-center gap-4 mb-8"
               >
                 <div className="h-[1px] w-12 bg-primary/40" />
                 <span className="text-sm font-medium tracking-widest text-primary uppercase">
                   Admissions Open 2026
                 </span>
+                <div className="h-[1px] w-12 bg-primary/40" />
               </motion.div>
 
               {/* Main Headline */}
@@ -110,12 +81,12 @@ export default function Hero() {
                 Master the True <br /> Art of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary italic font-light">Bharatanatyam</span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto lg:mx-0 mb-14 leading-relaxed font-light text-balance">
+              <p className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto mb-14 leading-relaxed font-light text-balance">
                 A structured, authentic learning path for serious students — from foundational steps to stage mastery.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-6 mb-14">
+              <div className="flex flex-wrap justify-center items-center gap-6 mb-14">
                 <GlassButton 
                   onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
                   className="bg-primary hover:bg-primary-dark text-white shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all group"
@@ -124,24 +95,6 @@ export default function Hero() {
                   Begin Your Journey
                   <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </GlassButton>
-              </div>
-            </motion.div>
-
-            {/* Right side Visual - Abstract elements */}
-            <motion.div 
-              className="flex-1 w-full max-w-lg lg:max-w-none flex items-center justify-center relative"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="relative w-full aspect-square max-w-md mx-auto">
-                <div className="absolute inset-0 rounded-full border border-primary/20 animate-[spin_60s_linear_infinite]" />
-                <div className="absolute inset-4 rounded-full border border-secondary-dark/20 animate-[spin_40s_linear_infinite_reverse]" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent rounded-full backdrop-blur-sm" />
-                
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-64 rounded-full overflow-hidden border border-white/20 shadow-2xl relative">
-                   <Image src="/hero-dancer.png" fill sizes="(max-width: 768px) 192px, 192px" className="object-cover" alt="Dancer" priority />
-                </div>
               </div>
             </motion.div>
           </div>
