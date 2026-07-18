@@ -15,10 +15,6 @@ import {
 
 import { GlassButton } from '@/components/ui/glass-button'
 
-const AnimatedCounter = ({ value }: { value: string }) => {
-  return <span>{value}</span>
-}
-
 const StatItem = ({ value, label }: { value: string; label: string }) => (
   <motion.div 
     initial={{ opacity: 0, y: 10 }}
@@ -28,7 +24,7 @@ const StatItem = ({ value, label }: { value: string; label: string }) => (
     className="flex flex-col gap-1 border-l border-primary/20 pl-4"
   >
     <div className="text-2xl sm:text-3xl font-serif leading-relaxed text-white font-medium tracking-tight">
-      <AnimatedCounter value={value} />
+      {value}
     </div>
     <div className="text-xs sm:text-sm text-white/70 font-medium tracking-wide uppercase">
       {label}
