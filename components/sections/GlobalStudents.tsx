@@ -62,57 +62,66 @@ const testimonials: Testimonial[] = [
   }
 ]
 
-const DragCarousel = ({ testimonials }: { testimonials: Testimonial[] }) => {
-  const containerRef = React.useRef<HTMLDivElement>(null)
-  const [width, setWidth] = React.useState(0)
-
-  React.useEffect(() => {
-    if (containerRef.current) {
-      setWidth(containerRef.current.scrollWidth - containerRef.current.offsetWidth)
-    }
-  }, [])
-
+const TestimonialsColumn = (props: {
+  className?: string
+  testimonials: Testimonial[]
+  duration?: number
+  reverse?: boolean
+}) => {
   return (
-    <div className="w-full overflow-hidden" ref={containerRef}>
+    <div className={props.className}>
       <motion.div
-        drag="x"
-        dragConstraints={{ right: 0, left: -width }}
-        className="flex gap-6 cursor-grab active:cursor-grabbing w-max pb-8 pt-4 px-4"
+        animate={{
+          translateY: props.reverse ? ["-50%", "0%"] : ["0%", "-50%"],
+        }}
+        transition={{
+          duration: props.duration || 30,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        }}
+        className="flex flex-col gap-6 pb-6"
       >
-        {testimonials.map(({ text, image, name, role, location }, i) => (
-          <div 
-            className="w-[300px] sm:w-[350px] p-8 rounded-3xl border border-primary/10 bg-white dark:bg-white/5 dark:bg-white/5 shadow-sm transition-colors hover:border-primary/30 pointer-events-none select-none" 
-            key={i}
-          >
-            <div className="text-sm text-text-main font-light leading-relaxed">
-              "{text}"
-            </div>
-            <div className="flex items-center justify-between gap-3 mt-5 border-t border-primary/10 pt-4">
-              <div className="flex items-center gap-3">
-                <img
-                  width={40}
-                  height={40}
-                  loading="lazy"
-                  decoding="async"
-                  src={image}
-                  alt={name}
-                  className="h-10 w-10 rounded-full object-cover ring-1 ring-primary/30"
-                />
-                <div className="flex flex-col">
-                  <div className="font-semibold text-xs tracking-tight text-text-main leading-tight">
-                    {name}
+        {[
+          ...new Array(2).fill(0).map((_, index) => (
+            <React.Fragment key={index}>
+              {props.testimonials.map(({ text, image, name, role, location }, i) => (
+                <div 
+                  className="p-8 rounded-3xl border border-primary/10 bg-white dark:bg-white/5 shadow-sm transition-colors hover:border-primary/30" 
+                  key={i}
+                >
+                  <div className="text-sm text-text-main font-light leading-relaxed">
+                    "{text}"
                   </div>
-                  <div className="text-[10px] text-text-muted tracking-tight mt-0.5">
-                    {role}
+                  <div className="flex items-center justify-between gap-3 mt-5 border-t border-primary/10 pt-4">
+                    <div className="flex items-center gap-3">
+                      <img
+                        width={40}
+                        height={40}
+                        loading="lazy"
+                        decoding="async"
+                        src={image}
+                        alt={name}
+                        className="h-10 w-10 rounded-full object-cover ring-1 ring-primary/30"
+                      />
+                      <div className="flex flex-col">
+                        <div className="font-semibold text-xs tracking-tight text-text-main leading-tight">
+                          {name}
+                        </div>
+                        <div className="text-[10px] text-text-muted tracking-tight mt-0.5">
+                          {role}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-[10px] text-primary font-medium bg-primary/10 px-2 py-1 rounded-full whitespace-nowrap">
+                      {location}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="text-[10px] text-primary font-medium bg-primary/10 px-2 py-1 rounded-full whitespace-nowrap">
-                {location}
-              </div>
-            </div>
-          </div>
-        ))}
+              ))}
+            </React.Fragment>
+          ))
+        ]}
       </motion.div>
     </div>
   )
@@ -142,15 +151,19 @@ export default function GlobalStudents() {
             <GlobePulse className="w-full max-w-[320px] sm:max-w-[500px]" />
           </div>
 
-          {/* Right Side: Interactive Drag Carousel */}
-          <div className="relative w-full overflow-hidden rounded-3xl border border-primary/10 bg-primary/5 py-8 flex flex-col">
-            <div className="px-8 pb-4">
-              <p className="text-sm font-semibold tracking-widest text-primary uppercase flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                Drag to explore stories
-              </p>
-            </div>
-            <DragCarousel testimonials={testimonials} />
+          {/* Right Side: Scrolling Testimonials */}
+          <div className="relative h-[600px] sm:h-[700px] overflow-hidden rounded-3xl border border-primary/10 bg-primary/5 p-4 sm:p-8 flex gap-4 sm:gap-6 mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)">
+            <TestimonialsColumn 
+              testimonials={testimonials.slice(0, 3)} 
+              duration={40} 
+              className="w-full lg:w-1/2" 
+            />
+            <TestimonialsColumn 
+              testimonials={testimonials.slice(3, 6)} 
+              duration={35} 
+              reverse
+              className="hidden sm:block w-full lg:w-1/2" 
+            />
           </div>
         </div>
       </div>
