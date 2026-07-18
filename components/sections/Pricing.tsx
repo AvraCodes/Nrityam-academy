@@ -65,7 +65,7 @@ export const PricingCard = ({
           </div>
         )}
         <div className="mb-4">
-          <h2 className="text-3xl font-serif leading-relaxed text-primary">{planName}</h2>
+          <h2 className="text-3xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary">{planName}</h2>
           <p className="text-sm text-text-muted mt-2 font-medium">{description}</p>
         </div>
         <div className="my-6 flex items-baseline gap-2 text-text-main">

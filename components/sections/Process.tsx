@@ -22,7 +22,7 @@ export default function Process() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-text-main mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">
             A structured path, <br/> from day one.
           </h2>
           <p className="text-lg text-text-muted font-light max-w-xl">

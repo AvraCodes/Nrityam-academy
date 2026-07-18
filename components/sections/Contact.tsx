@@ -66,7 +66,7 @@ export default function Contact() {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-serif leading-relaxed text-text-main mb-6">
+            <h2 className="text-4xl md:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">
               Start Your <span className="text-primary italic">Transformation</span> Today
             </h2>
 

@@ -109,8 +109,8 @@ export default function Hero() {
               </motion.div>
 
               {/* Main Headline */}
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-[72px] font-medium tracking-tight mb-8 text-balance leading-relaxed text-text-main">
-                Master the True <br /> Art of <span className="text-primary italic font-light">Bharatanatyam</span>
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-[72px] font-medium tracking-tight mb-8 text-balance leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main to-text-muted">
+                Master the True <br /> Art of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary italic font-light">Bharatanatyam</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto lg:mx-0 mb-14 leading-relaxed font-light text-balance">

@@ -61,7 +61,7 @@ export default function AcademyFeatures() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-text-main mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">
             Everything you need <br/> to excel in dance.
           </h2>
           <p className="text-lg text-text-muted font-light max-w-xl">

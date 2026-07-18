@@ -126,7 +126,7 @@ export default function GlobalStudents() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 sm:mb-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif leading-relaxed text-text-main mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">
             Connecting Dancers <br className="hidden sm:block" />
             <span className="text-primary">
               Across the Globe

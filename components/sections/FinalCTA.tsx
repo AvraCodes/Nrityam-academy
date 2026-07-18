@@ -30,7 +30,7 @@ export default function FinalCTA() {
             </div>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-primary mb-6 text-balance leading-relaxed">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary mb-6 text-balance leading-relaxed">
             Ready to Begin Your Dance Journey?
           </h2>
           

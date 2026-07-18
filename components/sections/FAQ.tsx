@@ -43,7 +43,7 @@ export default function FAQ() {
           <span className="inline-flex items-center gap-2 rounded-full border border-secondary-dark/30 bg-secondary-dark/10 px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest text-secondary-dark mb-6">
             Common Questions
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-text-main mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">
             Everything you need <br /> to know.
           </h2>
         </div>
