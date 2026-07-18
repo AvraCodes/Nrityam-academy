@@ -4,12 +4,14 @@ import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { TiltCard } from '@/components/ui/tilt-card'
 
+import { Music, Smile, Target, BookOpen, Star } from 'lucide-react'
+
 const STEP_DETAILS = [
-  { name: 'Rhythm (Tala)', detail: 'Master the intricate footwork and complex rhythmic structures that form the foundation of Bharatanatyam. Precision is our baseline.' },
-  { name: 'Expression (Abhinaya)', detail: 'Learn to convey profound emotions and ancient stories through nuanced facial expressions and hand gestures (Mudras).' },
-  { name: 'Discipline (Sadhana)', detail: 'Develop the rigorous physical stamina and mental fortitude required to respect and embody the art form.' },
-  { name: 'Tradition (Parampara)', detail: 'Connect with the ancient lineage. We preserve the pure Tanjore style while making it accessible to the modern student.' },
-  { name: 'Performance (Marga)', detail: 'The culmination of your journey. Combine rhythm, expression, and discipline to command the stage with divine grace.' },
+  { name: 'Rhythm (Tala)', detail: 'Master the intricate footwork and complex rhythmic structures that form the foundation of Bharatanatyam. Precision is our baseline.', icon: Music },
+  { name: 'Expression (Abhinaya)', detail: 'Learn to convey profound emotions and ancient stories through nuanced facial expressions and hand gestures (Mudras).', icon: Smile },
+  { name: 'Discipline (Sadhana)', detail: 'Develop the rigorous physical stamina and mental fortitude required to respect and embody the art form.', icon: Target },
+  { name: 'Tradition (Parampara)', detail: 'Connect with the ancient lineage. We preserve the pure Tanjore style while making it accessible to the modern student.', icon: BookOpen },
+  { name: 'Performance (Marga)', detail: 'The culmination of your journey. Combine rhythm, expression, and discipline to command the stage with divine grace.', icon: Star },
 ]
 
 const AUTO_ADVANCE_MS = 5000
@@ -128,7 +130,10 @@ export default function CoreBelief() {
                     className="relative z-10"
                   >
                     <div className="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/30 flex items-center justify-center text-accent mb-6">
-                      <span className="font-serif leading-relaxed text-2xl">{activeStep + 1}</span>
+                      {(() => {
+                        const Icon = STEP_DETAILS[activeStep].icon;
+                        return <Icon className="w-6 h-6" />;
+                      })()}
                     </div>
                     <h3 className="text-2xl sm:text-3xl font-serif leading-relaxed text-text-main mb-4">
                       {STEP_DETAILS[activeStep].name}

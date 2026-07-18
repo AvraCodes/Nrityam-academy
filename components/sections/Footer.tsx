@@ -32,7 +32,6 @@ const Footer = () => {
                 <span className="font-serif leading-relaxed text-2xl font-semibold text-white tracking-wide">
                   Nrityaam
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-primary group-hover:scale-125 transition-transform" />
               </Link>
               <p className="text-zinc-400 text-sm max-w-sm leading-relaxed">
                 Empowering dancers globally with authentic Bharatanatyam training, structured curriculum, and a passionate community.
