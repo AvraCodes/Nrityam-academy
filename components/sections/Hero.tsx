@@ -15,19 +15,22 @@ import {
 // Internal UI Components
 import { HoverButton } from '@/components/ui/hover-button'
 import { TiltCard } from '@/components/ui/tilt-card'
+import { FlipWords } from '@/components/ui/flip-words'
 
 const AnimatedCounter = ({ value, duration = 1.6 }: { value: string; duration?: number }) => {
+  const hasDecimals = value.includes('.')
   const hasNumbers = /[0-9]/.test(value)
+  const shouldAnimate = hasNumbers && !hasDecimals
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLSpanElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.5 })
 
-  const numericVal = hasNumbers ? (parseInt(value.replace(/[^0-9]/g, '')) || 0) : 0
-  const prefix = hasNumbers ? (value.match(/^[^0-9]*/)?.[0] || '') : value
-  const suffix = hasNumbers ? (value.replace(/^[^0-9]*[0-9]+/, '') || '') : ''
+  const numericVal = shouldAnimate ? (parseInt(value.replace(/[^0-9]/g, '')) || 0) : 0
+  const prefix = shouldAnimate ? (value.match(/^[^0-9]*/)?.[0] || '') : ''
+  const suffix = shouldAnimate ? (value.replace(/^[^0-9]*[0-9]+/, '') || '') : ''
 
   useEffect(() => {
-    if (!isInView || !hasNumbers) return
+    if (!isInView || !shouldAnimate) return
     let startTimestamp: number | null = null
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp
@@ -37,9 +40,9 @@ const AnimatedCounter = ({ value, duration = 1.6 }: { value: string; duration?: 
       if (progress < 1) window.requestAnimationFrame(step)
     }
     window.requestAnimationFrame(step)
-  }, [isInView, numericVal, duration, hasNumbers])
+  }, [isInView, numericVal, duration, shouldAnimate])
 
-  if (!hasNumbers) {
+  if (!shouldAnimate) {
     return <span ref={ref}>{value}</span>
   }
 
@@ -113,9 +116,10 @@ export default function Hero() {
             {/* Main Headline */}
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight text-[--color-text-main] mb-6 text-balance leading-[1.1]">
               Master the True Art of <br />
-              <span className="text-[--color-primary]">
-                Bharatanatyam
-              </span>
+              <FlipWords 
+                words={["Bharatanatyam", "Expression", "Rhythm", "Devotion"]} 
+                className="text-[--color-primary] -ml-2"
+              />
             </h1>
 
             <p className="text-lg sm:text-xl text-[--color-text-muted] max-w-xl mb-10 leading-relaxed font-light text-balance">

@@ -2,8 +2,15 @@
 
 import React from 'react'
 import { Map, MapMarker, MapControls, MarkerContent } from "@/components/ui/map-component"
-import { ArrowUpRight, Instagram, Youtube, Facebook, MapPin, Mail, Phone } from "lucide-react"
+import { ArrowUpRight, Instagram, Youtube, Facebook, MapPin, Mail, Phone, ArrowUp } from "lucide-react"
 import Link from "next/link"
+
+function handleScrollTop() {
+  window.scroll({
+    top: 0,
+    behavior: "smooth",
+  });
+}
 
 const Footer = () => {
   return (
@@ -142,11 +149,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-20 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-zinc-500 text-sm">
+        <div className="mt-20 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <p className="text-zinc-500 text-sm order-3 sm:order-1">
             © {new Date().getFullYear()} Nrityaam School of Bharatanatyam. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-zinc-500 text-sm">
+
+          <div className="flex items-center justify-center order-1 sm:order-2">
+            <button type="button" onClick={handleScrollTop} className="flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white hover:bg-[--color-primary] transition-colors">
+              <ArrowUp className="h-4 w-4" />
+              <span className="sr-only">Top</span>
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2 text-zinc-500 text-sm order-2 sm:order-3">
             <span>Built with passion in</span>
             <span className="text-[--color-primary] animate-pulse">❤</span>
             <span>Kolkata</span>

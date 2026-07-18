@@ -15,14 +15,20 @@ export default function Process() {
   return (
     <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[--color-bg-ivory] border-t border-[--color-primary]/10">
       <div className="max-w-7xl mx-auto">
-        <div className="max-w-2xl mb-16">
+        <motion.div 
+          className="max-w-2xl mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[--color-text-main] mb-6">
             A structured path, <br/> from day one.
           </h2>
           <p className="text-lg text-[--color-text-muted] font-light max-w-xl">
             We ensure every student is placed in the right batch and receives the foundational support needed to thrive.
           </p>
-        </div>
+        </motion.div>
 
         <div className="relative mt-20">
           {/* connecting line */}
@@ -39,7 +45,7 @@ export default function Process() {
               >
                 <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-[--color-primary]/20 bg-white hover:border-[--color-primary]/40 transition-colors shadow-sm">
                   <s.icon className="h-6 w-6 text-[--color-text-muted]" />
-                  <span className="absolute -top-3 -right-3 flex h-7 w-7 items-center justify-center rounded-full bg-[--color-secondary] text-[10px] font-bold text-black border-[3px] border-white">{s.k}</span>
+                  <span className="absolute -top-3 -right-3 flex h-7 w-7 items-center justify-center rounded-full bg-[--color-secondary] text-[10px] font-bold text-[--color-text-main] border-[3px] border-white">{s.k}</span>
                 </div>
                 <h3 className="mt-6 text-xl font-medium text-[--color-text-main]">{s.t}</h3>
                 <p className="mt-2 text-sm text-[--color-text-muted] font-light leading-relaxed">{s.d}</p>

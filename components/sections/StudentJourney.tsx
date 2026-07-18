@@ -160,7 +160,7 @@ export default function StudentJourney() {
                       <div className="w-10 h-10 rounded-full bg-[--color-primary]/10 border border-[--color-primary]/20 flex items-center justify-center text-[--color-primary] group-hover:scale-110 transition-transform">
                         <Activity className="w-4 h-4" />
                       </div>
-                      <ArrowRight className="w-4 h-4 text-black/20 group-hover:text-[--color-primary] transition-colors -rotate-45" />
+                      <ArrowRight className="w-4 h-4 text-[--color-text-main]/20 group-hover:text-[--color-primary] transition-colors -rotate-45" />
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-[--color-text-main] mb-1">{channel.name}</h4>

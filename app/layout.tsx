@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: "Nrityaam | School of Bharatanatyam",
   description:
     "A structured, modern Bharatanatyam training system trusted by 850+ students across 25 countries. Learn from world-class mentor Ranbbir Banerjee.",
+  icons: {
+    icon: "/logo.jpeg",
+  },
   openGraph: {
     title: "Nrityaam | School of Bharatanatyam",
     description:

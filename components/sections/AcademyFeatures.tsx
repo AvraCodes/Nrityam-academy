@@ -163,7 +163,7 @@ export default function AcademyFeatures() {
           {/* 1x1 Offline Workshops */}
           <Tile delay={0.6}>
             <div className="flex flex-col items-center text-center justify-center h-full gap-2">
-              <MapPin className="w-6 h-6 text-black/30" />
+              <MapPin className="w-6 h-6 text-[--color-text-main]/30" />
               <h3 className="text-sm font-medium text-[--color-text-main]">Annual Retreats</h3>
               <p className="text-[10px] text-[--color-text-muted]">Exclusive offline meetups in India & Europe.</p>
             </div>
