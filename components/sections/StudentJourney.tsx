@@ -135,13 +135,17 @@ export default function StudentJourney() {
               >
                 {stages.map((stage, i) => (
                   <div key={i} className="relative group">
-                    <div className="h-full p-6 rounded-2xl border border-primary/10 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/10 transition-colors flex flex-col justify-between group-hover:border-primary/30 relative z-10 shadow-sm">
-                      <div>
+                    <GlowCard 
+                      customSize 
+                      glowColor="primary" 
+                      className="h-full p-6 border-primary/10 bg-white/50 dark:bg-white/5 flex flex-col justify-between group shadow-sm text-left"
+                    >
+                      <div className="relative z-10">
                         <div className="text-[10px] font-mono text-primary mb-3 tracking-widest uppercase">Stage 0{i + 1}</div>
                         <h4 className="text-base font-semibold text-text-main mb-2 leading-tight">{stage.title}</h4>
                       </div>
-                      <p className="text-xs text-text-muted font-light mt-4 leading-relaxed">{stage.desc}</p>
-                    </div>
+                      <p className="text-xs text-text-muted font-light mt-4 leading-relaxed relative z-10">{stage.desc}</p>
+                    </GlowCard>
                     {i < stages.length - 1 && (
                       <div className="hidden md:block absolute top-1/2 -right-4 -translate-y-1/2 z-20 text-primary">
                         <ChevronRight className="w-6 h-6 opacity-50" />

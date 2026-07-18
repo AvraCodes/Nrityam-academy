@@ -18,18 +18,20 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
   ({ className, categoryIcon, category, title, description, imageSrc, imageAlt, ...props }, ref) => {
     
     // --- Animation Logic for 3D Tilt Effect ---
-    const mouseX = useMotionValue(0);
-    const mouseY = useMotionValue(0);
+    const mouseX = useMotionValue(0.5);
+    const mouseY = useMotionValue(0.5);
+    const isHovered = useMotionValue(0);
 
     const handleMouseMove = ({ clientX, clientY, currentTarget }: React.MouseEvent) => {
-      const { left, top } = currentTarget.getBoundingClientRect();
-      mouseX.set(clientX - left);
-      mouseY.set(clientY - top);
+      const { left, top, width, height } = currentTarget.getBoundingClientRect();
+      mouseX.set((clientX - left) / width);
+      mouseY.set((clientY - top) / height);
+      isHovered.set(1);
     };
 
     // Transform mouse position into a rotation value
-    const rotateX = useTransform(mouseY, [0, 350], [10, -10]);
-    const rotateY = useTransform(mouseX, [0, 350], [-10, 10]);
+    const rotateX = useTransform(mouseY, [0, 1], [10, -10]);
+    const rotateY = useTransform(mouseX, [0, 1], [-10, 10]);
     
     // Apply spring physics for a smoother animation
     const springConfig = { stiffness: 300, damping: 20 };
@@ -37,17 +39,18 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
     const springRotateY = useSpring(rotateY, springConfig);
     
     // --- Animation Logic for Glow Effect ---
-    const glowX = useTransform(mouseX, [0, 350], [0, 100]);
-    const glowY = useTransform(mouseY, [0, 350], [0, 100]);
-    const glowOpacity = useTransform(mouseX, [0, 350], [0, 0.5]);
+    const glowX = useTransform(mouseX, [0, 1], [0, 100]);
+    const glowY = useTransform(mouseY, [0, 1], [0, 100]);
+    const glowOpacity = useTransform(isHovered, [0, 1], [0, 0.5]);
 
     return (
       <motion.div
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={() => {
-          mouseX.set(0);
-          mouseY.set(0);
+          mouseX.set(0.5);
+          mouseY.set(0.5);
+          isHovered.set(0);
         }}
         style={{
           rotateX: springRotateX,

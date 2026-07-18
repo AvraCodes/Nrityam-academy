@@ -122,22 +122,22 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 1x2 Certification */}
-          <Tile wrapperClassName="row-span-2 bg-white/70 dark:bg-white/5 shadow-sm" delay={0.4}>
-            <div className="flex flex-col h-full justify-between">
-              <div>
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-text-muted">
-                  <GiOpenBook className="h-5 w-5" />
-                </div>
-                <h3 className="text-lg font-medium text-text-main mb-2">Certification</h3>
-                <p className="text-xs text-text-muted font-light leading-relaxed">
-                  Clear exams at every tier to earn verified Nrityam Academy certifications.
-                </p>
-              </div>
-              <div className="w-full aspect-square rounded-full border border-dashed border-primary/20 flex items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity bg-primary/5">
-                <GiShieldBounces className="w-10 h-10 text-secondary-dark" />
-              </div>
-            </div>
-          </Tile>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="row-span-2"
+          >
+            <ProductHighlightCard
+              categoryIcon={<GiOpenBook className="h-4 w-4" />}
+              category="Certification"
+              title="Verified Certification"
+              description="Clear exams at every tier to earn verified Nrityam Academy certifications."
+              imageSrc="/logo.jpeg"
+              imageAlt="Nrityam Logo"
+            />
+          </motion.div>
 
           {/* 1x1 Physical conditioning */}
           <Tile delay={0.5}>

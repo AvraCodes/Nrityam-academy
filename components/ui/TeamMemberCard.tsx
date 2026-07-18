@@ -50,14 +50,14 @@ export default function TeamMemberCard({
         </p>
       </motion.div>
 
-      <div className='flex items-center justify-end'>
+      <div className='flex flex-col sm:flex-row items-center sm:justify-end gap-6 sm:gap-0'>
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative h-125 w-90 shrink-0 overflow-hidden',
-            isPositionRight && 'order-1'
+            'relative h-[350px] sm:h-[400px] lg:h-[500px] w-full sm:w-[300px] lg:w-[360px] shrink-0 overflow-hidden rounded-3xl sm:rounded-none',
+            isPositionRight && 'sm:order-1'
           )}
         >
           <div className='pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-transparent' />
@@ -73,8 +73,8 @@ export default function TeamMemberCard({
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative -left-8 z-20 flex w-[calc(100%-350px)] flex-col gap-14',
-            isPositionRight && 'left-8 items-end'
+            'relative sm:-left-8 z-20 flex w-full sm:w-[calc(100%-300px)] lg:w-[calc(100%-350px)] flex-col gap-8 sm:gap-14 px-4 sm:px-0 text-center sm:text-left items-center sm:items-start',
+            isPositionRight && 'sm:left-8 sm:items-end sm:text-right'
           )}
         >
           <div>
@@ -85,29 +85,29 @@ export default function TeamMemberCard({
             </p>
           </div>
 
-          <div className={cn('flex gap-8', isPositionRight && 'justify-end')}>
+          <div className={cn('flex flex-col sm:flex-row gap-6 sm:gap-8 items-center sm:items-start', isPositionRight && 'sm:justify-end')}>
             <motion.div
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className={cn(
-                'group flex h-20 w-20 shrink-0 cursor-pointer items-center justify-center rounded-full border border-primary/40 transition-colors duration-300 hover:border-primary hover:bg-primary text-primary hover:text-white',
-                isPositionRight && 'order-1'
+                'group flex h-16 w-16 sm:h-20 sm:w-20 shrink-0 cursor-pointer items-center justify-center rounded-full border border-primary/40 transition-colors duration-300 hover:border-primary hover:bg-primary text-primary hover:text-white',
+                isPositionRight && 'sm:order-1'
               )}
             >
               <ArrowRight
                 size={22}
                 className={cn(
                   'transition-all duration-300 group-hover:-rotate-45 text-primary group-hover:text-white',
-                  isPositionRight && 'rotate-180 group-hover:rotate-225'
+                  isPositionRight && 'sm:rotate-180 group-hover:rotate-225'
                 )}
               />
             </motion.div>
 
-            <div className='w-[40%]'>
+            <div className='w-full sm:w-[60%] lg:w-[40%] text-center sm:text-left'>
               <p
                 className={cn(
                   'text-sm leading-[1.8] text-text-muted font-medium',
-                  isPositionRight && 'text-right'
+                  isPositionRight && 'sm:text-right'
                 )}
               >
                 {description}
