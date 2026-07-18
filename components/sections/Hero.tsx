@@ -57,7 +57,7 @@ const StatItem = ({ value, label }: { value: string; label: string }) => (
     transition={{ duration: 0.5 }}
     className="flex flex-col gap-1 border-l border-primary/20 pl-4"
   >
-    <div className="text-3xl sm:text-4xl font-serif leading-relaxed text-text-main font-medium tracking-tight">
+    <div className="text-2xl sm:text-3xl font-serif leading-relaxed text-text-main font-medium tracking-tight">
       <AnimatedCounter value={value} />
     </div>
     <div className="text-xs sm:text-sm text-text-muted font-medium tracking-wide uppercase">
@@ -109,11 +109,11 @@ export default function Hero() {
               </motion.div>
 
               {/* Main Headline */}
-              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight mb-8 text-balance leading-relaxed text-text-main">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-[72px] font-medium tracking-tight mb-8 text-balance leading-relaxed text-text-main">
                 Master the True <br /> Art of <span className="text-primary italic font-light">Bharatanatyam</span>
               </h1>
 
-              <p className="text-xl sm:text-2xl text-text-muted max-w-2xl mx-auto lg:mx-0 mb-14 leading-relaxed font-light text-balance">
+              <p className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto lg:mx-0 mb-14 leading-relaxed font-light text-balance">
                 A structured, authentic learning path for serious students — from foundational steps to stage mastery.
               </p>
 

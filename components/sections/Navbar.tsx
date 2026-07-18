@@ -119,7 +119,7 @@ export default function Navbar() {
           className="w-full h-full object-cover"
         />
       </div>
-      <span className="font-serif leading-relaxed text-xl font-bold tracking-tight text-text-main">
+      <span className="font-serif leading-relaxed text-lg font-medium tracking-tight text-text-main">
         Nrityaam
       </span>
     </Link>
