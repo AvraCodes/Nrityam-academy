@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { m as motion, AnimatePresence } from 'framer-motion'
 import { TiltCard } from '@/components/ui/tilt-card'
 import { GlowCard } from '@/components/ui/glow-card'
-import { Layers, Network, ChevronRight, Activity, ArrowRight } from 'lucide-react'
+import { Layers, Network, ChevronRight, Activity, ArrowRight, Video, PlayCircle, MessageSquare, BookOpen, Globe } from 'lucide-react'
 
 export default function StudentJourney() {
   const [activeTab, setActiveTab] = useState<'lifecycle' | 'channels'>('lifecycle')
@@ -27,11 +27,11 @@ export default function StudentJourney() {
   ]
 
   const channels = [
-    { name: 'Live Interactive Classes', role: 'Real-time guidance', desc: 'Join small-batch global live sessions via Zoom where the mentor watches and corrects your posture instantly.' },
-    { name: 'Recorded Library', role: 'Practice at your pace', desc: 'Unlimited access to high-quality recordings of every class and dedicated tutorial modules for every Adavu.' },
-    { name: '1-on-1 Feedback', role: 'Personalized correction', desc: 'Submit practice videos and receive detailed, time-stamped feedback on your form and expressions.' },
-    { name: 'Theory Workshops', role: 'Intellectual depth', desc: 'Deep dive into the Natya Shastra, understanding the rich history and philosophy behind every movement.' },
-    { name: 'Global Community', role: 'Peer inspiration', desc: 'Connect with fellow dancers worldwide, share progress, and stay motivated through community challenges.' }
+    { name: 'Live Interactive Classes', role: 'Real-time guidance', desc: 'Join small-batch global live sessions via Zoom where the mentor watches and corrects your posture instantly.', icon: Video },
+    { name: 'Recorded Library', role: 'Practice at your pace', desc: 'Unlimited access to high-quality recordings of every class and dedicated tutorial modules for every Adavu.', icon: PlayCircle },
+    { name: '1-on-1 Feedback', role: 'Personalized correction', desc: 'Submit practice videos and receive detailed, time-stamped feedback on your form and expressions.', icon: MessageSquare },
+    { name: 'Theory Workshops', role: 'Intellectual depth', desc: 'Deep dive into the Natya Shastra, understanding the rich history and philosophy behind every movement.', icon: BookOpen },
+    { name: 'Global Community', role: 'Peer inspiration', desc: 'Connect with fellow dancers worldwide, share progress, and stay motivated through community challenges.', icon: Globe }
   ]
 
   return (
@@ -174,7 +174,7 @@ export default function StudentJourney() {
                   >
                     <div className="flex items-center justify-between">
                       <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform relative z-10">
-                        <Activity className="w-4 h-4" />
+                        <channel.icon className="w-4 h-4" />
                       </div>
                       <ArrowRight className="w-4 h-4 text-text-main/20 group-hover:text-primary transition-colors -rotate-45 relative z-10" />
                     </div>
