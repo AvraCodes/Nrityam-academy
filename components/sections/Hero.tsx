@@ -27,10 +27,10 @@ const StatItem = ({ value, label }: { value: string; label: string }) => (
     transition={{ duration: 0.5 }}
     className="flex flex-col gap-1 border-l border-primary/20 pl-4"
   >
-    <div className="text-2xl sm:text-3xl font-serif leading-relaxed text-text-main font-medium tracking-tight">
+    <div className="text-2xl sm:text-3xl font-serif leading-relaxed text-white font-medium tracking-tight">
       <AnimatedCounter value={value} />
     </div>
-    <div className="text-xs sm:text-sm text-text-muted font-medium tracking-wide uppercase">
+    <div className="text-xs sm:text-sm text-white/70 font-medium tracking-wide uppercase">
       {label}
     </div>
   </motion.div>
@@ -102,7 +102,7 @@ export default function Hero() {
       </section>
 
       {/* Trust Metrics banner below the fold */}
-      <div className="bg-white/80 dark:bg-black/80 backdrop-blur-xl border-y border-primary/10 relative z-20">
+      <div className="bg-white/5 dark:bg-white/5 backdrop-blur-md border-y border-primary/20 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             <StatItem value="19+" label="Years Expertise" />
