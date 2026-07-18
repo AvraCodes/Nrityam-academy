@@ -46,7 +46,7 @@ const itemVariants = {
 
 export default function Enroll() {
   return (
-    <section id="enroll" className="bg-transparent py-20 md:py-28 text-text-main relative border-t border-text-light/10">
+ <section id="enroll" className="bg-transparent py-20 md:py-28 text-text-main relative ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

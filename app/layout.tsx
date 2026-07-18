@@ -51,10 +51,10 @@ export default function RootLayout({
       <head>
         <link rel="preload" href="/hero-bg.mp4" as="video" type="video/mp4" />
       </head>
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen overflow-x-hidden w-full">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           disableTransitionOnChange
         >
           <SmoothScroll>

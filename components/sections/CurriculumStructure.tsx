@@ -49,7 +49,7 @@ export default function CurriculumStructure() {
   }
 
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-transparent border-t border-primary/10" id="system">
+ <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-transparent " id="system">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -59,10 +59,10 @@ export default function CurriculumStructure() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-[#2B2118] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">
             A Structured Path to Mastery
           </h2>
-          <p className="text-lg text-[#8B5E3C] font-light max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted font-light max-w-2xl mx-auto">
             We don't just teach choreography. We build dancers. Our curriculum is layered, ensuring every student develops a robust foundation before advancing.
           </p>
         </motion.div>
@@ -104,8 +104,8 @@ export default function CurriculumStructure() {
                   >
                     <TiltCard className={`rounded-3xl border transition-all duration-300 overflow-hidden ${
                       isActive 
-                        ? 'border-[#D4AF37]/30 bg-white dark:bg-white/5 dark:bg-white/5 shadow-lg shadow-[#D4AF37]/10' 
-                        : 'border-[#8B5E3C]/10 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:bg-white/5'
+                        ? 'border-secondary/30 bg-white dark:bg-white/5 dark:bg-white/5 shadow-lg shadow-secondary/10' 
+                        : 'border-accent/10 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:bg-white/5'
                     }`}>
                       <button
                         onMouseEnter={() => setActiveLayer(index)}
@@ -113,20 +113,20 @@ export default function CurriculumStructure() {
                       >
                         <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${
                           isActive 
-                            ? 'bg-[#D4AF37]/20 text-[#D4AF37]' 
-                            : 'bg-[#D4AF37]/5 text-[#8B5E3C]'
+                            ? 'bg-secondary/20 text-secondary' 
+                            : 'bg-secondary/5 text-accent'
                         }`}>
                           <Icon className="w-5 h-5" />
                         </div>
                         
                         <div className="flex-1">
                           <div className={`text-xs font-mono mb-1 tracking-widest ${
-                            isActive ? 'text-[#D4AF37]' : 'text-[#8B5E3C]/70'
+                            isActive ? 'text-secondary' : 'text-accent/70'
                           }`}>
                             LAYER {layer.number}
                           </div>
                           <h3 className={`text-xl sm:text-2xl font-serif leading-relaxed transition-colors duration-300 ${
-                            isActive ? 'text-[#2B2118]' : 'text-[#8B5E3C]'
+                            isActive ? 'text-text-main' : 'text-accent'
                           }`}>
                             {layer.title}
                           </h3>
@@ -136,7 +136,7 @@ export default function CurriculumStructure() {
                           animate={{ rotate: isActive ? 180 : 0 }}
                           transition={{ duration: 0.3 }}
                           className={`text-xs px-3 py-1 rounded-full border transition-colors ${
-                            isActive ? 'border-[#D4AF37]/50 text-[#D4AF37] bg-[#D4AF37]/10' : 'border-[#8B5E3C]/20 text-[#8B5E3C]'
+                            isActive ? 'border-secondary/50 text-secondary bg-secondary/10' : 'border-accent/20 text-accent'
                           }`}
                         >
                           <ChevronDown className="w-4 h-4" />
@@ -153,7 +153,7 @@ export default function CurriculumStructure() {
                           >
                             <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-2 pl-[88px]">
                               <div className="h-px w-full bg-gradient-to-r from-black/10 to-transparent mb-6" />
-                              <p className="text-base sm:text-lg text-[#8B5E3C] font-light leading-relaxed">
+                              <p className="text-base sm:text-lg text-accent font-light leading-relaxed">
                                 {layer.desc}
                               </p>
                             </div>

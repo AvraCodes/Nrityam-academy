@@ -13,7 +13,7 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-transparent border-t border-primary/10">
+ <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-transparent ">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           className="max-w-2xl mb-16"

@@ -31,7 +31,7 @@ export default function CoreBelief() {
   }
 
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 bg-[#FFF8F0] border-t border-primary/10 overflow-hidden" id="philosophy">
+ <section className="relative py-16 sm:py-24 lg:py-32 bg-bg-ivory overflow-hidden" id="philosophy">
       {/* Background accents */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_50%)]" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
@@ -42,9 +42,9 @@ export default function CoreBelief() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5 mb-6"
+            className="inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-1.5 mb-6"
           >
-            <span className="text-[11px] font-medium tracking-widest text-[#8B5E3C] uppercase">
+            <span className="text-[11px] font-medium tracking-widest text-accent uppercase">
               Our Philosophy
             </span>
           </motion.div>
@@ -55,14 +55,14 @@ export default function CoreBelief() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-primary mb-6"
           >
-            The Art of <span className="text-[#8B5E3C]">Bharatanatyam</span>
+            The Art of <span className="text-accent">Bharatanatyam</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-[#8B5E3C] font-light"
+            className="text-lg text-accent font-light"
           >
             We believe true artistry cannot be rushed. Our methodology breaks down this divine dance into five essential pillars, building a dancer from the ground up.
           </motion.p>
@@ -84,8 +84,8 @@ export default function CoreBelief() {
                   onMouseEnter={() => handleStepClick(idx)}
                   className={`relative w-full text-left p-4 rounded-2xl transition-all duration-300 flex items-start gap-4 group cursor-pointer border ${
                     isActive 
-                      ? 'bg-[#D4AF37]/10 border-[#D4AF37]/30 shadow-lg shadow-[#D4AF37]/5' 
-                      : 'bg-transparent border-transparent hover:bg-[#D4AF37]/5'
+                      ? 'bg-secondary/10 border-secondary/30 shadow-lg shadow-secondary/5' 
+                      : 'bg-transparent border-transparent hover:bg-secondary/5'
                   }`}
                 >
                   {isActive && (
@@ -94,12 +94,12 @@ export default function CoreBelief() {
                   
                   <div className="relative z-10 flex items-center gap-4">
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 border border-transparent ${
-                      isActive ? 'bg-[#D4AF37] text-[#FFF8F0]' : 'border-[#8B5E3C]/30 text-[#8B5E3C] group-hover:bg-[#8B5E3C]/10'
+                      isActive ? 'bg-secondary text-bg-ivory' : 'border-accent/30 text-accent group-hover:bg-accent/10'
                     }`}>
                       {idx + 1}
                     </div>
                     <h4 className={`text-xl font-medium transition-colors ${
-                      isActive ? 'text-[#2B2118]' : 'text-[#8B5E3C] group-hover:text-[#2B2118]'
+                      isActive ? 'text-text-main' : 'text-accent group-hover:text-text-main'
                     }`}>
                       {step.name}
                     </h4>
@@ -125,13 +125,13 @@ export default function CoreBelief() {
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     className="relative z-10"
                   >
-                    <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#8B5E3C] mb-6">
+                    <div className="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/30 flex items-center justify-center text-accent mb-6">
                       <span className="font-serif leading-relaxed text-2xl">{activeStep + 1}</span>
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-serif leading-relaxed text-[#2B2118] mb-4">
+                    <h3 className="text-2xl sm:text-3xl font-serif leading-relaxed text-text-main mb-4">
                       {STEP_DETAILS[activeStep].name}
                     </h3>
-                    <p className="text-lg sm:text-xl text-[#8B5E3C] font-light leading-relaxed">
+                    <p className="text-lg sm:text-xl text-accent font-light leading-relaxed">
                       {STEP_DETAILS[activeStep].detail}
                     </p>
                   </motion.div>

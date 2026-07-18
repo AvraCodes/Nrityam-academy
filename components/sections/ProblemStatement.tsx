@@ -32,7 +32,7 @@ const itemVariants = {
 
 export default function ProblemStatement() {
   return (
-    <section id="system" className="bg-transparent py-20 md:py-28 overflow-hidden text-text-main relative border-b border-white/10">
+ <section id="system" className="bg-transparent py-20 md:py-28 overflow-hidden text-text-main relative border-white/10">
       {/* Background styling elements */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary-glow/5 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accent-light/5 blur-3xl pointer-events-none" />

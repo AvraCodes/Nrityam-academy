@@ -51,7 +51,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[#FFF8F0] py-20 md:py-28 relative overflow-hidden border-t border-primary/10">
+ <section id="contact" className="bg-bg-ivory py-20 md:py-28 relative overflow-hidden ">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -160,7 +160,7 @@ export default function Contact() {
                         type="text"
                         {...register("name")}
                         placeholder="e.g. Priyanjali Roy"
-                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
+                        className="w-full px-5 py-4 bg-bg-ivory/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
                       />
                       {errors.name && <p className="text-red-500 text-xs mt-2">{errors.name.message}</p>}
                     </div>
@@ -171,7 +171,7 @@ export default function Contact() {
                         type="email"
                         {...register("email")}
                         placeholder="e.g. priya@example.com"
-                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
+                        className="w-full px-5 py-4 bg-bg-ivory/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
                       />
                       {errors.email && <p className="text-red-500 text-xs mt-2">{errors.email.message}</p>}
                     </div>
@@ -184,7 +184,7 @@ export default function Contact() {
                         type="tel"
                         {...register("phone")}
                         placeholder="e.g. +91 98765 43210"
-                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
+                        className="w-full px-5 py-4 bg-bg-ivory/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
                       />
                       {errors.phone && <p className="text-red-500 text-xs mt-2">{errors.phone.message}</p>}
                     </div>
@@ -193,7 +193,7 @@ export default function Contact() {
                       <label className="block text-xs uppercase tracking-wider text-text-light font-semibold mb-2">Experience Level</label>
                       <select
                         {...register("experience")}
-                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm appearance-none cursor-pointer"
+                        className="w-full px-5 py-4 bg-bg-ivory/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm appearance-none cursor-pointer"
                         style={{
                           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237A1E2C'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
                           backgroundPosition: "right 16px center",
@@ -216,7 +216,7 @@ export default function Contact() {
                       {...register("message")}
                       rows={5}
                       placeholder="Tell us what you want to achieve or any challenges you struggle with..."
-                      className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm resize-none placeholder:text-text-light/50"
+                      className="w-full px-5 py-4 bg-bg-ivory/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm resize-none placeholder:text-text-light/50"
                     />
                     {errors.message && <p className="text-red-500 text-xs mt-2">{errors.message.message}</p>}
                   </div>

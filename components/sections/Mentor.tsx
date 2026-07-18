@@ -47,7 +47,7 @@ const itemVariants = {
 
 export default function Mentor() {
   return (
-    <section id="mentor" className="bg-bg-subtle py-20 md:py-28 overflow-hidden text-text-main relative border-b border-text-light/10">
+ <section id="mentor" className="bg-bg-subtle py-20 md:py-28 overflow-hidden text-text-main relative ">
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-primary-glow/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

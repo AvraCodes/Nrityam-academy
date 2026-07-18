@@ -75,7 +75,7 @@ const DanceSVG = () => (
 export default function Hero() {
   return (
     <>
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-16">
+ <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-16">
         {/* Background radial gradient */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent,var(--color-bg-ivory))] opacity-80" />
@@ -152,7 +152,7 @@ export default function Hero() {
       </section>
 
       {/* Trust Metrics banner below the fold */}
-      <div className="bg-white/40 dark:bg-black/40 backdrop-blur-md border-y border-primary/10 relative z-20">
+      <div className="bg-white/80 dark:bg-black/80 backdrop-blur-xl border-y border-primary/10 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             <StatItem value="19+" label="Years Expertise" />

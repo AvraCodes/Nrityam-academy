@@ -53,7 +53,7 @@ function Tile({ children, wrapperClassName = '', className = '', delay = 0 }: { 
 
 export default function AcademyFeatures() {
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-transparent border-t border-primary/10">
+ <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-transparent ">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

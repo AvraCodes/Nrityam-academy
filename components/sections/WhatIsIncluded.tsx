@@ -66,7 +66,7 @@ const itemVariants = {
 
 export default function WhatIsIncluded() {
   return (
-    <section id="what-is-included" className="bg-transparent py-20 md:py-28 text-text-main relative border-t border-white/10">
+ <section id="what-is-included" className="bg-transparent py-20 md:py-28 text-text-main relative border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
