@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { TiltCard } from '@/components/ui/tilt-card'
+import { GlowCard } from '@/components/ui/glow-card'
 import { Layers, Network, ChevronRight, Activity, ArrowRight } from 'lucide-react'
 
 export default function StudentJourney() {
@@ -158,22 +159,27 @@ export default function StudentJourney() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
-                className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="flex flex-wrap justify-center gap-6"
               >
                 {channels.map((channel, i) => (
-                  <div key={i} className="p-6 sm:p-8 rounded-2xl border border-primary/10 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/10 hover:border-primary/30 transition-colors flex flex-col gap-4 group shadow-sm">
+                  <GlowCard 
+                    key={i} 
+                    customSize
+                    glowColor="orange"
+                    className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-6 sm:p-8 border-primary/10 bg-white/50 dark:bg-white/5 flex flex-col gap-4 group shadow-sm text-left"
+                  >
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform relative z-10">
                         <Activity className="w-4 h-4" />
                       </div>
-                      <ArrowRight className="w-4 h-4 text-text-main/20 group-hover:text-primary transition-colors -rotate-45" />
+                      <ArrowRight className="w-4 h-4 text-text-main/20 group-hover:text-primary transition-colors -rotate-45 relative z-10" />
                     </div>
-                    <div>
+                    <div className="relative z-10">
                       <h4 className="text-lg font-semibold text-text-main mb-1">{channel.name}</h4>
                       <p className="text-[10px] uppercase tracking-wider text-secondary-dark font-medium mb-3">{channel.role}</p>
                       <p className="text-sm text-text-muted font-light leading-relaxed">{channel.desc}</p>
                     </div>
-                  </div>
+                  </GlowCard>
                 ))}
               </motion.div>
             )}

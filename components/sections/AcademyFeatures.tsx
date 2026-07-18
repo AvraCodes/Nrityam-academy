@@ -3,6 +3,8 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { GiLotusFlower, GiIndianPalace, GiBurningDot, GiDoubleNecklace, GiScrollUnfurled, GiOpenBook, GiTribalPendant, GiBarefoot, GiHourglass, GiShieldBounces, GiHeartDrop, GiPositionMarker } from 'react-icons/gi'
+import { ProductHighlightCard } from '@/components/ui/product-highlight-card'
+
 function Counter({ value, decimals = 0, suffix = '' }: { value: number; decimals?: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, amount: 0.5 })
@@ -71,31 +73,22 @@ export default function AcademyFeatures() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 auto-rows-[160px] gap-4">
           
-          {/* BIG hero tile 2x2 */}
-          <Tile wrapperClassName="col-span-2 row-span-2" className="flex flex-col justify-between" delay={0}>
-            <div className="flex items-start justify-between">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/20 ring-1 ring-primary/30">
-                <GiScrollUnfurled className="h-6 w-6 text-primary" />
-              </div>
-            </div>
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-serif leading-relaxed text-text-main mb-2">High-Definition Virtual Studio</h3>
-              <p className="text-sm text-text-muted max-w-md font-light leading-relaxed">
-                Experience crystal-clear live classes. Our multi-camera setup ensures you see every footwork detail and facial expression exactly as the guru performs it.
-              </p>
-              {/* Abstract camera/focus UI elements */}
-              <div className="mt-6 flex gap-4 opacity-70">
-                <div className="w-16 h-16 border-2 border-primary/20 rounded relative">
-                   <div className="absolute top-1 left-1 w-2 h-2 border-t-2 border-l-2 border-primary/30" />
-                   <div className="absolute bottom-1 right-1 w-2 h-2 border-b-2 border-r-2 border-primary/30" />
-                   <div className="absolute inset-0 m-auto w-1 h-1 bg-secondary-dark rounded-full animate-ping" />
-                </div>
-                <div className="flex-1 border-y border-primary/10 flex items-center justify-center">
-                  <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
-                </div>
-              </div>
-            </div>
-          </Tile>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="col-span-2 row-span-2"
+          >
+            <ProductHighlightCard
+              categoryIcon={<GiScrollUnfurled className="h-5 w-5" />}
+              category="Interactive Studio"
+              title="High-Definition Virtual Studio"
+              description="Experience crystal-clear live classes. Our multi-camera setup ensures you see every footwork detail and facial expression exactly as the guru performs it."
+              imageSrc="/hero-dancer.png"
+              imageAlt="Classical Dancer"
+            />
+          </motion.div>
 
           {/* 1x1 Global Community */}
           <Tile delay={0.1}>
