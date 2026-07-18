@@ -7,8 +7,19 @@ import Footer from "@/components/sections/Footer";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
-const runiga = localFont({
-  src: "../public/fonts/Runiga.otf",
+const mileast = localFont({
+  src: [
+    {
+      path: "../public/fonts/Mileast.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Mileast Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
   variable: "--font-serif",
   display: "swap",
 });
@@ -46,7 +57,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${runiga.variable} ${outfit.variable}`}
+      className={`${mileast.variable} ${outfit.variable}`}
     >
       <head>
         <link rel="preload" href="/hero-bg.mp4" as="video" type="video/mp4" />

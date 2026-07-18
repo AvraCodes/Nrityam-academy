@@ -89,7 +89,7 @@ export default function Gallery() {
             href="https://drive.google.com/drive/folders/1-Y1bJm8OSXMbUlykY4Q-OiIq3UlEBjdN"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-text-light/30 hover:border-primary rounded-full text-sm font-medium tracking-wide transition-all duration-300 bg-white hover:bg-bg-subtle group shadow-sm text-text-main"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-text-light/30 hover:border-primary rounded-full text-sm font-medium tracking-wide transition-all duration-300 bg-white dark:bg-white/5 dark:bg-white/5 hover:bg-bg-subtle group shadow-sm text-text-main"
           >
             <span>View Full Google Drive Archive</span>
             <svg

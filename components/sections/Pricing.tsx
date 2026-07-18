@@ -39,7 +39,7 @@ export const PricingCard = ({
   const isHomePage = pathname === '/';
 
   const cardClasses = `
-    backdrop-blur-xl bg-white/40 rounded-3xl shadow-xl flex-1 max-w-sm px-8 py-10 flex flex-col transition-all duration-300
+    backdrop-blur-xl bg-white/40 dark:bg-white/5 rounded-3xl shadow-xl flex-1 max-w-sm px-8 py-10 flex flex-col transition-all duration-300
     border border-white/40 relative z-10 cursor-pointer
     dark:from-white/10 dark:to-white/5 dark:border-white/10 dark:backdrop-brightness-[0.91]
     ${isPopular ? 'scale-105 relative ring-2 ring-primary/40 shadow-2xl hover:scale-[1.08]' : 'hover:scale-[1.03]'}
@@ -49,7 +49,7 @@ export const PricingCard = ({
     mt-10 w-full py-3 rounded-full font-semibold text-sm transition-all duration-300 font-sans cursor-pointer
     ${buttonVariant === 'primary' 
       ? 'bg-primary hover:bg-primary-light text-white shadow-lg shadow-primary/20' 
-      : 'bg-white/50 hover:bg-white/80 text-text-main border border-white/60 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white dark:border-white/20'
+      : 'bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:bg-white/5 text-text-main border border-white/60 dark:bg-white/10 dark:bg-white/5 dark:hover:bg-white/20 dark:bg-white/5 dark:text-white dark:border-white/20'
     }
   `;
 

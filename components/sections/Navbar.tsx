@@ -136,7 +136,7 @@ export default function Navbar() {
             headerShapeClass,
             "border",
             isScrolled || isOpen 
-              ? "bg-white/80 backdrop-blur-xl border-primary/10 shadow-lg" 
+              ? "bg-white/80 dark:bg-white/5 backdrop-blur-xl border-primary/10 shadow-lg" 
               : "bg-transparent border-transparent"
           )}
         >
@@ -164,7 +164,7 @@ export default function Navbar() {
                     document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="hidden sm:inline-flex h-10 items-center justify-center rounded-full bg-white text-text-main px-6 text-sm font-medium border border-primary/20 transition-all hover:bg-primary hover:text-white hover:scale-105 shadow-sm hover:shadow-lg cursor-pointer"
+                className="hidden sm:inline-flex h-10 items-center justify-center rounded-full bg-white dark:bg-white/5 dark:bg-white/5 text-text-main px-6 text-sm font-medium border border-primary/20 transition-all hover:bg-primary hover:text-white hover:scale-105 shadow-sm hover:shadow-lg cursor-pointer"
               >
                 Enroll Now
               </a>
@@ -225,7 +225,7 @@ export default function Navbar() {
                       setIsOpen(false);
                       document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="mt-4 inline-flex h-12 w-full items-center justify-center rounded-full bg-white text-text-main border border-primary/20 text-base font-medium hover:bg-primary hover:text-white shadow-sm transition-all"
+                    className="mt-4 inline-flex h-12 w-full items-center justify-center rounded-full bg-white dark:bg-white/5 dark:bg-white/5 text-text-main border border-primary/20 text-base font-medium hover:bg-primary hover:text-white shadow-sm transition-all"
                   >
                     Enroll Now
                   </a>

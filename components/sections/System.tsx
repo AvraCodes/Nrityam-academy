@@ -130,8 +130,8 @@ export default function System() {
                   onClick={() => setActiveTab(idx)}
                   className={`flex items-start gap-4 p-5 rounded-2xl border text-left transition-all duration-300 relative cursor-pointer outline-none select-none ${
                     isSelected
-                      ? "bg-white border-primary shadow-md translate-x-1"
-                      : "bg-bg-subtle/50 border-text-light/10 hover:bg-white hover:border-primary/30"
+                      ? "bg-white dark:bg-white/5 dark:bg-white/5 border-primary shadow-md translate-x-1"
+                      : "bg-bg-subtle/50 border-text-light/10 hover:bg-white dark:bg-white/5 dark:bg-white/5 hover:border-primary/30"
                   }`}
                 >
                   {/* Selected Indicator Bar */}
@@ -168,7 +168,7 @@ export default function System() {
 
           {/* Right Column: Animated Card Content */}
           <div className="lg:col-span-7">
-            <div className="bg-white border border-text-light/10 rounded-3xl p-8 shadow-sm min-h-[460px] relative flex flex-col justify-between text-left">
+            <div className="bg-white dark:bg-white/5 dark:bg-white/5 border border-text-light/10 rounded-3xl p-8 shadow-sm min-h-[460px] relative flex flex-col justify-between text-left">
               
               <AnimatePresence mode="wait">
                 <motion.div

@@ -19,7 +19,7 @@ export default function FinalCTA() {
         >
           {/* Trust Badge */}
           <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/50 backdrop-blur-sm px-4 py-2 shadow-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/50 dark:bg-white/5 backdrop-blur-sm px-4 py-2 shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-dark opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary-dark"></span>
@@ -41,14 +41,14 @@ export default function FinalCTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <HoverButton 
               onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
-              className="w-full sm:w-auto bg-white text-primary border border-primary hover:bg-primary/5 shadow-xl shadow-primary/10 h-14 px-8 text-base font-medium"
+              className="w-full sm:w-auto bg-white dark:bg-white/5 dark:bg-white/5 text-primary border border-primary hover:bg-primary/5 shadow-xl shadow-primary/10 h-14 px-8 text-base font-medium"
             >
               Enroll Now
               <ArrowRight className="w-5 h-5 ml-2" />
             </HoverButton>
             <button
               onClick={() => document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" })}
-              className="w-full sm:w-auto h-14 px-8 rounded-full text-sm font-medium text-text-main hover:text-primary transition-colors bg-white hover:bg-primary/5 border border-primary/20 shadow-sm"
+              className="w-full sm:w-auto h-14 px-8 rounded-full text-sm font-medium text-text-main hover:text-primary transition-colors bg-white dark:bg-white/5 dark:bg-white/5 hover:bg-primary/5 border border-primary/20 shadow-sm"
             >
               Have Questions?
             </button>

@@ -89,7 +89,7 @@ export default function CoreBelief() {
                   }`}
                 >
                   {isActive && (
-                    <motion.div layoutId="activeBg" className="absolute inset-0 bg-white/40 rounded-2xl -z-10" />
+                    <motion.div layoutId="activeBg" className="absolute inset-0 bg-white/40 dark:bg-white/5 rounded-2xl -z-10" />
                   )}
                   
                   <div className="relative z-10 flex items-center gap-4">
@@ -112,7 +112,7 @@ export default function CoreBelief() {
           {/* Right: Content Display */}
           <div className="lg:col-span-7 relative min-h-[300px] sm:min-h-[250px] lg:min-h-[400px]">
             <motion.div className="flex-1 w-full lg:h-[450px]">
-              <div className="h-full w-full p-8 sm:p-12 rounded-3xl border border-primary/20 bg-white/70 backdrop-blur-md relative overflow-hidden flex flex-col justify-center shadow-2xl">
+              <div className="h-full w-full p-8 sm:p-12 rounded-3xl border border-primary/20 bg-white/70 dark:bg-white/5 backdrop-blur-md relative overflow-hidden flex flex-col justify-center shadow-2xl">
                 {/* Decorative glowing orb */}
                 <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-primary rounded-full blur-[100px] opacity-20" />
                 

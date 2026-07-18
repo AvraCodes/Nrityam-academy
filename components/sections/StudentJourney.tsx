@@ -56,7 +56,7 @@ export default function StudentJourney() {
         </div>
 
         {/* Dynamic Philosophy Summary Card */}
-        <TiltCard className="mb-12 p-8 sm:p-10 border border-primary/20 rounded-3xl bg-white/70 backdrop-blur-md transition-all duration-500 shadow-xl shadow-primary/5">
+        <TiltCard className="mb-12 p-8 sm:p-10 border border-primary/20 rounded-3xl bg-white/70 dark:bg-white/5 backdrop-blur-md transition-all duration-500 shadow-xl shadow-primary/5">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div className="space-y-4">
               <h3 className="text-2xl sm:text-3xl font-serif text-text-main tracking-wide">
@@ -128,7 +128,7 @@ export default function StudentJourney() {
               >
                 {stages.map((stage, i) => (
                   <div key={i} className="relative group">
-                    <div className="h-full p-6 rounded-2xl border border-primary/10 bg-white hover:bg-white transition-colors flex flex-col justify-between group-hover:border-primary/30 relative z-10 shadow-sm">
+                    <div className="h-full p-6 rounded-2xl border border-primary/10 bg-white dark:bg-white/5 dark:bg-white/5 hover:bg-white dark:bg-white/5 dark:bg-white/5 transition-colors flex flex-col justify-between group-hover:border-primary/30 relative z-10 shadow-sm">
                       <div>
                         <div className="text-[10px] font-mono text-primary mb-3 tracking-widest uppercase">Stage 0{i + 1}</div>
                         <h4 className="text-base font-semibold text-text-main mb-2 leading-tight">{stage.title}</h4>
@@ -155,7 +155,7 @@ export default function StudentJourney() {
                 className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                 {channels.map((channel, i) => (
-                  <div key={i} className="p-6 sm:p-8 rounded-2xl border border-primary/10 bg-white hover:border-primary/30 transition-colors flex flex-col gap-4 group shadow-sm">
+                  <div key={i} className="p-6 sm:p-8 rounded-2xl border border-primary/10 bg-white dark:bg-white/5 dark:bg-white/5 hover:border-primary/30 transition-colors flex flex-col gap-4 group shadow-sm">
                     <div className="flex items-center justify-between">
                       <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                         <Activity className="w-4 h-4" />

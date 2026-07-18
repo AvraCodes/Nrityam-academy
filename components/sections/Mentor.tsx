@@ -116,7 +116,7 @@ export default function Mentor() {
                   <motion.div
                     key={idx}
                     variants={itemVariants}
-                    className="p-6 bg-white border border-text-light/10 rounded-2xl hover:border-primary/25 transition-all duration-300 flex flex-col text-left group hover:shadow-md"
+                    className="p-6 bg-white dark:bg-white/5 dark:bg-white/5 border border-text-light/10 rounded-2xl hover:border-primary/25 transition-all duration-300 flex flex-col text-left group hover:shadow-md"
                   >
                     <div className="w-10 h-10 rounded-xl bg-primary-glow/10 text-primary flex items-center justify-center border border-primary/20 mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                       <IconComp className="w-5 h-5" />

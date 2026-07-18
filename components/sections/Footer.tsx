@@ -60,7 +60,7 @@ const Footer = () => {
                   </MarkerContent>
                 </MapMarker>
                 <div className="absolute bottom-4 right-4 flex gap-2">
-                  <MapControls className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20" />
+                  <MapControls className="bg-white/10 dark:bg-white/5 backdrop-blur-md border-white/20 text-white hover:bg-white/20 dark:bg-white/5" />
                 </div>
               </Map>
               <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10 rounded-2xl" />
@@ -142,7 +142,7 @@ const Footer = () => {
                   <a 
                     key={i} 
                     href={social.href}
-                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-white/5 dark:bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
                   >
                     <social.icon className="w-4 h-4" />
                   </a>
@@ -155,11 +155,11 @@ const Footer = () => {
         {/* Bottom Bar - User Provided Theme Component */}
         <div className="mt-20 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-6 pb-6">
           <p className="text-zinc-500 text-sm order-3 sm:order-1">
-            © {new Date().getFullYear()} Nrityaam School of Bharatanatyam. All rights reserved.
+            © {new Date().getFullYear()} Nrityaam. Designed by <a href="https://brew-web.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Avra from BrewWeb</a> (<a href="https://portfolioavra.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Portfolio</a>)
           </p>
 
           <div className="flex items-center justify-center order-1 sm:order-2">
-            <div className="flex items-center rounded-full border border-white/20 bg-white/5 p-1">
+            <div className="flex items-center rounded-full border border-white/20 bg-white/5 dark:bg-white/5 p-1">
               <button
                 onClick={() => setTheme("light")}
                 className="bg-primary/20 mr-2 rounded-full p-2 text-white hover:bg-primary transition-colors"
@@ -175,7 +175,7 @@ const Footer = () => {
 
               <button
                 onClick={() => setTheme("dark")}
-                className="ml-2 rounded-full p-2 text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
+                className="ml-2 rounded-full p-2 text-zinc-400 hover:text-white hover:bg-white/10 dark:bg-white/5 transition-colors"
               >
                 <DIcons.Moon className="h-4 w-4" strokeWidth={1.5} />
                 <span className="sr-only">Dark Theme</span>

@@ -6,31 +6,31 @@
   --font-sans:  "Outfit", system-ui, sans-serif;
 
   /* ── Brand Colors (Royal Maroon & Temple Gold) ── */
-  --color-primary:        #7A1E2C;
-  --color-primary-light:  #9D2E3E;
-  --color-primary-dark:   #59131D;
-  --color-primary-glow:   rgba(122, 30, 44, 0.18);
+  --color-primary:        var(--primary);
+  --color-primary-light:  var(--primary-light);
+  --color-primary-dark:   var(--primary-dark);
+  --color-primary-glow:   var(--primary-glow);
 
-  --color-secondary:      #D4AF37;
-  --color-secondary-light:#E5C254;
-  --color-secondary-dark: #B39023;
+  --color-secondary:      var(--secondary);
+  --color-secondary-light:var(--secondary-light);
+  --color-secondary-dark: var(--secondary-dark);
 
-  --color-bg-ivory:       #FFF8F0;
-  --color-bg-subtle:      #FAF2E6;
+  --color-bg-ivory:       var(--bg-ivory);
+  --color-bg-subtle:      var(--bg-subtle);
 
-  --color-text-main:      #2B2118;
-  --color-text-muted:     #6E5D50;
-  --color-text-light:     #A59282;
+  --color-text-main:      var(--text-main);
+  --color-text-muted:     var(--text-muted);
+  --color-text-light:     var(--text-light);
 
-  --color-accent:         #8B5E3C;
-  --color-accent-light:   #A97F5B;
-  --color-accent-dark:    #6D472B;
+  --color-accent:         var(--accent);
+  --color-accent-light:   var(--accent-light);
+  --color-accent-dark:    var(--accent-dark);
 
   /* ── Shadows ──────────────────────────────── */
-  --shadow-primary: 0 8px 32px rgba(122, 30, 44, 0.18);
-  --shadow-gold:    0 8px 32px rgba(212, 175, 55, 0.25);
-  --shadow-card:    0 4px 24px rgba(43, 33, 24, 0.08);
-  --shadow-lg:      0 12px 48px rgba(43, 33, 24, 0.14);
+  --shadow-primary: var(--shadow-primary-val);
+  --shadow-gold:    var(--shadow-gold-val);
+  --shadow-card:    var(--shadow-card-val);
+  --shadow-lg:      var(--shadow-lg-val);
 
   /* ── Border Radius ────────────────────────── */
   --radius-sm:   4px;
@@ -41,6 +41,62 @@
 
   /* ── Easings ──────────────────────────────── */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  :root {
+    --primary:        #7A1E2C;
+    --primary-light:  #9D2E3E;
+    --primary-dark:   #59131D;
+    --primary-glow:   rgba(122, 30, 44, 0.18);
+    
+    --secondary:      #D4AF37;
+    --secondary-light:#E5C254;
+    --secondary-dark: #B39023;
+    
+    --bg-ivory:       #FFF8F0;
+    --bg-subtle:      #FAF2E6;
+    
+    --text-main:      #2B2118;
+    --text-muted:     #6E5D50;
+    --text-light:     #A59282;
+    
+    --accent:         #8B5E3C;
+    --accent-light:   #A97F5B;
+    --accent-dark:    #6D472B;
+
+    --shadow-primary-val: 0 8px 32px rgba(122, 30, 44, 0.18);
+    --shadow-gold-val:    0 8px 32px rgba(212, 175, 55, 0.25);
+    --shadow-card-val:    0 4px 24px rgba(43, 33, 24, 0.08);
+    --shadow-lg-val:      0 12px 48px rgba(43, 33, 24, 0.14);
+  }
+
+  .dark {
+    --primary:        #8C2636;
+    --primary-light:  #B03749;
+    --primary-dark:   #4A0E15;
+    --primary-glow:   rgba(140, 38, 54, 0.25);
+    
+    --secondary:      #DDBB48;
+    --secondary-light:#EED268;
+    --secondary-dark: #B39023;
+    
+    --bg-ivory:       #120A0B;
+    --bg-subtle:      #1A0F11;
+    
+    --text-main:      #F5F0EB;
+    --text-muted:     #B5A69B;
+    --text-light:     #8C7D73;
+    
+    --accent:         #A97F5B;
+    --accent-light:   #C59D7D;
+    --accent-dark:    #8B5E3C;
+
+    --shadow-primary-val: 0 8px 32px rgba(140, 38, 54, 0.25);
+    --shadow-gold-val:    0 8px 32px rgba(221, 187, 72, 0.15);
+    --shadow-card-val:    0 4px 24px rgba(0, 0, 0, 0.4);
+    --shadow-lg-val:      0 12px 48px rgba(0, 0, 0, 0.6);
+  }
 }
 
 /* ── Base resets ──────────────────────────────── */

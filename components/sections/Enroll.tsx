@@ -85,7 +85,7 @@ export default function Enroll() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className="p-6 bg-white border border-text-light/20 rounded-3xl hover:shadow-lg transition-all duration-300 relative text-left group"
+                className="p-6 bg-white dark:bg-white/5 dark:bg-white/5 border border-text-light/20 rounded-3xl hover:shadow-lg transition-all duration-300 relative text-left group"
               >
                 {/* Step indicator number */}
                 <div className="absolute top-6 right-6 text-5xl font-serif text-text-light/20 group-hover:text-primary/10 transition-colors font-bold select-none">

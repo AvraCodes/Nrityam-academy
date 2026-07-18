@@ -60,7 +60,7 @@ export default function FAQ() {
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 onMouseEnter={() => setOpen(i)}
                 onMouseLeave={() => setOpen(null)}
-                className={`rounded-2xl border bg-white/50 transition-colors ${isOpen ? 'border-secondary-dark/40 shadow-sm' : 'border-primary/10 hover:border-primary/20'}`}
+                className={`rounded-2xl border bg-white/50 dark:bg-white/5 transition-colors ${isOpen ? 'border-secondary-dark/40 shadow-sm' : 'border-primary/10 hover:border-primary/20'}`}
               >
                 <button
                   className="flex w-full items-center justify-between gap-4 px-6 sm:px-8 py-6 text-left"

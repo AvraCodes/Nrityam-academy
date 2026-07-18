@@ -60,7 +60,7 @@ export default function ProblemStatement() {
             </p>
 
             {/* Result callout card */}
-            <div className="p-6 bg-white/50 backdrop-blur-md border border-white/40 rounded-2xl shadow-md relative overflow-hidden group hover:bg-white/60 hover:border-primary/30 transition-colors">
+            <div className="p-6 bg-white/50 dark:bg-white/5 backdrop-blur-md border border-white/40 rounded-2xl shadow-md relative overflow-hidden group hover:bg-white/60 dark:bg-white/5 hover:border-primary/30 transition-colors">
               <div className="absolute top-0 left-0 h-full w-1 bg-primary" />
               <div className="text-xs uppercase tracking-widest text-accent font-semibold mb-2 flex items-center gap-2">
                 <AlertCircle className="w-4 h-4" />
@@ -88,7 +88,7 @@ export default function ProblemStatement() {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="flex gap-4 p-5 bg-white/50 backdrop-blur-md border border-white/40 rounded-2xl transition-all duration-300 group hover:translate-y-[-2px] hover:border-primary/40 hover:bg-white/70 hover:shadow-md"
+                  className="flex gap-4 p-5 bg-white/50 dark:bg-white/5 backdrop-blur-md border border-white/40 rounded-2xl transition-all duration-300 group hover:translate-y-[-2px] hover:border-primary/40 hover:bg-white/70 dark:bg-white/5 hover:shadow-md"
                 >
                   <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary-glow/10 border border-primary/20 text-primary font-sans text-sm font-semibold group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                     {index + 1}

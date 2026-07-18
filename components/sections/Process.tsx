@@ -43,7 +43,7 @@ export default function Process() {
                 transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
                 className="relative"
               >
-                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/20 bg-white hover:border-primary/40 transition-colors shadow-sm">
+                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/20 bg-white dark:bg-white/5 dark:bg-white/5 hover:border-primary/40 transition-colors shadow-sm">
                   <s.icon className="h-6 w-6 text-text-muted" />
                   <span className="absolute -top-3 -right-3 flex h-7 w-7 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-text-main border-[3px] border-white">{s.k}</span>
                 </div>

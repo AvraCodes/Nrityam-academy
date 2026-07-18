@@ -76,7 +76,7 @@ export default function Contact() {
 
             <div className="space-y-8 mb-12">
               <div className="flex items-start gap-5 group">
-                <div className="w-12 h-12 rounded-2xl bg-white border border-primary/10 shadow-sm flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 dark:bg-white/5 border border-primary/10 shadow-sm flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div className="pt-1">
@@ -86,7 +86,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-5 group">
-                <div className="w-12 h-12 rounded-2xl bg-white border border-primary/10 shadow-sm flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 dark:bg-white/5 border border-primary/10 shadow-sm flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div className="pt-1">
@@ -96,7 +96,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-5 group">
-                <div className="w-12 h-12 rounded-2xl bg-white border border-primary/10 shadow-sm flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 dark:bg-white/5 border border-primary/10 shadow-sm flex items-center justify-center text-primary group-hover:scale-105 transition-transform shrink-0">
                   <Instagram className="w-5 h-5" />
                 </div>
                 <div className="pt-1">
@@ -114,7 +114,7 @@ export default function Contact() {
             </div>
 
             {/* WhatsApp Box */}
-            <div className="p-6 bg-white border border-[#25D366]/20 rounded-2xl shadow-sm text-left">
+            <div className="p-6 bg-white dark:bg-white/5 dark:bg-white/5 border border-[#25D366]/20 rounded-2xl shadow-sm text-left">
               <h4 className="text-sm font-semibold text-text-main mb-2 flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
                 Need Immediate Answers?
@@ -126,7 +126,7 @@ export default function Contact() {
                 href="https://wa.me/916291333077"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full gap-2 px-6 py-3.5 bg-white border border-[#25D366]/40 hover:bg-[#25D366]/5 text-[#25D366] font-semibold rounded-xl text-sm transition-colors cursor-pointer shadow-sm"
+                className="inline-flex items-center justify-center w-full gap-2 px-6 py-3.5 bg-white dark:bg-white/5 dark:bg-white/5 border border-[#25D366]/40 hover:bg-[#25D366]/5 text-[#25D366] font-semibold rounded-xl text-sm transition-colors cursor-pointer shadow-sm"
               >
                 <MessageSquare className="w-4 h-4" />
                 Chat Now on WhatsApp
@@ -136,7 +136,7 @@ export default function Contact() {
 
           {/* Right Column: Inquiry Form Card */}
           <div className="lg:col-span-7">
-            <div className="bg-white border border-primary/10 p-8 sm:p-12 rounded-3xl shadow-xl shadow-primary/5 relative">
+            <div className="bg-white dark:bg-white/5 dark:bg-white/5 border border-primary/10 p-8 sm:p-12 rounded-3xl shadow-xl shadow-primary/5 relative">
               <h3 className="text-2xl font-serif text-text-main mb-8 text-left">
                 Admission & Goals Inquiry
               </h3>
@@ -160,7 +160,7 @@ export default function Contact() {
                         type="text"
                         {...register("name")}
                         placeholder="e.g. Priyanjali Roy"
-                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
+                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
                       />
                       {errors.name && <p className="text-red-500 text-xs mt-2">{errors.name.message}</p>}
                     </div>
@@ -171,7 +171,7 @@ export default function Contact() {
                         type="email"
                         {...register("email")}
                         placeholder="e.g. priya@example.com"
-                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
+                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
                       />
                       {errors.email && <p className="text-red-500 text-xs mt-2">{errors.email.message}</p>}
                     </div>
@@ -184,7 +184,7 @@ export default function Contact() {
                         type="tel"
                         {...register("phone")}
                         placeholder="e.g. +91 98765 43210"
-                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
+                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm placeholder:text-text-light/50"
                       />
                       {errors.phone && <p className="text-red-500 text-xs mt-2">{errors.phone.message}</p>}
                     </div>
@@ -193,7 +193,7 @@ export default function Contact() {
                       <label className="block text-xs uppercase tracking-wider text-text-light font-semibold mb-2">Experience Level</label>
                       <select
                         {...register("experience")}
-                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm appearance-none cursor-pointer"
+                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm appearance-none cursor-pointer"
                         style={{
                           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237A1E2C'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
                           backgroundPosition: "right 16px center",
@@ -216,7 +216,7 @@ export default function Contact() {
                       {...register("message")}
                       rows={5}
                       placeholder="Tell us what you want to achieve or any challenges you struggle with..."
-                      className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm resize-none placeholder:text-text-light/50"
+                      className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-primary/10 rounded-xl focus:bg-white dark:bg-white/5 dark:bg-white/5 focus:border-primary/40 focus:ring-1 focus:ring-primary/40 outline-none transition-all text-text-main text-sm resize-none placeholder:text-text-light/50"
                     />
                     {errors.message && <p className="text-red-500 text-xs mt-2">{errors.message.message}</p>}
                   </div>

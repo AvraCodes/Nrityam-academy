@@ -41,7 +41,7 @@ function Tile({ children, wrapperClassName = '', className = '', delay = 0 }: { 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      className={`group relative overflow-hidden rounded-3xl border border-primary/10 bg-white/70 shadow-sm p-6 transition-colors hover:border-primary/40 ${wrapperClassName}`}
+      className={`group relative overflow-hidden rounded-3xl border border-primary/10 bg-white/70 dark:bg-white/5 shadow-sm p-6 transition-colors hover:border-primary/40 ${wrapperClassName}`}
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -121,7 +121,7 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 2x1 Lifetime Access */}
-          <Tile wrapperClassName="col-span-2 row-span-1 bg-white/70 shadow-sm" delay={0.3}>
+          <Tile wrapperClassName="col-span-2 row-span-1 bg-white/70 dark:bg-white/5 shadow-sm" delay={0.3}>
             <div className="flex h-full items-center gap-6">
               <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary-dark/10 ring-1 ring-secondary-dark/20">
                 <Clock className="h-7 w-7 text-secondary-dark" />
@@ -134,7 +134,7 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 1x2 Certification */}
-          <Tile wrapperClassName="row-span-2 bg-white/70 shadow-sm" delay={0.4}>
+          <Tile wrapperClassName="row-span-2 bg-white/70 dark:bg-white/5 shadow-sm" delay={0.4}>
             <div className="flex flex-col h-full justify-between">
               <div>
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-text-muted">
