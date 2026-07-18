@@ -9,14 +9,14 @@ import "./globals.css";
 
 const blore = localFont({
   src: "../public/fonts/Blore DEMO.otf",
-  variable: "--font-serif",
+  variable: "--font-blore",
   display: "swap",
 });
 
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-sans",
+  variable: "--font-outfit",
   display: "swap",
 });
 
