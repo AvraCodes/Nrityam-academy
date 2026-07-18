@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { Stethoscope, CalendarPlus, Video, Repeat, Star } from 'lucide-react'
+import { Stethoscope, CalendarPlus, Video, Repeat, Star, ArrowRight } from 'lucide-react'
 
 const STEPS = [
   { icon: Stethoscope, k: '01', t: 'Evaluate', d: 'Submit a short video or join a live evaluation to determine your current level and batch placement.' },
@@ -31,8 +31,7 @@ export default function Process() {
         </motion.div>
 
         <div className="relative mt-20">
-          {/* Professional dashed connecting line */}
-          <div className="absolute left-8 right-8 top-7 hidden lg:block border-t-2 border-dashed border-primary/20 z-0" />
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
             {STEPS.map((s, i) => (
               <motion.div
@@ -49,6 +48,12 @@ export default function Process() {
                 </div>
                 <h3 className="mt-6 text-xl font-medium text-text-main">{s.t}</h3>
                 <p className="mt-2 text-sm text-text-muted font-light leading-relaxed">{s.d}</p>
+
+                {i < STEPS.length - 1 && (
+                  <div className="hidden lg:flex absolute top-7 -right-6 items-center justify-center -translate-y-1/2 w-6 text-primary/30 z-0">
+                    <ArrowRight className="w-6 h-6" />
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
