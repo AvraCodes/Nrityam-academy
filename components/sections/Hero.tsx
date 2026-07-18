@@ -83,7 +83,7 @@ export default function Hero() {
 
         <DanceSVG />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 lg:mt-12">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32 lg:mt-24">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             
             <motion.div 
@@ -92,24 +92,21 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              {/* Status Badge */}
+              {/* Status Text */}
               <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm px-4 py-1.5 mb-8"
+                className="flex items-center gap-4 mb-8"
               >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-light opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                <span className="text-[11px] font-medium tracking-wide text-text-main">
-                  Admissions Open for Global Batch 2026
+                <div className="h-[1px] w-12 bg-primary/40" />
+                <span className="text-sm font-medium tracking-widest text-primary uppercase">
+                  Admissions Open 2026
                 </span>
               </motion.div>
 
               {/* Main Headline */}
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-[72px] font-medium tracking-tight mb-8 text-balance leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main to-text-muted">
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight mb-8 text-balance leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main to-text-muted">
                 Master the True <br /> Art of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary italic font-light">Bharatanatyam</span>
               </h1>
 
