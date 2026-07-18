@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { motion } from "framer-motion";
 import { MessageSquare, Mail, Instagram, MapPin, Send, Check } from "lucide-react";
 
 // Form validation schema using Zod
@@ -58,7 +59,13 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column */}
-          <div className="lg:col-span-5 text-left flex flex-col justify-center h-full">
+          <motion.div 
+            className="lg:col-span-5 text-left flex flex-col justify-center h-full"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="flex items-center gap-3 mb-6">
               <span className="w-8 h-[2px] bg-primary rounded-full" />
               <span className="text-sm font-semibold tracking-widest text-primary uppercase">
@@ -132,10 +139,16 @@ export default function Contact() {
                 Chat Now on WhatsApp
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Inquiry Form Card */}
-          <div className="lg:col-span-7">
+          <motion.div 
+            className="lg:col-span-7"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="bg-white dark:bg-white/5 dark:bg-white/5 border border-primary/10 p-8 sm:p-12 rounded-3xl shadow-xl shadow-primary/5 relative">
               <h3 className="text-2xl font-serif leading-relaxed text-text-main mb-8 text-left">
                 Admission & Goals Inquiry
@@ -238,7 +251,7 @@ export default function Contact() {
                 </form>
               )}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

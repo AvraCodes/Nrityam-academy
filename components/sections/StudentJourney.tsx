@@ -46,14 +46,20 @@ export default function StudentJourney() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <motion.div 
+          className="text-center mb-16 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-text-main mb-6">
             How We Nurture a Complete Dancer
           </h2>
           <p className="text-lg text-text-muted font-light">
             We don't just teach steps; we guide you through a profound transformation. Every student follows a proven path supported by modern learning channels.
           </p>
-        </div>
+        </motion.div>
 
         {/* Dynamic Philosophy Summary Card */}
         <TiltCard className="mb-12 p-8 sm:p-10 border border-primary/20 rounded-3xl bg-white/70 dark:bg-white/5 backdrop-blur-md transition-all duration-500 shadow-xl shadow-primary/5">

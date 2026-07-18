@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
@@ -35,6 +35,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 import GlobalBackground from "@/components/ui/GlobalBackground";
 
 export default function RootLayout({
@@ -51,7 +58,7 @@ export default function RootLayout({
       <head>
         <link rel="preload" href="/hero-bg.mp4" as="video" type="video/mp4" />
       </head>
-      <body className="flex flex-col min-h-screen overflow-x-hidden w-full">
+      <body className="flex flex-col min-h-[100dvh] overflow-x-hidden w-full">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

@@ -39,14 +39,20 @@ export default function FAQ() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+        >
           <span className="flex items-center justify-center gap-4 mb-8">
             Common Questions
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">
             Everything you need <br /> to know.
           </h2>
-        </div>
+        </motion.div>
 
         <div className="space-y-4">
           {FAQS.map((f, i) => {

@@ -45,7 +45,7 @@ const pricingPlans = [
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col min-h-screen overflow-hidden">
+    <div className="relative flex flex-col min-h-[100dvh] overflow-hidden">
       <Hero />
       <CoreBelief />
       <Process />

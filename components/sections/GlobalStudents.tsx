@@ -133,7 +133,13 @@ export default function GlobalStudents() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(122,30,44,0.05),transparent_70%)] z-0" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 sm:mb-24">
+        <motion.div 
+          className="text-center mb-16 sm:mb-24"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">
             Connecting Dancers <br className="hidden sm:block" />
             <span className="text-primary">
@@ -143,7 +149,7 @@ export default function GlobalStudents() {
           <p className="text-base sm:text-lg text-text-muted max-w-2xl mx-auto font-sans">
             Join our thriving community of international students learning authentic Bharatanatyam from the comfort of their homes.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left Side: Globe Pulse */}

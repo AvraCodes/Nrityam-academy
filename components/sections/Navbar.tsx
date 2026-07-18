@@ -199,7 +199,7 @@ export default function Navbar() {
               
               <button 
                 onClick={toggleMenu} 
-                className="md:hidden p-2 -mr-2 text-text-main hover:text-primary transition-colors"
+                className="md:hidden p-3 -mr-3 text-text-main hover:text-primary transition-colors"
                 aria-label={isOpen ? "Close Menu" : "Open Menu"}
               >
                 <AnimatePresence mode="wait">
