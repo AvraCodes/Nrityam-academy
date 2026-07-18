@@ -174,8 +174,17 @@ export default function AcademyFeatures() {
             <p className="text-xs text-text-muted font-light">Deep theoretical understanding.</p>
           </Tile>
 
+          {/* 1x1 Live Q&A */}
+          <Tile delay={0.8}>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
+              <GiBarefoot className="h-5 w-5" />
+            </div>
+            <h3 className="text-lg font-medium text-text-main mb-1">Live Q&A</h3>
+            <p className="text-xs text-text-muted font-light">Weekly dedicated doubt clearing.</p>
+          </Tile>
+
           {/* 2x1 Repertoire */}
-          <Tile wrapperClassName="col-span-2 row-span-1 bg-white/70 dark:bg-white/5 shadow-sm" delay={0.8}>
+          <Tile wrapperClassName="col-span-2 row-span-1 bg-white/70 dark:bg-white/5 shadow-sm" delay={0.9}>
             <div className="flex h-full items-center gap-6">
               <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/5 ring-1 ring-primary/10">
                 <GiDoubleNecklace className="h-7 w-7 text-primary" />
@@ -185,15 +194,6 @@ export default function AcademyFeatures() {
                 <p className="text-sm text-text-muted font-light">Master traditional Margam pieces with authentic Tanjore style choreography.</p>
               </div>
             </div>
-          </Tile>
-
-          {/* 1x1 Live Q&A */}
-          <Tile delay={0.9}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
-              <GiBarefoot className="h-5 w-5" />
-            </div>
-            <h3 className="text-lg font-medium text-text-main mb-1">Live Q&A</h3>
-            <p className="text-xs text-text-muted font-light">Weekly dedicated doubt clearing.</p>
           </Tile>
 
         </div>

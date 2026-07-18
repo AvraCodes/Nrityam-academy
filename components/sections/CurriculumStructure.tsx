@@ -104,8 +104,8 @@ export default function CurriculumStructure() {
                   >
                     <TiltCard className={`rounded-3xl border transition-all duration-300 overflow-hidden ${
                       isActive 
-                        ? 'border-secondary/30 bg-white dark:bg-white/5 dark:bg-white/5 shadow-lg shadow-secondary/10' 
-                        : 'border-accent/10 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:bg-white/5'
+                        ? 'border-secondary/30 bg-white dark:bg-white/5 shadow-lg shadow-secondary/10' 
+                        : 'border-accent/10 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/10'
                     }`}>
                       <button
                         onMouseEnter={() => setActiveLayer(index)}

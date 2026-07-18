@@ -56,7 +56,7 @@ export default function Home() {
       <GlobalStudents />
       <Team />
       <ModernPricingPage
-        title="Investment in Your Art"
+        title={<span className="text-transparent bg-clip-text bg-gradient-to-l from-primary via-secondary to-accent italic font-light pr-2">Investment in Your Art</span>}
         subtitle="Choose the structured plan that fits your current level and goals."
         plans={pricingPlans}
       />

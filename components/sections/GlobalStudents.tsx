@@ -142,7 +142,7 @@ export default function GlobalStudents() {
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main/90 to-primary/80 mb-6">
             Connecting Dancers <br className="hidden sm:block" />
-            <span className="text-primary">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent italic font-light pl-1 pr-2 pb-1">
               Across the Globe
             </span>
           </h2>

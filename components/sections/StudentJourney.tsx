@@ -134,7 +134,7 @@ export default function StudentJourney() {
               >
                 {stages.map((stage, i) => (
                   <div key={i} className="relative group">
-                    <div className="h-full p-6 rounded-2xl border border-primary/10 bg-white dark:bg-white/5 dark:bg-white/5 hover:bg-white dark:bg-white/5 dark:bg-white/5 transition-colors flex flex-col justify-between group-hover:border-primary/30 relative z-10 shadow-sm">
+                    <div className="h-full p-6 rounded-2xl border border-primary/10 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/10 transition-colors flex flex-col justify-between group-hover:border-primary/30 relative z-10 shadow-sm">
                       <div>
                         <div className="text-[10px] font-mono text-primary mb-3 tracking-widest uppercase">Stage 0{i + 1}</div>
                         <h4 className="text-base font-semibold text-text-main mb-2 leading-tight">{stage.title}</h4>
@@ -161,7 +161,7 @@ export default function StudentJourney() {
                 className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                 {channels.map((channel, i) => (
-                  <div key={i} className="p-6 sm:p-8 rounded-2xl border border-primary/10 bg-white dark:bg-white/5 dark:bg-white/5 hover:border-primary/30 transition-colors flex flex-col gap-4 group shadow-sm">
+                  <div key={i} className="p-6 sm:p-8 rounded-2xl border border-primary/10 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/10 hover:border-primary/30 transition-colors flex flex-col gap-4 group shadow-sm">
                     <div className="flex items-center justify-between">
                       <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                         <Activity className="w-4 h-4" />

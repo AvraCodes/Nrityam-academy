@@ -44,7 +44,7 @@ export default function Hero() {
  <section className="relative min-h-[90dvh] flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-16">
         {/* Background radial gradient */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent,var(--color-bg-ivory))] opacity-80" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent,var(--color-bg-ivory))] opacity-60" />
         </div>
 
         <DanceSVG />
@@ -74,7 +74,7 @@ export default function Hero() {
 
               {/* Main Headline */}
               <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight mb-8 text-balance leading-relaxed text-transparent bg-clip-text bg-gradient-to-br from-text-main via-text-main to-text-muted">
-                Master the True <br /> Art of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary italic font-light">Bharatanatyam</span>
+                Master the True <br /> Art of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary italic font-light pl-1 pr-2 pb-1">Bharatanatyam</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto mb-14 leading-relaxed font-light text-balance">
