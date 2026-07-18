@@ -108,15 +108,12 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 1x1 Mentor */}
-          <Tile delay={0.2} wrapperClassName="bg-gradient-to-br from-primary-dark via-primary to-secondary-dark">
-            <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-colors" />
-            <div className="relative z-10 flex flex-col justify-end h-full">
-              <div className="flex items-center gap-2 mb-1">
-                <GiBurningDot className="w-4 h-4 text-secondary" />
-                <h3 className="text-sm font-medium text-white">Direct Mentorship</h3>
-              </div>
-              <p className="text-[10px] text-white/80">Taught entirely by Guru Ranbbir.</p>
+          <Tile delay={0.2}>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
+              <GiBurningDot className="h-5 w-5" />
             </div>
+            <h3 className="text-lg font-medium text-text-main mb-1">Direct Mentorship</h3>
+            <p className="text-xs text-text-muted font-light">Taught entirely by <strong className="text-text-main">Guru Ranbbir</strong>.</p>
           </Tile>
 
           {/* 2x1 Lifetime Access */}
@@ -155,17 +152,48 @@ export default function AcademyFeatures() {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
               <GiHeartDrop className="h-5 w-5" />
             </div>
-            <h3 className="text-sm font-medium text-text-main mb-1">Fitness Focused</h3>
+            <h3 className="text-lg font-medium text-text-main mb-1">Fitness Focused</h3>
             <p className="text-xs text-text-muted font-light">Dedicated stamina building modules.</p>
           </Tile>
 
           {/* 1x1 Offline Workshops */}
           <Tile delay={0.6}>
-            <div className="flex flex-col items-center text-center justify-center h-full gap-2">
-              <GiPositionMarker className="w-6 h-6 text-text-main/30" />
-              <h3 className="text-sm font-medium text-text-main">Annual Retreats</h3>
-              <p className="text-[10px] text-text-muted">Exclusive offline meetups in India & Europe.</p>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
+              <GiPositionMarker className="h-5 w-5" />
             </div>
+            <h3 className="text-lg font-medium text-text-main mb-1">Annual Retreats</h3>
+            <p className="text-xs text-text-muted font-light">Exclusive offline meetups globally.</p>
+          </Tile>
+          
+          {/* 1x1 Theory */}
+          <Tile delay={0.7}>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-text-muted">
+              <GiIndianPalace className="h-5 w-5" />
+            </div>
+            <h3 className="text-lg font-medium text-text-main mb-1">Natya Shastra</h3>
+            <p className="text-xs text-text-muted font-light">Deep theoretical understanding.</p>
+          </Tile>
+
+          {/* 2x1 Repertoire */}
+          <Tile wrapperClassName="col-span-2 row-span-1 bg-white/70 dark:bg-white/5 shadow-sm" delay={0.8}>
+            <div className="flex h-full items-center gap-6">
+              <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/5 ring-1 ring-primary/10">
+                <GiDoubleNecklace className="h-7 w-7 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-medium text-text-main mb-1">Advanced Repertoires</h3>
+                <p className="text-sm text-text-muted font-light">Master traditional Margam pieces with authentic Tanjore style choreography.</p>
+              </div>
+            </div>
+          </Tile>
+
+          {/* 1x1 Live Q&A */}
+          <Tile delay={0.9}>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
+              <GiBarefoot className="h-5 w-5" />
+            </div>
+            <h3 className="text-lg font-medium text-text-main mb-1">Live Q&A</h3>
+            <p className="text-xs text-text-muted font-light">Weekly dedicated doubt clearing.</p>
           </Tile>
 
         </div>

@@ -82,15 +82,15 @@ export function GlobePulse({
       globe = createGlobe(canvas, {
       devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
       width, height: width,
-      phi: 0, theta: 0.2, dark: 0, diffuse: 1.2,
+      phi: 0, theta: 0.2, dark: 1, diffuse: 1.2,
       mapSamples: 16000, mapBrightness: 6,
-      baseColor: [0.95, 0.9, 0.85],
+      baseColor: [0.3, 0.3, 0.3],
       markerColor: [0.83, 0.68, 0.21],
-      glowColor: [1, 1, 1],
+      glowColor: [0.1, 0.1, 0.1],
       markerElevation: 0,
       markers: markers.map((m) => ({ location: m.location, size: 0.025, id: m.id })),
       arcs: [], arcColor: [0.83, 0.68, 0.21],
-      arcWidth: 0.5, arcHeight: 0.25, opacity: 0.9,
+      arcWidth: 0.5, arcHeight: 0.25, opacity: 0.8,
     })
     function animate() {
       if (!isPausedRef.current) phi += speed
