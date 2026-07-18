@@ -152,7 +152,7 @@ export default function Hero() {
       </section>
 
       {/* Trust Metrics banner below the fold */}
-      <div className="bg-bg-subtle border-y border-primary/10 relative z-20">
+      <div className="bg-white/40 dark:bg-black/40 backdrop-blur-md border-y border-primary/10 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             <StatItem value="19+" label="Years Expertise" />

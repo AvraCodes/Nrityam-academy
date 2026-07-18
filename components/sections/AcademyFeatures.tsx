@@ -2,8 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Video, Users, Medal, Clock, ShieldCheck, HeartPulse, GraduationCap, MapPin } from 'lucide-react'
-
+import { GiLotusFlower, GiIndianPalace, GiBurningDot, GiDoubleNecklace, GiScrollUnfurled, GiOpenBook, GiTribalPendant, GiBarefoot, GiHourglass, GiShieldBounces, GiHeartDrop, GiPositionMarker } from 'react-icons/gi'
 function Counter({ value, decimals = 0, suffix = '' }: { value: number; decimals?: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, amount: 0.5 })
@@ -76,7 +75,7 @@ export default function AcademyFeatures() {
           <Tile wrapperClassName="col-span-2 row-span-2" className="flex flex-col justify-between" delay={0}>
             <div className="flex items-start justify-between">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/20 ring-1 ring-primary/30">
-                <Video className="h-6 w-6 text-primary-light" />
+                <GiScrollUnfurled className="h-6 w-6 text-primary" />
               </div>
               <span className="rounded-full bg-primary/20 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-primary-light">Live & Interactive</span>
             </div>
@@ -102,18 +101,18 @@ export default function AcademyFeatures() {
           {/* 1x1 Global Community */}
           <Tile delay={0.1}>
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-text-muted">
-              <Users className="h-5 w-5" />
+              <GiLotusFlower className="h-5 w-5" />
             </div>
             <h3 className="text-lg font-medium text-text-main mb-1">Global Peers</h3>
             <p className="text-xs text-text-muted font-light">Join students from <strong className="text-text-main">25+ countries</strong>.</p>
           </Tile>
 
           {/* 1x1 Mentor */}
-          <Tile delay={0.2} wrapperClassName="bg-[url('https://images.unsplash.com/photo-1549471013-3364d73206c8?q=80&w=400&auto=format&fit=crop')] bg-cover bg-center">
+          <Tile delay={0.2} wrapperClassName="bg-gradient-to-br from-primary-dark via-primary to-secondary-dark">
             <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-colors" />
             <div className="relative z-10 flex flex-col justify-end h-full">
               <div className="flex items-center gap-2 mb-1">
-                <Medal className="w-4 h-4 text-secondary" />
+                <GiBurningDot className="w-4 h-4 text-secondary" />
                 <h3 className="text-sm font-medium text-white">Direct Mentorship</h3>
               </div>
               <p className="text-[10px] text-white/80">Taught entirely by Guru Ranbbir.</p>
@@ -124,7 +123,7 @@ export default function AcademyFeatures() {
           <Tile wrapperClassName="col-span-2 row-span-1 bg-white/70 dark:bg-white/5 shadow-sm" delay={0.3}>
             <div className="flex h-full items-center gap-6">
               <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary-dark/10 ring-1 ring-secondary-dark/20">
-                <Clock className="h-7 w-7 text-secondary-dark" />
+                <GiHourglass className="h-7 w-7 text-secondary-dark" />
               </div>
               <div>
                 <h3 className="text-xl font-medium text-text-main mb-1">Lifetime Recording Access</h3>
@@ -138,7 +137,7 @@ export default function AcademyFeatures() {
             <div className="flex flex-col h-full justify-between">
               <div>
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-text-muted">
-                  <GraduationCap className="h-5 w-5" />
+                  <GiOpenBook className="h-5 w-5" />
                 </div>
                 <h3 className="text-lg font-medium text-text-main mb-2">Certification</h3>
                 <p className="text-xs text-text-muted font-light leading-relaxed">
@@ -146,7 +145,7 @@ export default function AcademyFeatures() {
                 </p>
               </div>
               <div className="w-full aspect-square rounded-full border border-dashed border-primary/20 flex items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity bg-primary/5">
-                <ShieldCheck className="w-10 h-10 text-secondary-dark" />
+                <GiShieldBounces className="w-10 h-10 text-secondary-dark" />
               </div>
             </div>
           </Tile>
@@ -154,7 +153,7 @@ export default function AcademyFeatures() {
           {/* 1x1 Physical conditioning */}
           <Tile delay={0.5}>
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
-              <HeartPulse className="h-5 w-5" />
+              <GiHeartDrop className="h-5 w-5" />
             </div>
             <h3 className="text-sm font-medium text-text-main mb-1">Fitness Focused</h3>
             <p className="text-xs text-text-muted font-light">Dedicated stamina building modules.</p>
@@ -163,7 +162,7 @@ export default function AcademyFeatures() {
           {/* 1x1 Offline Workshops */}
           <Tile delay={0.6}>
             <div className="flex flex-col items-center text-center justify-center h-full gap-2">
-              <MapPin className="w-6 h-6 text-text-main/30" />
+              <GiPositionMarker className="w-6 h-6 text-text-main/30" />
               <h3 className="text-sm font-medium text-text-main">Annual Retreats</h3>
               <p className="text-[10px] text-text-muted">Exclusive offline meetups in India & Europe.</p>
             </div>

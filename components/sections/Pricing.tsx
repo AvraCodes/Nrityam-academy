@@ -60,7 +60,7 @@ export const PricingCard = ({
     <Link href={linkHref} className="flex flex-1 max-w-sm">
       <TiltCard className={cardClasses.trim()} spotlight={true} tiltLimit={8}>
         {isPopular && (
-          <div className="absolute -top-4 right-8 px-4 py-1 text-xs font-semibold rounded-full bg-primary text-white shadow-md">
+          <div className="absolute top-6 right-6 px-3 py-1 text-[10px] uppercase tracking-wider font-bold rounded-full bg-primary/10 text-primary border border-primary/20 shadow-sm">
             Most Popular
           </div>
         )}

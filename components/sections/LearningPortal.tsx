@@ -99,7 +99,7 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
                 <div className="rounded-t-xl bg-white dark:bg-white/5 dark:bg-white/5 border border-primary/10 border-b-0 overflow-hidden relative shadow-inner">
                   {/* Mock Video Player */}
                   <div className="aspect-video relative bg-black flex flex-col justify-between overflow-hidden">
-                    <Image src="https://images.unsplash.com/photo-1549471013-3364d73206c8?q=80&w=800&auto=format&fit=crop" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover opacity-80" alt="Video player" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/80 via-primary-dark/80 to-secondary-dark/80 opacity-80" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-16 h-16 rounded-full bg-white/60 dark:bg-white/5 backdrop-blur flex items-center justify-center border border-white shadow-lg text-primary cursor-pointer hover:scale-110 transition-transform">
                         <PlayCircle className="w-8 h-8 ml-1" />
