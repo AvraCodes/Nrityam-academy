@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { TiltCard } from '@/components/ui/tilt-card'
+import { GlowCard } from '@/components/ui/glow-card'
 import { ChevronDown, Book, Zap, Heart, Star } from 'lucide-react'
 
 const LAYERS = [
@@ -102,11 +102,15 @@ export default function CurriculumStructure() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                   >
-                    <TiltCard className={`rounded-3xl border transition-all duration-300 overflow-hidden ${
-                      isActive 
-                        ? 'border-secondary/30 bg-white dark:bg-white/5 shadow-lg shadow-secondary/10' 
-                        : 'border-accent/10 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/10'
-                    }`}>
+                    <GlowCard 
+                      customSize
+                      glowColor={['maroon', 'red', 'yellow', 'cream'][index % 4] as any}
+                      className={`rounded-3xl border transition-all duration-300 overflow-hidden ${
+                        isActive 
+                          ? 'border-secondary/30 bg-white dark:bg-white/5 shadow-lg shadow-secondary/10' 
+                          : 'border-accent/10 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/10'
+                      }`}
+                    >
                       <button
                         onMouseEnter={() => setActiveLayer(index)}
                         className="flex items-center gap-4 w-full p-6 sm:p-8 text-left cursor-pointer"
@@ -160,7 +164,7 @@ export default function CurriculumStructure() {
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </TiltCard>
+                    </GlowCard>
                   </motion.div>
                 )
             })}
