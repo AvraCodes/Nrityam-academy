@@ -42,10 +42,7 @@ export default function Hero() {
   return (
     <>
  <section className="relative min-h-[90dvh] flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-16">
-        {/* Background radial gradient */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent,var(--color-bg-ivory))] opacity-60" />
-        </div>
+        {/* Background radial gradient removed to match global opacity */}
 
         <DanceSVG />
 
