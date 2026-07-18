@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useRef, useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import {
   ArrowRight,
@@ -161,8 +162,8 @@ export default function Hero() {
               <div className="absolute inset-4 rounded-full border border-[--color-secondary-dark]/20 animate-[spin_40s_linear_infinite_reverse]" />
               <div className="absolute inset-0 bg-gradient-to-tr from-[--color-primary]/5 to-transparent rounded-full backdrop-blur-sm" />
               
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-64 rounded-full overflow-hidden border border-white/20 shadow-2xl">
-                 <img src="/hero-dancer.png" className="w-full h-full object-cover" alt="Dancer" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-64 rounded-full overflow-hidden border border-white/20 shadow-2xl relative">
+                 <Image src="/hero-dancer.png" fill sizes="(max-width: 768px) 192px, 192px" className="object-cover" alt="Dancer" priority />
               </div>
             </div>
           </motion.div>

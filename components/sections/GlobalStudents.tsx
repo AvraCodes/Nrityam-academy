@@ -2,8 +2,12 @@
 
 import React from "react"
 import { motion } from "framer-motion"
-import { GlobePulse } from "@/components/ui/globe-pulse"
+import dynamic from "next/dynamic"
 
+const GlobePulse = dynamic(
+  () => import("@/components/ui/globe-pulse").then((mod) => mod.GlobePulse),
+  { ssr: false }
+)
 
 interface Testimonial {
   text: string

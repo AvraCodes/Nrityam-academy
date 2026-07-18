@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { TiltCard } from '@/components/ui/tilt-card'
 import { PlayCircle, Video, CheckCircle2 } from 'lucide-react'
@@ -97,8 +98,8 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
 
                 <div className="rounded-t-xl bg-white border border-[--color-primary]/10 border-b-0 overflow-hidden relative shadow-inner">
                   {/* Mock Video Player */}
-                  <div className="aspect-video relative bg-black flex flex-col justify-between">
-                    <img src="https://images.unsplash.com/photo-1549471013-3364d73206c8?q=80&w=800&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-80" alt="Video player" />
+                  <div className="aspect-video relative bg-black flex flex-col justify-between overflow-hidden">
+                    <Image src="https://images.unsplash.com/photo-1549471013-3364d73206c8?q=80&w=800&auto=format&fit=crop" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover opacity-80" alt="Video player" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-16 h-16 rounded-full bg-white/60 backdrop-blur flex items-center justify-center border border-white shadow-lg text-[--color-primary] cursor-pointer hover:scale-110 transition-transform">
                         <PlayCircle className="w-8 h-8 ml-1" />
@@ -117,11 +118,11 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
                     
                     <div className="flex gap-3 overflow-hidden">
                       <div className="w-32 h-20 rounded-lg bg-[--color-primary]/5 border border-[--color-primary]/10 shrink-0 relative overflow-hidden">
-                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" className="w-full h-full object-cover opacity-50" alt="thumb" />
+                         <Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" fill sizes="128px" className="object-cover opacity-50" alt="thumb" />
                          <span className="absolute bottom-1 right-1 text-[8px] bg-black/80 px-1 rounded text-white">12:40</span>
                       </div>
                       <div className="w-32 h-20 rounded-lg bg-[--color-primary]/5 border border-[--color-primary]/30 shrink-0 relative overflow-hidden">
-                         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" className="w-full h-full object-cover opacity-90" alt="thumb" />
+                         <Image src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" fill sizes="128px" className="object-cover opacity-90" alt="thumb" />
                          <span className="absolute bottom-1 right-1 text-[8px] bg-black/80 px-1 rounded text-white">45:12</span>
                          <div className="absolute inset-0 ring-2 ring-[--color-primary] ring-inset" />
                       </div>
