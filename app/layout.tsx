@@ -8,7 +8,7 @@ import SmoothScroll from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
 const blore = localFont({
-  src: "../public/fonts/Blore DEMO.otf",
+  src: "../public/fonts/blore.otf",
   variable: "--font-blore",
   display: "swap",
 });
