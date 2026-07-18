@@ -123,8 +123,6 @@ export default function AcademyFeatures() {
               category="Certification"
               title="Verified Certification"
               description="Clear exams at every tier to earn verified Nrityam Academy certifications."
-              imageSrc="/logo.jpeg"
-              imageAlt="Nrityam Logo"
             />
           </motion.div>
 
