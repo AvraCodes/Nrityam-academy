@@ -51,66 +51,61 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-transparent py-20 md:py-28 text-text-main relative overflow-hidden">
-      {/* Glow elements */}
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-secondary/5 blur-3xl pointer-events-none" />
+    <section id="contact" className="bg-[#FFF8F0] py-20 md:py-28 relative overflow-hidden border-t border-[--color-primary]/10">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column: Academy Info & WhatsApp */}
-          <div className="lg:col-span-5 text-left">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-px bg-primary" />
-              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] uppercase text-primary">
+          {/* Left Column */}
+          <div className="lg:col-span-5 text-left flex flex-col justify-center h-full">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-12 h-px bg-[--color-primary]" />
+              <span className="text-[11px] font-sans font-bold tracking-[0.2em] uppercase text-[--color-primary]">
                 Get In Touch
               </span>
             </div>
 
-            <h2
-              className="text-4xl md:text-5xl font-light leading-tight text-primary mb-6"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              Start Your <em className="italic text-secondary">Transformation</em> Today
+            <h2 className="text-4xl md:text-5xl font-serif leading-tight text-[--color-text-main] mb-6">
+              Start Your <span className="text-[--color-primary] italic">Transformation</span> Today
             </h2>
 
-            <p className="text-text-muted text-base leading-relaxed mb-8">
+            <p className="text-[--color-text-muted] text-lg leading-relaxed mb-10 font-light">
               Fill out the inquiry form to book your assessment. We will contact you via WhatsApp or Email to schedule your roadmap session.
             </p>
 
-            {/* Quick Contacts details */}
-            <div className="space-y-6 mb-8">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-white/50 border border-primary/20 flex items-center justify-center text-primary">
+            <div className="space-y-8 mb-12">
+              <div className="flex items-start gap-5 group">
+                <div className="w-12 h-12 rounded-2xl bg-white border border-[--color-primary]/10 shadow-sm flex items-center justify-center text-[--color-primary] group-hover:scale-105 transition-transform shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <div>
-                  <h4 className="text-xs uppercase tracking-wider text-text-light font-semibold mb-0.5">Classes Location</h4>
-                  <p className="text-text-main text-sm font-medium">Online Classes (Available Globally)</p>
+                <div className="pt-1">
+                  <h4 className="text-xs uppercase tracking-wider text-[--color-text-light] font-semibold mb-1">Location</h4>
+                  <p className="text-[--color-text-main] text-base font-medium">Online Classes (Available Globally)</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-white/50 border border-primary/20 flex items-center justify-center text-primary">
+              <div className="flex items-start gap-5 group">
+                <div className="w-12 h-12 rounded-2xl bg-white border border-[--color-primary]/10 shadow-sm flex items-center justify-center text-[--color-primary] group-hover:scale-105 transition-transform shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
-                <div>
-                  <h4 className="text-xs uppercase tracking-wider text-text-light font-semibold mb-0.5">Email Support</h4>
-                  <p className="text-text-main text-sm font-medium">contact@nrityaam.com</p>
+                <div className="pt-1">
+                  <h4 className="text-xs uppercase tracking-wider text-[--color-text-light] font-semibold mb-1">Email Support</h4>
+                  <p className="text-[--color-text-main] text-base font-medium">contact@nrityaam.com</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-white/50 border border-primary/20 flex items-center justify-center text-primary">
+              <div className="flex items-start gap-5 group">
+                <div className="w-12 h-12 rounded-2xl bg-white border border-[--color-primary]/10 shadow-sm flex items-center justify-center text-[--color-primary] group-hover:scale-105 transition-transform shrink-0">
                   <Instagram className="w-5 h-5" />
                 </div>
-                <div>
-                  <h4 className="text-xs uppercase tracking-wider text-text-light font-semibold mb-0.5">Instagram Community</h4>
+                <div className="pt-1">
+                  <h4 className="text-xs uppercase tracking-wider text-[--color-text-light] font-semibold mb-1">Community</h4>
                   <a
-                    href="https://www.instagram.com/ranbbir.dance?igsh=ZXJnb3k4Y2p6ZXBm"
+                    href="https://www.instagram.com/ranbbir.dance"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:underline text-sm font-semibold"
+                    className="text-[--color-text-main] hover:text-[--color-primary] transition-colors text-base font-medium"
                   >
                     @ranbbir.dance
                   </a>
@@ -118,17 +113,20 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Chat Now WhatsApp button */}
-            <div className="p-6 bg-white/50 border border-primary/20 rounded-3xl text-left backdrop-blur-md">
-              <h4 className="text-sm font-semibold text-text-main mb-2">Need Immediate Answers?</h4>
-              <p className="text-text-muted text-xs leading-relaxed mb-4">
-                Skip the form and chat with Ranbir sir directly via WhatsApp. Average response time is under 4 hours.
+            {/* WhatsApp Box */}
+            <div className="p-6 bg-white border border-[#25D366]/20 rounded-2xl shadow-sm text-left">
+              <h4 className="text-sm font-semibold text-[--color-text-main] mb-2 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                Need Immediate Answers?
+              </h4>
+              <p className="text-[--color-text-muted] text-sm leading-relaxed mb-5">
+                Skip the form and chat directly via WhatsApp. Average response time is under 4 hours.
               </p>
               <a
                 href="https://wa.me/916291333077"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white font-medium rounded-full text-sm transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center w-full gap-2 px-6 py-3.5 bg-white border border-[#25D366]/40 hover:bg-[#25D366]/5 text-[#25D366] font-semibold rounded-xl text-sm transition-colors cursor-pointer shadow-sm"
               >
                 <MessageSquare className="w-4 h-4" />
                 Chat Now on WhatsApp
@@ -137,113 +135,110 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Inquiry Form Card */}
-          <div className="lg:col-span-7 bg-white/40 border border-white/60 p-8 rounded-3xl backdrop-blur-md shadow-2xl relative">
-            <h3 className="text-xl font-semibold text-text-main mb-6 text-left font-sans">
-              Admission & Goals Inquiry
-            </h3>
+          <div className="lg:col-span-7">
+            <div className="bg-white border border-[--color-primary]/10 p-8 sm:p-12 rounded-3xl shadow-xl shadow-[--color-primary]/5 relative">
+              <h3 className="text-2xl font-serif text-[--color-text-main] mb-8 text-left">
+                Admission & Goals Inquiry
+              </h3>
 
-            {submitSuccess ? (
-              <div className="py-12 px-6 text-center flex flex-col items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white mb-4 animate-bounce">
-                  <Check className="w-8 h-8" />
+              {submitSuccess ? (
+                <div className="py-16 px-6 text-center flex flex-col items-center justify-center">
+                  <div className="w-20 h-20 rounded-full bg-[--color-primary]/10 flex items-center justify-center text-[--color-primary] mb-6 animate-bounce">
+                    <Check className="w-10 h-10" />
+                  </div>
+                  <h4 className="text-2xl font-serif text-[--color-text-main] mb-3">Inquiry Submitted!</h4>
+                  <p className="text-[--color-text-muted] text-base leading-relaxed max-w-sm">
+                    Thank you for sharing your goals. Ranbir sir will contact you via WhatsApp to coordinate your roadmap assessment.
+                  </p>
                 </div>
-                <h4 className="text-xl font-semibold text-text-main mb-2">Inquiry Submitted!</h4>
-                <p className="text-text-muted text-sm leading-relaxed max-w-sm">
-                  Thank you for sharing your goals. Ranbir sir will contact you via WhatsApp to coordinate your roadmap assessment.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 text-left">
-                {/* Row: Name & Email */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              ) : (
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 text-left">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-xs uppercase tracking-wider text-[--color-text-light] font-semibold mb-2">Full Name</label>
+                      <input
+                        type="text"
+                        {...register("name")}
+                        placeholder="e.g. Priyanjali Roy"
+                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-[--color-primary]/10 rounded-xl focus:bg-white focus:border-[--color-primary]/40 focus:ring-1 focus:ring-[--color-primary]/40 outline-none transition-all text-[--color-text-main] text-sm placeholder:text-[--color-text-light]/50"
+                      />
+                      {errors.name && <p className="text-red-500 text-xs mt-2">{errors.name.message}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-xs uppercase tracking-wider text-[--color-text-light] font-semibold mb-2">Email Address</label>
+                      <input
+                        type="email"
+                        {...register("email")}
+                        placeholder="e.g. priya@example.com"
+                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-[--color-primary]/10 rounded-xl focus:bg-white focus:border-[--color-primary]/40 focus:ring-1 focus:ring-[--color-primary]/40 outline-none transition-all text-[--color-text-main] text-sm placeholder:text-[--color-text-light]/50"
+                      />
+                      {errors.email && <p className="text-red-500 text-xs mt-2">{errors.email.message}</p>}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-xs uppercase tracking-wider text-[--color-text-light] font-semibold mb-2">WhatsApp Number</label>
+                      <input
+                        type="tel"
+                        {...register("phone")}
+                        placeholder="e.g. +91 98765 43210"
+                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-[--color-primary]/10 rounded-xl focus:bg-white focus:border-[--color-primary]/40 focus:ring-1 focus:ring-[--color-primary]/40 outline-none transition-all text-[--color-text-main] text-sm placeholder:text-[--color-text-light]/50"
+                      />
+                      {errors.phone && <p className="text-red-500 text-xs mt-2">{errors.phone.message}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-xs uppercase tracking-wider text-[--color-text-light] font-semibold mb-2">Experience Level</label>
+                      <select
+                        {...register("experience")}
+                        className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-[--color-primary]/10 rounded-xl focus:bg-white focus:border-[--color-primary]/40 focus:ring-1 focus:ring-[--color-primary]/40 outline-none transition-all text-[--color-text-main] text-sm appearance-none cursor-pointer"
+                        style={{
+                          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237A1E2C'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
+                          backgroundPosition: "right 16px center",
+                          backgroundSize: "16px",
+                          backgroundRepeat: "no-repeat",
+                        }}
+                      >
+                        <option value="" className="text-[--color-text-main]">Select Level</option>
+                        <option value="beginner" className="text-[--color-text-main]">Complete Beginner (Age 10+)</option>
+                        <option value="intermediate" className="text-[--color-text-main]">Intermediate (Adavu training)</option>
+                        <option value="advanced" className="text-[--color-text-main]">Advanced (Learned choreography)</option>
+                      </select>
+                      {errors.experience && <p className="text-red-500 text-xs mt-2">{errors.experience.message}</p>}
+                    </div>
+                  </div>
+
                   <div>
-                    <label className="block text-xs uppercase tracking-wider text-text-light font-semibold mb-2">Full Name</label>
-                    <input
-                      type="text"
-                      {...register("name")}
-                      placeholder="e.g. Priyanjali Roy"
-                      className="w-full px-4 py-3 bg-white/60 border border-primary/20 rounded-xl focus:border-primary focus:outline-none transition-colors text-text-main text-sm placeholder-text-light/60"
+                    <label className="block text-xs uppercase tracking-wider text-[--color-text-light] font-semibold mb-2">Goals & Challenges</label>
+                    <textarea
+                      {...register("message")}
+                      rows={5}
+                      placeholder="Tell us what you want to achieve or any challenges you struggle with..."
+                      className="w-full px-5 py-4 bg-[#FFF8F0]/50 border border-[--color-primary]/10 rounded-xl focus:bg-white focus:border-[--color-primary]/40 focus:ring-1 focus:ring-[--color-primary]/40 outline-none transition-all text-[--color-text-main] text-sm resize-none placeholder:text-[--color-text-light]/50"
                     />
-                    {errors.name && <p className="text-red-600 text-[11px] mt-1.5">{errors.name.message}</p>}
+                    {errors.message && <p className="text-red-500 text-xs mt-2">{errors.message.message}</p>}
                   </div>
 
-                  <div>
-                    <label className="block text-xs uppercase tracking-wider text-text-light font-semibold mb-2">Email Address</label>
-                    <input
-                      type="email"
-                      {...register("email")}
-                      placeholder="e.g. priya@example.com"
-                      className="w-full px-4 py-3 bg-white/60 border border-primary/20 rounded-xl focus:border-primary focus:outline-none transition-colors text-text-main text-sm placeholder-text-light/60"
-                    />
-                    {errors.email && <p className="text-red-600 text-[11px] mt-1.5">{errors.email.message}</p>}
-                  </div>
-                </div>
-
-                {/* Row: Phone & Experience */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs uppercase tracking-wider text-text-light font-semibold mb-2">WhatsApp / Phone Number</label>
-                    <input
-                      type="tel"
-                      {...register("phone")}
-                      placeholder="e.g. +91 98765 43210"
-                      className="w-full px-4 py-3 bg-white/60 border border-primary/20 rounded-xl focus:border-primary focus:outline-none transition-colors text-text-main text-sm placeholder-text-light/60"
-                    />
-                    {errors.phone && <p className="text-red-600 text-[11px] mt-1.5">{errors.phone.message}</p>}
-                  </div>
-
-                  <div>
-                    <label className="block text-xs uppercase tracking-wider text-text-light font-semibold mb-2">Dance Experience Level</label>
-                    <select
-                      {...register("experience")}
-                      className="w-full px-4 py-3 bg-white/60 border border-primary/20 rounded-xl focus:border-primary focus:outline-none transition-colors text-text-main text-sm appearance-none cursor-pointer placeholder-text-light/60"
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237A1E2C'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
-                        backgroundPosition: "right 16px center",
-                        backgroundSize: "16px",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                    >
-                      <option value="" className="bg-bg-ivory text-text-main">Select Experience Level</option>
-                      <option value="beginner" className="bg-bg-ivory text-text-main">Complete Beginner (Above age 10)</option>
-                      <option value="intermediate" className="bg-bg-ivory text-text-main">Intermediate (Some Adavu training)</option>
-                      <option value="advanced" className="bg-bg-ivory text-text-main">Advanced (Learned choreography/basics)</option>
-                    </select>
-                    {errors.experience && <p className="text-red-600 text-[11px] mt-1.5">{errors.experience.message}</p>}
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-text-light font-semibold mb-2">Your Goals & Challenges</label>
-                  <textarea
-                    {...register("message")}
-                    rows={4}
-                    placeholder="Tell us what you want to achieve or any challenges you struggle with..."
-                    className="w-full px-4 py-3 bg-white/60 border border-primary/20 rounded-xl focus:border-primary focus:outline-none transition-colors text-text-main text-sm resize-none placeholder-text-light/60"
-                  />
-                  {errors.message && <p className="text-red-600 text-[11px] mt-1.5">{errors.message.message}</p>}
-                </div>
-
-                {/* Submit button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 bg-primary hover:bg-primary-dark disabled:opacity-50 text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-primary"
-                >
-                  {isSubmitting ? (
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      <span>Submit Goal Inquiry</span>
-                    </>
-                  )}
-                </button>
-              </form>
-            )}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-4 bg-[--color-primary] hover:bg-[--color-primary-dark] disabled:opacity-50 text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-[--color-primary]/20 mt-4"
+                  >
+                    {isSubmitting ? (
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        <span>Submit Inquiry</span>
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
-
         </div>
       </div>
     </section>
