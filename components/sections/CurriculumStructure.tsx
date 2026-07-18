@@ -49,7 +49,7 @@ export default function CurriculumStructure() {
   }
 
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-bg-ivory border-t border-primary/10" id="system">
+    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-transparent border-t border-primary/10" id="system">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -59,7 +59,7 @@ export default function CurriculumStructure() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2B2118] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-[#2B2118] mb-6">
             A Structured Path to Mastery
           </h2>
           <p className="text-lg text-[#8B5E3C] font-light max-w-2xl mx-auto">
@@ -125,7 +125,7 @@ export default function CurriculumStructure() {
                           }`}>
                             LAYER {layer.number}
                           </div>
-                          <h3 className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${
+                          <h3 className={`text-xl sm:text-2xl font-serif leading-relaxed transition-colors duration-300 ${
                             isActive ? 'text-[#2B2118]' : 'text-[#8B5E3C]'
                           }`}>
                             {layer.title}

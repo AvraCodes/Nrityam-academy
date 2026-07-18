@@ -66,7 +66,7 @@ export default function Contact() {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-serif leading-tight text-text-main mb-6">
+            <h2 className="text-4xl md:text-5xl font-serif leading-relaxed text-text-main mb-6">
               Start Your <span className="text-primary italic">Transformation</span> Today
             </h2>
 
@@ -137,7 +137,7 @@ export default function Contact() {
           {/* Right Column: Inquiry Form Card */}
           <div className="lg:col-span-7">
             <div className="bg-white dark:bg-white/5 dark:bg-white/5 border border-primary/10 p-8 sm:p-12 rounded-3xl shadow-xl shadow-primary/5 relative">
-              <h3 className="text-2xl font-serif text-text-main mb-8 text-left">
+              <h3 className="text-2xl font-serif leading-relaxed text-text-main mb-8 text-left">
                 Admission & Goals Inquiry
               </h3>
 
@@ -146,7 +146,7 @@ export default function Contact() {
                   <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 animate-bounce">
                     <Check className="w-10 h-10" />
                   </div>
-                  <h4 className="text-2xl font-serif text-text-main mb-3">Inquiry Submitted!</h4>
+                  <h4 className="text-2xl font-serif leading-relaxed text-text-main mb-3">Inquiry Submitted!</h4>
                   <p className="text-text-muted text-base leading-relaxed max-w-sm">
                     Thank you for sharing your goals. Ranbir sir will contact you via WhatsApp to coordinate your roadmap assessment.
                   </p>

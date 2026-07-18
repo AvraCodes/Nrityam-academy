@@ -47,7 +47,7 @@ export default function StudentJourney() {
       <div className="max-w-6xl mx-auto relative z-10">
         
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2B2118] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-[#2B2118] mb-6">
             How We Nurture a Complete Dancer
           </h2>
           <p className="text-lg text-text-muted font-light">
@@ -59,7 +59,7 @@ export default function StudentJourney() {
         <TiltCard className="mb-12 p-8 sm:p-10 border border-primary/20 rounded-3xl bg-white/70 dark:bg-white/5 backdrop-blur-md transition-all duration-500 shadow-xl shadow-primary/5">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div className="space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-serif text-text-main tracking-wide">
+              <h3 className="text-2xl sm:text-3xl font-serif leading-relaxed text-text-main tracking-wide">
                 Dance Is Not Just Movement. <br className="hidden lg:block"/>
                 <span className="text-primary">It's Devotion.</span>
               </h3>

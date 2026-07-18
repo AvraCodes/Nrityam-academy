@@ -65,11 +65,11 @@ export const PricingCard = ({
           </div>
         )}
         <div className="mb-4">
-          <h2 className="text-3xl font-serif text-primary">{planName}</h2>
+          <h2 className="text-3xl font-serif leading-relaxed text-primary">{planName}</h2>
           <p className="text-sm text-text-muted mt-2 font-medium">{description}</p>
         </div>
         <div className="my-6 flex items-baseline gap-2 text-text-main">
-          <span className="text-5xl font-light font-serif">₹{price}</span>
+          <span className="text-5xl font-light font-serif leading-relaxed">₹{price}</span>
           <span className="text-sm text-text-muted font-medium">/mo</span>
         </div>
         <div className="card-divider w-full mb-6 h-px bg-gradient-to-r from-transparent via-text-main/10 to-transparent"></div>
@@ -112,7 +112,7 @@ export const ModernPricingPage = ({
     <div id="pricing" className="relative bg-transparent text-text-main w-full overflow-hidden pb-32">
       <main className="relative z-10 w-full flex flex-col items-center justify-center px-4 pt-32">
         <div className="w-full max-w-5xl mx-auto text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-light leading-tight text-primary font-serif mb-6">
+          <h1 className="text-5xl md:text-6xl font-light leading-relaxed text-primary font-serif mb-6">
             {title}
           </h1>
           <p className="text-lg text-text-muted max-w-2xl mx-auto font-medium">

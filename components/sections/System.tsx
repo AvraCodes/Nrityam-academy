@@ -91,7 +91,7 @@ export default function System() {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
-    <section id="system" className="bg-bg-ivory py-20 md:py-28 overflow-hidden text-text-main relative border-b border-text-light/10">
+    <section id="system" className="bg-transparent py-20 md:py-28 overflow-hidden text-text-main relative border-b border-text-light/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -105,7 +105,7 @@ export default function System() {
           </div>
 
           <h2
-            className="text-4xl md:text-5xl font-light leading-tight text-primary mb-4 font-serif"
+            className="text-4xl md:text-5xl font-light leading-relaxed text-primary mb-4 font-serif"
           >
             The Nrityaam <em className="italic text-accent">Bharatanatyam</em> System
           </h2>

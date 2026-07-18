@@ -120,13 +120,13 @@ const DragCarousel = ({ testimonials }: { testimonials: Testimonial[] }) => {
 
 export default function GlobalStudents() {
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 bg-bg-ivory overflow-hidden" id="gallery">
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-transparent overflow-hidden" id="gallery">
       <div className="absolute inset-0 bg-gradient-to-b from-bg-ivory via-bg-ivory/90 to-bg-ivory z-0" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(122,30,44,0.05),transparent_70%)] z-0" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 sm:mb-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-text-main mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif leading-relaxed text-text-main mb-6">
             Connecting Dancers <br className="hidden sm:block" />
             <span className="text-primary">
               Across the Globe

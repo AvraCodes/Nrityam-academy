@@ -44,7 +44,7 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-bg-ivory py-20 md:py-28 overflow-hidden text-text-main">
+    <section id="gallery" className="bg-transparent py-20 md:py-28 overflow-hidden text-text-main">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

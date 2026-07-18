@@ -57,7 +57,7 @@ const StatItem = ({ value, label }: { value: string; label: string }) => (
     transition={{ duration: 0.5 }}
     className="flex flex-col gap-1 border-l border-primary/20 pl-4"
   >
-    <div className="text-3xl sm:text-4xl font-serif text-text-main font-medium tracking-tight">
+    <div className="text-3xl sm:text-4xl font-serif leading-relaxed text-text-main font-medium tracking-tight">
       <AnimatedCounter value={value} />
     </div>
     <div className="text-xs sm:text-sm text-text-muted font-medium tracking-wide uppercase">
@@ -75,7 +75,7 @@ const DanceSVG = () => (
 export default function Hero() {
   return (
     <>
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-bg-ivory pt-20 pb-16">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-16">
         {/* Background radial gradient */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent,var(--color-bg-ivory))] opacity-80" />
@@ -109,7 +109,7 @@ export default function Hero() {
               </motion.div>
 
               {/* Main Headline */}
-              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight mb-8 text-balance leading-[1.1] text-text-main">
+              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight mb-8 text-balance leading-relaxed text-text-main">
                 Master the True <br /> Art of <span className="text-primary italic font-light">Bharatanatyam</span>
               </h1>
 

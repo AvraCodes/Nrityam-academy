@@ -35,7 +35,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-bg-ivory">
+    <section id="faq" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-transparent">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto relative z-10">
@@ -43,7 +43,7 @@ export default function FAQ() {
           <span className="inline-flex items-center gap-2 rounded-full border border-secondary-dark/30 bg-secondary-dark/10 px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest text-secondary-dark mb-6">
             Common Questions
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-text-main mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-text-main mb-6">
             Everything you need <br /> to know.
           </h2>
         </div>

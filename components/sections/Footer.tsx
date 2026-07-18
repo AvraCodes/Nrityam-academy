@@ -29,7 +29,7 @@ const Footer = () => {
           <div className="lg:col-span-5 flex flex-col gap-8">
             <div className="flex flex-col gap-4">
               <Link href="/" className="flex items-center gap-2 group w-fit">
-                <span className="font-serif text-2xl font-semibold text-white tracking-wide">
+                <span className="font-serif leading-relaxed text-2xl font-semibold text-white tracking-wide">
                   Nrityaam
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-primary group-hover:scale-125 transition-transform" />

@@ -53,7 +53,7 @@ export default function CoreBelief() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-serif text-primary mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-primary mb-6"
           >
             The Art of <span className="text-[#8B5E3C]">Bharatanatyam</span>
           </motion.h2>
@@ -126,9 +126,9 @@ export default function CoreBelief() {
                     className="relative z-10"
                   >
                     <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#8B5E3C] mb-6">
-                      <span className="font-serif text-2xl">{activeStep + 1}</span>
+                      <span className="font-serif leading-relaxed text-2xl">{activeStep + 1}</span>
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-serif text-[#2B2118] mb-4">
+                    <h3 className="text-2xl sm:text-3xl font-serif leading-relaxed text-[#2B2118] mb-4">
                       {STEP_DETAILS[activeStep].name}
                     </h3>
                     <p className="text-lg sm:text-xl text-[#8B5E3C] font-light leading-relaxed">

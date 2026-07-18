@@ -54,7 +54,7 @@ function Tile({ children, wrapperClassName = '', className = '', delay = 0 }: { 
 
 export default function AcademyFeatures() {
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-bg-ivory border-t border-primary/10">
+    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-transparent border-t border-primary/10">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function AcademyFeatures() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-text-main mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-text-main mb-6">
             Everything you need <br/> to excel in dance.
           </h2>
           <p className="text-lg text-text-muted font-light max-w-xl">
@@ -81,7 +81,7 @@ export default function AcademyFeatures() {
               <span className="rounded-full bg-primary/20 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-primary-light">Live & Interactive</span>
             </div>
             <div>
-              <h3 className="text-2xl sm:text-3xl font-serif text-text-main mb-2">High-Definition Virtual Studio</h3>
+              <h3 className="text-2xl sm:text-3xl font-serif leading-relaxed text-text-main mb-2">High-Definition Virtual Studio</h3>
               <p className="text-sm text-text-muted max-w-md font-light leading-relaxed">
                 Experience crystal-clear live classes. Our multi-camera setup ensures you see every footwork detail and facial expression exactly as the guru performs it.
               </p>

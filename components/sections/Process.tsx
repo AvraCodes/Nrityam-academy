@@ -13,7 +13,7 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-bg-ivory border-t border-primary/10">
+    <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-transparent border-t border-primary/10">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           className="max-w-2xl mb-16"
@@ -22,7 +22,7 @@ export default function Process() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-text-main mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif leading-relaxed text-text-main mb-6">
             A structured path, <br/> from day one.
           </h2>
           <p className="text-lg text-text-muted font-light max-w-xl">

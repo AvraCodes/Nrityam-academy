@@ -46,7 +46,7 @@ const itemVariants = {
 
 export default function Enroll() {
   return (
-    <section id="enroll" className="bg-bg-ivory py-20 md:py-28 text-text-main relative border-t border-text-light/10">
+    <section id="enroll" className="bg-transparent py-20 md:py-28 text-text-main relative border-t border-text-light/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -88,7 +88,7 @@ export default function Enroll() {
                 className="p-6 bg-white dark:bg-white/5 dark:bg-white/5 border border-text-light/20 rounded-3xl hover:shadow-lg transition-all duration-300 relative text-left group"
               >
                 {/* Step indicator number */}
-                <div className="absolute top-6 right-6 text-5xl font-serif text-text-light/20 group-hover:text-primary/10 transition-colors font-bold select-none">
+                <div className="absolute top-6 right-6 text-5xl font-serif leading-relaxed text-text-light/20 group-hover:text-primary/10 transition-colors font-bold select-none">
                   0{idx + 1}
                 </div>
 
