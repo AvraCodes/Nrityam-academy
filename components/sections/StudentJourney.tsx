@@ -165,7 +165,7 @@ export default function StudentJourney() {
                   <GlowCard 
                     key={i} 
                     customSize
-                    glowColor="orange"
+                    glowColor="primary"
                     className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] p-6 sm:p-8 border-primary/10 bg-white/50 dark:bg-white/5 flex flex-col gap-4 group shadow-sm text-left"
                   >
                     <div className="flex items-center justify-between">

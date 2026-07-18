@@ -3,7 +3,7 @@ import React, { useEffect, useRef, ReactNode } from 'react';
 interface GlowCardProps {
   children: ReactNode;
   className?: string;
-  glowColor?: 'blue' | 'purple' | 'green' | 'red' | 'orange';
+  glowColor?: 'primary' | 'secondary' | 'blue' | 'purple' | 'green' | 'red' | 'orange';
   size?: 'sm' | 'md' | 'lg';
   width?: string | number;
   height?: string | number;
@@ -11,6 +11,8 @@ interface GlowCardProps {
 }
 
 const glowColorMap = {
+  primary: { base: 351, spread: 20 },   // Maroon (Theme Primary)
+  secondary: { base: 46, spread: 20 },  // Gold (Theme Secondary)
   blue: { base: 220, spread: 200 },
   purple: { base: 280, spread: 300 },
   green: { base: 120, spread: 200 },

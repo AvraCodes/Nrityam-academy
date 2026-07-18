@@ -70,7 +70,7 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
             className="pointer-events-none absolute -inset-px rounded-xl opacity-0"
             style={{
               opacity: glowOpacity,
-              background: `radial-gradient(80px at ${glowX}% ${glowY}%, hsl(var(--primary)), transparent 40%)`,
+              background: `radial-gradient(80px at ${glowX}% ${glowY}%, var(--primary), transparent 40%)`,
             }}
           />
 
