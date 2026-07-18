@@ -7,6 +7,8 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { usePathname, useRouter } from 'next/navigation';
+import { useTheme } from 'next-themes';
+import { DIcons } from 'dicons';
 
 const AnimatedNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -39,6 +41,7 @@ export default function Navbar() {
   const [headerShapeClass, setHeaderShapeClass] = useState('rounded-full');
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { setTheme, theme } = useTheme();
   
   const pathname = usePathname();
   const shapeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -156,6 +159,23 @@ export default function Navbar() {
 
             {/* CTA and Mobile Toggle */}
             <div className="flex items-center gap-4">
+              <div className="hidden sm:flex items-center rounded-full border border-primary/20 bg-white/5 dark:bg-white/5 p-1 shadow-sm">
+                <button
+                  onClick={() => setTheme("light")}
+                  className={`rounded-full p-1.5 transition-colors ${theme === 'light' ? 'bg-primary/10 text-primary' : 'text-zinc-400 hover:text-text-main'}`}
+                >
+                  <DIcons.Sun className="h-4 w-4" strokeWidth={1.5} />
+                  <span className="sr-only">Light Theme</span>
+                </button>
+                <button
+                  onClick={() => setTheme("dark")}
+                  className={`rounded-full p-1.5 transition-colors ${theme === 'dark' ? 'bg-primary/10 text-primary' : 'text-zinc-400 hover:text-text-main'}`}
+                >
+                  <DIcons.Moon className="h-4 w-4" strokeWidth={1.5} />
+                  <span className="sr-only">Dark Theme</span>
+                </button>
+              </div>
+
               <a
                 href={pathname === '/' ? '#pricing' : '/#pricing'}
                 onClick={(e) => {

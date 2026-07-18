@@ -13,8 +13,7 @@ import {
   ArrowUpRight
 } from 'lucide-react'
 
-// Internal UI Components
-import { SlideToAction } from '@/components/ui/slide-to-action'
+import { GlassButton } from '@/components/ui/glass-button'
 
 const AnimatedCounter = ({ value, duration = 1.6 }: { value: string; duration?: number }) => {
   const hasDecimals = value.includes('.')
@@ -110,7 +109,7 @@ export default function Hero() {
               </motion.div>
 
               {/* Main Headline */}
-              <h1 className="font-serif text-5xl sm:text-7xl lg:text-[100px] font-medium tracking-tighter mb-8 text-balance leading-[1.05] text-text-main">
+              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tight mb-8 text-balance leading-[1.1] text-text-main">
                 Master the True <br /> Art of <span className="text-primary italic font-light">Bharatanatyam</span>
               </h1>
 
@@ -120,11 +119,14 @@ export default function Hero() {
 
               {/* CTAs */}
               <div className="flex flex-wrap items-center gap-6 mb-14">
-                <SlideToAction 
-                  onAction={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
-                  text="Slide to Enroll"
-                  successText="Redirecting..."
-                />
+                <GlassButton 
+                  onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+                  className="bg-primary hover:bg-primary-dark text-white shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all group"
+                  glassColor="rgba(255, 255, 255, 0.15)"
+                >
+                  Begin Your Journey
+                  <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </GlassButton>
               </div>
             </motion.div>
 
