@@ -13,10 +13,11 @@ interface ProductHighlightCardProps extends HTMLMotionProps<"div"> {
   imageSrc?: string;
   imageAlt?: string;
   imageClassName?: string;
+  contentClassName?: string;
 }
 
 export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHighlightCardProps>(
-  ({ className, categoryIcon, category, title, description, imageSrc, imageAlt, imageClassName, ...props }, ref) => {
+  ({ className, categoryIcon, category, title, description, imageSrc, imageAlt, imageClassName, contentClassName, ...props }, ref) => {
     
     // --- Animation Logic for 3D Tilt Effect ---
     const mouseX = useMotionValue(0.5);
@@ -68,7 +69,7 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
 
           {/* Glow effect removed as requested */}
 
-          <div className="relative z-10 flex h-full flex-col justify-center gap-6 p-6">
+          <div className={cn("relative z-10 flex h-full flex-col justify-center gap-6 p-6", contentClassName)}>
             {/* CORRECTED THIS LINE */}
             <div className="flex items-center space-x-2 text-text-main">
               {categoryIcon}
@@ -78,7 +79,7 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
             {/* CORRECTED THIS LINE */}
             <div className="text-text-main">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">{title}</h2>
-              <p className="mt-2 max-w-[80%] text-xs text-text-muted font-light">
+              <p className="mt-2 text-sm text-text-muted font-light">
                 {description}
               </p>
             </div>

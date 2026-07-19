@@ -76,7 +76,8 @@ export default function AcademyFeatures() {
               description="Experience crystal-clear live classes. Our multi-camera setup ensures you see every footwork detail and facial expression exactly as the guru performs it."
               imageSrc="/virtual_studio.png"
               imageAlt="Virtual Studio Camera Setup"
-              imageClassName="-right-4 bottom-0 h-[320px] w-[320px] opacity-90 rounded-2xl drop-shadow-2xl mix-blend-multiply dark:mix-blend-normal pointer-events-none"
+              imageClassName="absolute right-0 top-0 h-full w-[60%] object-cover rounded-r-2xl [mask-image:linear-gradient(to_right,transparent_0%,black_30%)] pointer-events-none"
+              contentClassName="max-w-[50%] z-20"
             />
           </motion.div>
 
@@ -126,7 +127,8 @@ export default function AcademyFeatures() {
               description="Clear exams at every tier to earn verified Nrityam Academy certifications."
               imageSrc="/certification.png"
               imageAlt="Verified Certificate"
-              imageClassName="-right-8 -bottom-8 h-[240px] w-[240px] opacity-90 rounded-2xl drop-shadow-xl mix-blend-multiply dark:mix-blend-normal pointer-events-none"
+              imageClassName="absolute bottom-0 left-0 w-full h-[65%] object-cover rounded-b-2xl [mask-image:linear-gradient(to_bottom,transparent_0%,black_30%)] pointer-events-none"
+              contentClassName="justify-start pt-8 pb-0 max-h-[50%] z-20"
             />
           </motion.div>
 
