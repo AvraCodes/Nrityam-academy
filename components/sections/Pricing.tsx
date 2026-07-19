@@ -27,20 +27,21 @@ export interface PricingCardProps {
   buttonText: string;
   isPopular?: boolean;
   buttonVariant?: 'primary' | 'secondary';
+  bgImage?: string;
 }
 
 /**
  * We export the PricingCard component itself in case you want to use it elsewhere.
  */
 export const PricingCard = ({
-  planName, description, price, features, buttonText, isPopular = false, buttonVariant = 'primary'
+  planName, description, price, features, buttonText, isPopular = false, buttonVariant = 'primary', bgImage
 }: PricingCardProps) => {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
 
   const cardClasses = `
     backdrop-blur-xl bg-white/40 dark:bg-white/5 rounded-3xl shadow-xl flex-1 max-w-sm px-8 py-10 flex flex-col transition-all duration-300
-    border border-white/40 relative z-10 cursor-pointer
+    border border-white/40 relative z-10 cursor-pointer overflow-hidden
     dark:from-white/10 dark:to-white/5 dark:border-white/10 dark:backdrop-brightness-[0.91]
     ${isPopular ? 'scale-105 relative ring-2 ring-primary/40 shadow-2xl hover:scale-[1.08]' : 'hover:scale-[1.03]'}
   `;
@@ -59,30 +60,35 @@ export const PricingCard = ({
   return (
     <Link href={linkHref} className="flex flex-1 max-w-sm">
       <TiltCard className={cardClasses.trim()} spotlight={true} tiltLimit={8}>
-        {isPopular && (
-          <div className="absolute top-6 right-6 px-3 py-1 text-[10px] uppercase tracking-wider font-bold rounded-full bg-primary/10 text-primary border border-primary/20 shadow-sm">
-            Most Popular
-          </div>
+        {bgImage && (
+          <img src={bgImage} alt="" className="absolute right-0 bottom-0 h-full w-[80%] object-cover opacity-30 dark:opacity-60 [mask-image:radial-gradient(circle_at_bottom_right,black_10%,transparent_80%)] mix-blend-multiply dark:mix-blend-screen pointer-events-none z-0" />
         )}
-        <div className="mb-4">
-          <h2 className="text-3xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary">{planName}</h2>
-          <p className="text-sm text-text-muted mt-2 font-medium">{description}</p>
-        </div>
-        <div className="my-6 flex items-baseline gap-2 text-text-main">
-          <span className="text-5xl font-light font-serif leading-relaxed">₹{price}</span>
-          <span className="text-sm text-text-muted font-medium">/mo</span>
-        </div>
-        <div className="card-divider w-full mb-6 h-px bg-gradient-to-r from-transparent via-text-main/10 to-transparent"></div>
-        <ul className="flex flex-col gap-4 text-sm text-text-main font-medium mb-8">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <CheckIcon className="text-primary w-5 h-5 shrink-0 mt-0.5" /> 
-              <span className="leading-relaxed">{feature}</span>
-            </li>
-          ))}
-        </ul>
-        <div className="w-full mt-auto block">
-          <RippleButton className={buttonClasses.trim()}>{displayButtonText}</RippleButton>
+        <div className="relative z-10 flex flex-col h-full w-full">
+          {isPopular && (
+            <div className="absolute -top-4 -right-2 px-3 py-1 text-[10px] uppercase tracking-wider font-bold rounded-full bg-primary/10 text-primary border border-primary/20 shadow-sm">
+              Most Popular
+            </div>
+          )}
+          <div className="mb-4">
+            <h2 className="text-3xl font-serif leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-light to-secondary">{planName}</h2>
+            <p className="text-sm text-text-muted mt-2 font-medium">{description}</p>
+          </div>
+          <div className="my-6 flex items-baseline gap-2 text-text-main">
+            <span className="text-5xl font-light font-serif leading-relaxed">₹{price}</span>
+            <span className="text-sm text-text-muted font-medium">/mo</span>
+          </div>
+          <div className="card-divider w-full mb-6 h-px bg-gradient-to-r from-transparent via-text-main/10 to-transparent"></div>
+          <ul className="flex flex-col gap-4 text-sm text-text-main font-medium mb-8">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <CheckIcon className="text-primary w-5 h-5 shrink-0 mt-0.5" /> 
+                <span className="leading-relaxed">{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="w-full mt-auto block">
+            <RippleButton className={buttonClasses.trim()}>{displayButtonText}</RippleButton>
+          </div>
         </div>
       </TiltCard>
     </Link>

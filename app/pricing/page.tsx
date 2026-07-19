@@ -14,6 +14,7 @@ const pricingPlans = [
     ],
     buttonText: "Start Learning",
     buttonVariant: "secondary" as const,
+    bgImage: "/bg_foundation.png",
   },
   {
     planName: "Pro Student",
@@ -29,6 +30,7 @@ const pricingPlans = [
     buttonText: "Enroll Now",
     buttonVariant: "primary" as const,
     isPopular: true,
+    bgImage: "/bg_pro.png",
   },
 ];
 
