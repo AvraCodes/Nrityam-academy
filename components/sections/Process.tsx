@@ -32,7 +32,7 @@ export default function Process() {
 
         <div className="relative mt-20">
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 sm:gap-8 lg:gap-10">
             {STEPS.map((s, i) => (
               <motion.div
                 key={s.t}
@@ -40,9 +40,9 @@ export default function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-                className="relative"
+                className="relative flex flex-col items-center text-center sm:items-start sm:text-left"
               >
-                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/20 bg-white dark:bg-white/5 dark:bg-white/5 hover:border-primary/40 transition-colors shadow-sm">
+                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/20 bg-white dark:bg-white/5 hover:border-primary/40 transition-colors shadow-sm">
                   <s.icon className="h-6 w-6 text-text-muted" />
                   <span className="absolute -top-3 -right-3 flex h-7 w-7 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-text-main border-[3px] border-white">{s.k}</span>
                 </div>
@@ -50,8 +50,10 @@ export default function Process() {
                 <p className="mt-2 text-sm text-text-muted font-light leading-relaxed">{s.d}</p>
 
                 {i < STEPS.length - 1 && (
-                  <div className="hidden lg:flex absolute top-7 -right-6 items-center justify-center -translate-y-1/2 w-6 text-primary/30 z-0">
-                    <ArrowRight className="w-6 h-6" />
+                  <div className="hidden lg:flex absolute top-7 -right-12 items-center justify-center -translate-y-1/2 w-12 text-primary/40 z-0">
+                    <svg className="w-12 h-6" viewBox="0 0 48 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M2 12h44M36 5l10 7-10 7" />
+                    </svg>
                   </div>
                 )}
               </motion.div>
