@@ -55,11 +55,10 @@ const GlowCard: React.FC<GlowCardProps> = ({
         ${!customSize ? 'aspect-[3/4]' : ''}
         rounded-2xl 
         relative 
-        grid 
-        grid-rows-[1fr_auto] 
+        flex
+        flex-col
         shadow-[0_1rem_2rem_-1rem_black] 
         p-4 
-        gap-4 
         backdrop-blur-[5px]
         transition-colors
         duration-300
