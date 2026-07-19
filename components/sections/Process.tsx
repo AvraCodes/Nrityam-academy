@@ -50,9 +50,10 @@ export default function Process() {
                 <p className="mt-2 text-sm text-text-muted font-light leading-relaxed">{s.d}</p>
 
                 {i < STEPS.length - 1 && (
-                  <div className="hidden lg:flex absolute top-7 -right-12 items-center justify-center -translate-y-1/2 w-12 text-primary/40 z-0">
-                    <svg className="w-12 h-6" viewBox="0 0 48 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M2 12h44M36 5l10 7-10 7" />
+                  <div className="hidden lg:flex absolute top-7 left-[72px] right-[-24px] items-center -translate-y-1/2 z-0">
+                    <div className="h-[3px] w-full bg-primary/30 rounded-full" />
+                    <svg className="w-5 h-5 text-primary/30 -ml-2 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9 18l6-6-6-6" />
                     </svg>
                   </div>
                 )}
