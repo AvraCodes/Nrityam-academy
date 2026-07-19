@@ -23,7 +23,12 @@ const AnimatedNavLink = ({ href, children }: { href: string; children: React.Rea
           e.preventDefault();
           const target = document.querySelector(href);
           if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+            if ((window as any).lenis) {
+              (window as any).lenis.scrollTo(target, { offset: -100 });
+            } else {
+              const top = target.getBoundingClientRect().top + window.scrollY - 100;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }
           }
         }
       }}
