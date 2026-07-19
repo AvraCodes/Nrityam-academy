@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Map, MapMarker, MapControls, MarkerContent } from "@/components/ui/map-component"
 import { ArrowUpRight, Instagram, Youtube, Facebook, MapPin, Mail, Phone, ArrowUp } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { m as motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { DIcons } from "dicons";
 import { useTheme } from "next-themes";
