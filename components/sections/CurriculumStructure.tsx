@@ -101,6 +101,7 @@ export default function CurriculumStructure() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                    onMouseEnter={() => setActiveLayer(index)}
                   >
                     <GlowCard 
                       customSize
@@ -112,7 +113,7 @@ export default function CurriculumStructure() {
                       }`}
                     >
                       <button
-                        onClick={() => setActiveLayer(index)}
+                        onClick={() => toggleLayer(index)}
                         className="flex items-center gap-4 w-full p-6 sm:p-8 text-left cursor-pointer"
                       >
                         <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${
