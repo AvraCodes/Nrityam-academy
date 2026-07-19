@@ -127,7 +127,7 @@ export default function AcademyFeatures() {
               description="Clear exams at every tier to earn verified Nrityam Academy certifications."
               imageSrc="/certification.png"
               imageAlt="Verified Certificate"
-              imageClassName="absolute -bottom-4 -right-4 w-[110%] h-[55%] object-contain rounded-b-2xl [mask-image:linear-gradient(to_bottom,transparent_0%,black_30%)] pointer-events-none"
+              imageClassName="absolute bottom-0 right-0 w-[80%] h-[55%] object-contain rounded-b-2xl [mask-image:radial-gradient(circle_at_bottom_right,black_40%,transparent_70%)] pointer-events-none opacity-90"
               contentClassName="justify-start pt-6 pb-0 z-20"
             />
           </motion.div>
