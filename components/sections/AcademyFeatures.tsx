@@ -26,7 +26,7 @@ function Counter({ value, decimals = 0, suffix = '' }: { value: number; decimals
   return <span ref={ref}>{n.toFixed(decimals)}{suffix}</span>
 }
 
-function Tile({ children, wrapperClassName = '', className = '', delay = 0, glowColor = 'primary' }: { children: React.ReactNode; wrapperClassName?: string; className?: string; delay?: number; glowColor?: 'primary' | 'secondary' | 'maroon' | 'red' | 'yellow' | 'cream' }) {
+function Tile({ children, wrapperClassName = '', className = '', delay = 0, glowColor = 'primary', bgImage }: { children: React.ReactNode; wrapperClassName?: string; className?: string; delay?: number; glowColor?: 'primary' | 'secondary' | 'maroon' | 'red' | 'yellow' | 'cream'; bgImage?: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -35,8 +35,13 @@ function Tile({ children, wrapperClassName = '', className = '', delay = 0, glow
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
       className={`relative h-full ${wrapperClassName}`}
     >
-      <GlowCard customSize glowColor={glowColor} className={`h-full w-full rounded-3xl border border-primary/10 bg-white/70 dark:bg-white/5 shadow-sm p-6 transition-colors hover:border-primary/40 ${className}`}>
-        {children}
+      <GlowCard customSize glowColor={glowColor} className={`h-full w-full rounded-3xl border border-primary/10 bg-white/70 dark:bg-white/5 shadow-sm p-6 transition-colors hover:border-primary/40 overflow-hidden ${className}`}>
+        {bgImage && (
+          <img src={bgImage} alt="" className="absolute right-0 bottom-0 h-[80%] w-[80%] object-contain opacity-10 dark:opacity-20 [mask-image:radial-gradient(circle_at_bottom_right,black,transparent_70%)] pointer-events-none" />
+        )}
+        <div className="relative z-10 h-full w-full">
+          {children}
+        </div>
       </GlowCard>
     </motion.div>
   )
@@ -82,7 +87,7 @@ export default function AcademyFeatures() {
           </motion.div>
 
           {/* 1x1 Global Community */}
-          <Tile delay={0.1} glowColor="yellow">
+          <Tile delay={0.1} glowColor="yellow" bgImage="/bg_lotus.png">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-text-muted">
               <GiLotusFlower className="h-5 w-5" />
             </div>
@@ -91,7 +96,7 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 1x1 Mentor */}
-          <Tile delay={0.2} glowColor="maroon">
+          <Tile delay={0.2} glowColor="maroon" bgImage="/bg_diya.png">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
               <GiBurningDot className="h-5 w-5" />
             </div>
@@ -100,7 +105,7 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 2x1 Lifetime Access */}
-          <Tile wrapperClassName="col-span-2 row-span-1" delay={0.3} glowColor="cream" className="bg-white/70 dark:bg-white/5 flex flex-col justify-center">
+          <Tile wrapperClassName="col-span-2 row-span-1" delay={0.3} glowColor="cream" bgImage="/bg_hourglass.png" className="bg-white/70 dark:bg-white/5 flex flex-col justify-center">
             <div className="flex h-full items-center gap-6">
               <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary-dark/10 ring-1 ring-secondary-dark/20">
                 <GiHourglass className="h-7 w-7 text-secondary-dark" />
@@ -133,7 +138,7 @@ export default function AcademyFeatures() {
           </motion.div>
 
           {/* 1x1 Physical conditioning */}
-          <Tile delay={0.5} glowColor="red">
+          <Tile delay={0.5} glowColor="red" bgImage="/bg_lotus.png">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
               <GiHeartDrop className="h-5 w-5" />
             </div>
@@ -142,7 +147,7 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 1x1 Offline Workshops */}
-          <Tile delay={0.6} glowColor="yellow">
+          <Tile delay={0.6} glowColor="yellow" bgImage="/bg_diya.png">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
               <GiPositionMarker className="h-5 w-5" />
             </div>
@@ -151,7 +156,7 @@ export default function AcademyFeatures() {
           </Tile>
           
           {/* 1x1 Theory */}
-          <Tile delay={0.7} glowColor="maroon">
+          <Tile delay={0.7} glowColor="maroon" bgImage="/bg_book.png">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-text-muted">
               <GiIndianPalace className="h-5 w-5" />
             </div>
@@ -160,7 +165,7 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 1x1 Live Q&A */}
-          <Tile delay={0.8}>
+          <Tile delay={0.8} bgImage="/bg_lotus.png">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/5 ring-1 ring-primary/10 mb-4 text-primary">
               <GiBarefoot className="h-5 w-5" />
             </div>
@@ -169,7 +174,7 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 2x1 Repertoire */}
-          <Tile wrapperClassName="col-span-2 row-span-1" delay={0.9}>
+          <Tile wrapperClassName="col-span-2 row-span-1" delay={0.9} bgImage="/bg_book.png">
             <div className="flex h-full items-center gap-6">
               <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/5 ring-1 ring-primary/10">
                 <GiDoubleNecklace className="h-7 w-7 text-primary" />
