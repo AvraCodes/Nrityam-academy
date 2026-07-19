@@ -117,15 +117,15 @@ export default function CurriculumStructure() {
                       >
                         <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${
                           isActive 
-                            ? 'bg-secondary/20 text-secondary' 
-                            : 'bg-secondary/5 text-accent'
+                            ? 'bg-primary/20 text-primary' 
+                            : 'bg-primary/5 text-accent'
                         }`}>
                           <Icon className="w-5 h-5" />
                         </div>
                         
                         <div className="flex-1">
                           <div className={`text-xs font-mono mb-1 tracking-widest ${
-                            isActive ? 'text-secondary' : 'text-accent/70'
+                            isActive ? 'text-primary' : 'text-accent/70'
                           }`}>
                             LAYER {layer.number}
                           </div>
