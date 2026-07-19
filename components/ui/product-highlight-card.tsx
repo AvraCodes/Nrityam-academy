@@ -55,7 +55,7 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
           transformStyle: "preserve-3d",
         }}
         className={cn(
-          "relative w-full h-full min-h-[350px] rounded-2xl bg-white/70 dark:bg-white/5 shadow-lg transition-shadow duration-300 hover:shadow-2xl border border-primary/10",
+          "relative w-full h-full rounded-2xl bg-white/70 dark:bg-white/5 shadow-lg transition-shadow duration-300 hover:shadow-2xl border border-primary/10",
           className
         )}
         {...props}
@@ -67,7 +67,7 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
 
           {/* Glow effect removed as requested */}
 
-          <div className="relative z-10 flex h-full flex-col justify-between p-6">
+          <div className="relative z-10 flex h-full flex-col justify-center gap-6 p-6">
             {/* CORRECTED THIS LINE */}
             <div className="flex items-center space-x-2 text-text-main">
               {categoryIcon}
