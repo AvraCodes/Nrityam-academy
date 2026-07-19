@@ -1,14 +1,28 @@
 "use client"
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Map, MapMarker, MapControls, MarkerContent } from "@/components/ui/map-component"
 import { ArrowUpRight, Instagram, Youtube, Facebook, MapPin, Mail, Phone, ArrowUp } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { DIcons } from "dicons";
 import { useTheme } from "next-themes";
 
 const Footer = () => {
   const { setTheme } = useTheme();
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleScrollTop = () => {
     window.scrollTo({
@@ -151,7 +165,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar - User Provided Theme Component */}
         <div className="mt-20 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-6 pb-6">
           <p className="text-zinc-500 text-sm order-3 sm:order-1">
             © {new Date().getFullYear()} Nrityaam School of Bharatanatyam. All rights reserved.
@@ -165,11 +178,6 @@ const Footer = () => {
               >
                 <DIcons.Sun className="h-4 w-4" strokeWidth={1.5} />
                 <span className="sr-only">Light Theme</span>
-              </button>
-
-              <button type="button" onClick={handleScrollTop} className="p-2 text-zinc-400 hover:text-white transition-colors">
-                <DIcons.ArrowUp className="h-4 w-4" strokeWidth={1.5} />
-                <span className="sr-only">Top</span>
               </button>
 
               <button
@@ -189,6 +197,23 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
+      {/* Floating Scroll to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            transition={{ duration: 0.3 }}
+            onClick={handleScrollTop}
+            className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary-light hover:-translate-y-1 transition-all duration-300"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp className="h-6 w-6" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </footer>
   )
 }

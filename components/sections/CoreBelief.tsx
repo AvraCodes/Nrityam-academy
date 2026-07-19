@@ -116,9 +116,9 @@ export default function CoreBelief() {
           {/* Right: Content Display */}
           <div className="lg:col-span-7 relative min-h-[300px] sm:min-h-[250px] lg:min-h-[400px]">
             <motion.div className="flex-1 w-full lg:h-[450px]">
-              <div className="h-full w-full p-8 sm:p-12 rounded-3xl border border-primary/20 bg-white/70 dark:bg-white/5 backdrop-blur-md relative overflow-hidden flex flex-col justify-center shadow-2xl">
+              <TiltCard className="h-full w-full p-8 sm:p-12 rounded-3xl border border-primary/20 bg-white/70 dark:bg-white/5 backdrop-blur-md relative overflow-hidden flex flex-col justify-center shadow-2xl">
                 {/* Decorative glowing orb */}
-                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-primary rounded-full blur-[100px] opacity-20" />
+                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-primary rounded-full blur-[100px] opacity-20 pointer-events-none" />
                 
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -143,7 +143,7 @@ export default function CoreBelief() {
                     </p>
                   </motion.div>
                 </AnimatePresence>
-              </div>
+              </TiltCard>
             </motion.div>
           </div>
 
