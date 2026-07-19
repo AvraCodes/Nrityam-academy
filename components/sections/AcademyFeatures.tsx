@@ -163,7 +163,7 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 2x1 Repertoire */}
-          <Tile wrapperClassName="col-span-2 row-span-1 bg-white/70 dark:bg-white/5 shadow-sm" delay={0.9}>
+          <Tile wrapperClassName="col-span-2 row-span-1" delay={0.9}>
             <div className="flex h-full items-center gap-6">
               <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/5 ring-1 ring-primary/10">
                 <GiDoubleNecklace className="h-7 w-7 text-primary" />
