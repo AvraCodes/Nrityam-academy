@@ -33,13 +33,12 @@ export interface GlassButtonProps
 
 const GlassButton = React.forwardRef<HTMLButtonElement, GlassButtonProps>(
   ({ className, children, size, contentClassName, glassColor, asChild, ...props }, ref) => {
-    // Generate a unique ID so multiple buttons don't conflict with each other's SVG filters
-    const filterId = React.useId().replace(/:/g, "");
+    const staticId = "static";
 
     return (
       <>
         <svg className="absolute w-0 h-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <filter id={`liquid-glass-${filterId}`} primitiveUnits="objectBoundingBox">
+          <filter id={`liquid-glass-${staticId}`} primitiveUnits="objectBoundingBox">
             <feImage 
               result="map" 
               width="100%" 
@@ -62,7 +61,7 @@ const GlassButton = React.forwardRef<HTMLButtonElement, GlassButtonProps>(
         </svg>
 
         <style>{`
-          .btn-liquid-${filterId} {
+          .btn-liquid-${staticId} {
             appearance: none;
             border: none;
             background: transparent;
@@ -71,9 +70,8 @@ const GlassButton = React.forwardRef<HTMLButtonElement, GlassButtonProps>(
             --glass-reflex-dark: 1;
           }
 
-          .btn-liquid-lens-${filterId} {
-            background-color: ${glassColor || "oklch(from var(--foreground) l c h / 5%)"};
-            backdrop-filter: blur(8px) url(#liquid-glass-${filterId}) saturate(150%);
+          .btn-liquid-lens-${staticId} {
+            backdrop-filter: blur(8px) url(#liquid-glass-${staticId}) saturate(150%);
             -webkit-backdrop-filter: blur(8px) saturate(150%);
             box-shadow: 
               inset 0 0 0 1px color-mix(in srgb, white calc(var(--glass-reflex-light) * 10%), transparent),
@@ -90,36 +88,42 @@ const GlassButton = React.forwardRef<HTMLButtonElement, GlassButtonProps>(
             transition: background-color 400ms cubic-bezier(1, 0.0, 0.4, 1), box-shadow 400ms cubic-bezier(1, 0.0, 0.4, 1);
           }
 
-          .btn-liquid-text-${filterId} {
+          .btn-liquid-text-${staticId} {
             text-shadow: 0 1px 2px oklch(from var(--background) l c h / 30%);
             transition: color 400ms cubic-bezier(1, 0.0, 0.4, 1);
           }
           
           @media (hover: hover) {
-            .btn-liquid-${filterId}:not(:disabled):hover {
+            .btn-liquid-${staticId}:not(:disabled):hover {
               transform: scale(1.03);
             }
           }
-          .btn-liquid-${filterId}:not(:disabled):active {
+          .btn-liquid-${staticId}:not(:disabled):active {
             transform: scale(0.96);
           }
         `}</style>
         
         {asChild ? (
-            <div className={cn(glassButtonVariants({ size }), `btn-liquid-${filterId}`, className)} {...(props as any)}>
-               <span className={`btn-liquid-lens-${filterId} absolute inset-0 -z-10 rounded-[inherit] pointer-events-none`} />
-               <span className={cn(`btn-liquid-text-${filterId} relative z-10 w-full flex items-center justify-center gap-[inherit] select-none`, contentClassName)}>
+            <div className={cn(glassButtonVariants({ size }), `btn-liquid-${staticId}`, className)} {...(props as any)}>
+               <span 
+                 className={`btn-liquid-lens-${staticId} absolute inset-0 -z-10 rounded-[inherit] pointer-events-none`} 
+                 style={{ backgroundColor: glassColor || "oklch(from var(--foreground) l c h / 5%)" }} 
+               />
+               <span className={cn(`btn-liquid-text-${staticId} relative z-10 w-full flex items-center justify-center gap-[inherit] select-none`, contentClassName)}>
                  {children}
                </span>
             </div>
         ) : (
           <button
-            className={cn(glassButtonVariants({ size }), `btn-liquid-${filterId}`, className)}
+            className={cn(glassButtonVariants({ size }), `btn-liquid-${staticId}`, className)}
             ref={ref}
             {...props}
           >
-            <span className={`btn-liquid-lens-${filterId} absolute inset-0 -z-10 rounded-[inherit] pointer-events-none`} />
-            <span className={cn(`btn-liquid-text-${filterId} relative z-10 w-full flex items-center justify-center gap-[inherit] select-none`, contentClassName)}>
+            <span 
+              className={`btn-liquid-lens-${staticId} absolute inset-0 -z-10 rounded-[inherit] pointer-events-none`} 
+              style={{ backgroundColor: glassColor || "oklch(from var(--foreground) l c h / 5%)" }} 
+            />
+            <span className={cn(`btn-liquid-text-${staticId} relative z-10 w-full flex items-center justify-center gap-[inherit] select-none`, contentClassName)}>
               {children}
             </span>
           </button>
