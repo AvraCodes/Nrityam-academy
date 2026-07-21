@@ -61,7 +61,7 @@ export const PricingCard = ({
     <Link href={linkHref} className="flex flex-1 max-w-sm">
       <TiltCard className={cardClasses.trim()} spotlight={true} tiltLimit={8}>
         {bgImage && (
-          <img src={bgImage} alt="" className="absolute right-0 bottom-0 h-full w-[80%] object-cover opacity-30 dark:opacity-60 [mask-image:radial-gradient(circle_at_bottom_right,black_10%,transparent_80%)] mix-blend-multiply dark:mix-blend-screen pointer-events-none z-0" />
+          <img src={bgImage} alt="" className="absolute right-0 bottom-0 h-full w-[80%] object-cover opacity-35 dark:opacity-60 [mask-image:radial-gradient(circle_at_bottom_right,black_10%,transparent_80%)] mix-blend-multiply dark:mix-blend-screen pointer-events-none z-0" />
         )}
         <div className="relative z-10 flex flex-col h-full w-full">
           {isPopular && (

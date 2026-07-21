@@ -37,7 +37,7 @@ function Tile({ children, wrapperClassName = '', className = '', delay = 0, glow
     >
       <GlowCard customSize glowColor={glowColor} className={`h-full w-full rounded-3xl border border-primary/10 bg-white/70 dark:bg-white/5 shadow-sm p-6 transition-colors hover:border-primary/40 overflow-hidden ${className}`}>
         {bgImage && (
-          <img src={bgImage} alt="" className="absolute right-0 bottom-0 h-full w-[80%] object-cover opacity-40 dark:opacity-70 [mask-image:radial-gradient(circle_at_bottom_right,black_10%,transparent_80%)] mix-blend-multiply dark:mix-blend-screen pointer-events-none z-0" />
+          <img src={bgImage} alt="" className="absolute right-0 bottom-0 h-full w-[80%] object-cover opacity-35 dark:opacity-70 [mask-image:radial-gradient(circle_at_bottom_right,black_10%,transparent_80%)] mix-blend-multiply dark:mix-blend-screen pointer-events-none z-0" />
         )}
         <div className="relative z-10 h-full w-full">
           {children}
