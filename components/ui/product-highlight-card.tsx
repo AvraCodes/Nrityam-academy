@@ -57,7 +57,7 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
           transformStyle: "preserve-3d",
         }}
         className={cn(
-          "relative w-full h-full rounded-2xl bg-white/70 dark:bg-white/5 shadow-lg transition-shadow duration-300 hover:shadow-2xl border border-primary/10",
+          "relative w-full h-full rounded-2xl bg-white/45 dark:bg-white/5 shadow-lg transition-shadow duration-300 hover:shadow-2xl border border-primary/10",
           className
         )}
         {...props}

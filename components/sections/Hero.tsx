@@ -16,7 +16,7 @@ import {
 import { GlassButton } from '@/components/ui/glass-button'
 
 const StatItem = ({ value, label }: { value: string; label: string }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -34,29 +34,29 @@ const StatItem = ({ value, label }: { value: string; label: string }) => (
 
 const DanceSVG = () => (
   <svg className="absolute -right-64 top-0 h-full w-[800px] text-primary/5 opacity-50 blur-3xl" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M400 800C620.914 800 800 620.914 800 400C800 179.086 620.914 0 400 0C179.086 0 0 179.086 0 400C0 620.914 179.086 800 400 800Z" fill="currentColor"/>
+    <path d="M400 800C620.914 800 800 620.914 800 400C800 179.086 620.914 0 400 0C179.086 0 0 179.086 0 400C0 620.914 179.086 800 400 800Z" fill="currentColor" />
   </svg>
 )
 
 export default function Hero() {
   return (
     <>
- <section className="relative min-h-[90dvh] flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-16">
+      <section className="relative min-h-[90dvh] flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-16">
         {/* Background radial gradient removed to match global opacity */}
 
         <DanceSVG />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32 lg:mt-24">
           <div className="flex flex-col items-center justify-center text-center">
-            
-            <motion.div 
+
+            <motion.div
               className="flex-1 w-full max-w-4xl mx-auto flex flex-col items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {/* Status Text */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -80,7 +80,7 @@ export default function Hero() {
 
               {/* CTAs */}
               <div className="flex flex-wrap justify-center items-center gap-6 mb-14">
-                <GlassButton 
+                <GlassButton
                   onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
                   className="bg-primary hover:bg-primary-dark text-white shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all group"
                   glassColor="rgba(255, 255, 255, 0.15)"

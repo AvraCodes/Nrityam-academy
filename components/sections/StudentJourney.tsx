@@ -63,7 +63,7 @@ export default function StudentJourney() {
         </motion.div>
 
         {/* Dynamic Philosophy Summary Card */}
-        <TiltCard className="mb-12 p-8 sm:p-10 border border-primary/20 rounded-3xl bg-white/70 dark:bg-white/5 backdrop-blur-md transition-all duration-500 shadow-xl shadow-primary/5">
+        <TiltCard className="mb-12 p-8 sm:p-10 border border-primary/20 rounded-3xl bg-white/45 dark:bg-white/5 backdrop-blur-md transition-all duration-500 shadow-xl shadow-primary/5">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div className="space-y-4">
               <h3 className="text-2xl sm:text-3xl font-serif leading-relaxed text-text-main tracking-wide">

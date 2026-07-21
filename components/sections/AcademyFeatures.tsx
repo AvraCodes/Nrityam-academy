@@ -35,7 +35,7 @@ function Tile({ children, wrapperClassName = '', className = '', delay = 0, glow
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
       className={`relative h-full ${wrapperClassName}`}
     >
-      <GlowCard customSize glowColor={glowColor} className={`h-full w-full rounded-3xl border border-primary/10 bg-white/70 dark:bg-white/5 shadow-sm p-6 transition-colors hover:border-primary/40 overflow-hidden ${className}`}>
+      <GlowCard customSize glowColor={glowColor} className={`h-full w-full rounded-3xl border border-primary/10 bg-white/45 dark:bg-white/5 shadow-sm p-6 transition-colors hover:border-primary/40 overflow-hidden ${className}`}>
         {bgImage && (
           <img src={bgImage} alt="" className="absolute right-0 bottom-0 h-full w-[80%] object-cover opacity-35 dark:opacity-70 [mask-image:radial-gradient(circle_at_bottom_right,black_10%,transparent_80%)] mix-blend-multiply dark:mix-blend-screen pointer-events-none z-0" />
         )}
@@ -105,7 +105,7 @@ export default function AcademyFeatures() {
           </Tile>
 
           {/* 2x1 Lifetime Access */}
-          <Tile wrapperClassName="col-span-2 row-span-1" delay={0.3} glowColor="cream" bgImage="/bg_hourglass.png" className="bg-white/70 dark:bg-white/5 flex flex-col justify-center">
+          <Tile wrapperClassName="col-span-2 row-span-1" delay={0.3} glowColor="cream" bgImage="/bg_hourglass.png" className="bg-white/45 dark:bg-white/5 flex flex-col justify-center">
             <div className="flex h-full items-center gap-6">
               <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary-dark/10 ring-1 ring-secondary-dark/20">
                 <GiHourglass className="h-7 w-7 text-secondary-dark" />

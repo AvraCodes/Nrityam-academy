@@ -87,7 +87,7 @@ export default function LearningPortal({ reverseLayout = false }: { reverseLayou
             variants={itemVariants}
           >
             <TiltCard className="w-full">
-              <div className="relative rounded-2xl overflow-hidden border border-primary/20 bg-white/70 dark:bg-white/5 backdrop-blur-xl shadow-2xl p-2 pb-0">
+              <div className="relative rounded-2xl overflow-hidden border border-primary/20 bg-white/45 dark:bg-white/5 backdrop-blur-xl shadow-2xl p-2 pb-0">
                 
                 {/* Browser bar */}
                 <div className="h-8 flex items-center px-4 gap-1.5 mb-2">
